@@ -271,8 +271,13 @@ a:focus {
   margin: 0;
 }
 
+.post-list li:not(:last-child) {
+  padding-bottom: var(--spacing-6);
+  border-bottom: 3px solid var(--color-accent);
+}
+
 .post-list-item {
-  margin-top: var(--spacing-8);
+  margin-top: var(--spacing-6);
 }
 
 .post-list-item p {

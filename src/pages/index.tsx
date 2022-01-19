@@ -47,7 +47,7 @@ const BlogIndex: React.FC<PageProps<BlogIndexProps>> = ({ data, location }) => {
     <Layout location={location} title={siteTitle}>
       <Seo title="All posts" />
       <Bio />
-      <ol style={{ listStyle: `none` }}>
+      <ol style={{ listStyle: `none` }} className="post-list">
         {posts.map(post => {
           const title = post.frontmatter.title || post.fields.slug
 
