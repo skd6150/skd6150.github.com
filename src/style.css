@@ -54,12 +54,24 @@
   --fontSize-5: 2.074rem;
   --fontSize-6: 2.488rem;
   --fontSize-7: 2.986rem;
-  --color-primary: #005b99;
-  --color-text: #2e353f;
-  --color-text-light: #4f5969;
-  --color-heading: #1a202c;
-  --color-heading-black: black;
-  --color-accent: #d1dce5;
+
+  --color-accent: #cacaca;
+}
+
+body.light {
+  --color-primary: #1d2632;
+  --color-text: #000000;
+  --color-text-light: #666666;
+  --color-heading: #080707;
+  --color-background: #ffffff;
+}
+
+body.dark {
+  --color-primary: #ffffff;
+  --color-text: #cacaca;
+  --color-text-light: #848484;
+  --color-heading: #f3f3f3;
+  --color-background: #1d2632;
 }
 
 /* HTML elements */
@@ -81,6 +93,7 @@ body {
   font-family: var(--font-body);
   font-size: var(--fontSize-1);
   color: var(--color-text);
+  background-color: var(--color-background);
 }
 
 footer {
@@ -120,7 +133,7 @@ h6 {
 h1 {
   font-weight: var(--fontWeight-black);
   font-size: var(--fontSize-6);
-  color: var(--color-heading-black);
+  color: var(--color-heading);
 }
 
 h2 {
@@ -201,7 +214,6 @@ blockquote {
   margin-left: calc(-1 * var(--spacing-6));
   margin-right: var(--spacing-8);
   padding: var(--spacing-0) var(--spacing-0) var(--spacing-0) var(--spacing-6);
-  border-left: var(--spacing-1) solid var(--color-primary);
   font-size: var(--fontSize-2);
   font-style: italic;
   margin-bottom: var(--spacing-8);
@@ -260,7 +272,6 @@ a:focus {
 }
 
 .post-list-item {
-  margin-bottom: var(--spacing-8);
   margin-top: var(--spacing-8);
 }
 
@@ -277,6 +288,10 @@ a:focus {
 
 .post-list-item header {
   margin-bottom: var(--spacing-4);
+}
+
+.post-list-item small {
+  color: var(--color-text-light);
 }
 
 .header-link-home {
@@ -317,6 +332,28 @@ a:focus {
 
 .gatsby-highlight {
   margin-bottom: var(--spacing-8);
+}
+
+.theme-toggler {
+  display: flex;
+  position: fixed;
+  bottom: var(--spacing-6);
+  right: var(--spacing-6);
+  width: 50px;
+  height: 50px;
+  box-shadow: 2px 1px 3px 1px rgba(0, 0, 0, 0.5);
+  border-radius: 50px;
+  background-color: #cacaca;
+}
+
+.theme-toggler input {
+  all: unset;
+}
+
+.theme-toggler svg {
+  margin: auto;
+  color: #1d2632;
+  font-size: var(--fontSize-4);
 }
 
 /* Media queries */

@@ -1,5 +1,6 @@
 import * as React from "react"
 import { PageProps, Link } from "gatsby"
+import ThemeToggler from "./theme-toggler"
 
 interface LayoutProps {
   location: any
@@ -30,6 +31,7 @@ const Layout = ({ location, title, children }: LayoutProps) => {
     <div className="global-wrapper" data-is-root-path={isRootPath}>
       <header className="global-header">{header}</header>
       <main>{children}</main>
+      <ThemeToggler />
       <footer>
         © {new Date().getFullYear()}, Built with
         {` `}

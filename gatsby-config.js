@@ -12,6 +12,7 @@ module.exports = {
     },
   },
   plugins: [
+    "gatsby-plugin-dark-mode",
     {
       resolve: `gatsby-plugin-typescript`,
       options: {
