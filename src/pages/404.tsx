@@ -1,10 +1,21 @@
 import * as React from "react"
-import { graphql } from "gatsby"
+import { PageProps, graphql } from "gatsby"
 
 import Layout from "../components/layout"
 import Seo from "../components/seo"
 
-const NotFoundPage = ({ data, location }) => {
+interface NotFountPageProps {
+  site: {
+    siteMetadata: {
+      title: string
+    }
+  }
+}
+
+const NotFoundPage: React.FC<PageProps<NotFountPageProps>> = ({
+  data,
+  location,
+}) => {
   const siteTitle = data.site.siteMetadata.title
 
   return (
