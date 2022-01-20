@@ -2,7 +2,7 @@ import * as React from "react"
 import { useStaticQuery, graphql } from "gatsby"
 
 interface BioProps {
-  isolated: boolean
+  isolated?: boolean
 }
 
 const Bio = ({ isolated }: BioProps) => {
@@ -27,7 +27,7 @@ const Bio = ({ isolated }: BioProps) => {
   const github = data.site.siteMetadata.social.github
 
   return (
-    <div className="bio" data-isolated={isolated}>
+    <div className="bio" data-isolated={isolated || false}>
       <div className="bio-avatar">👨‍💻</div>
       <div className="bio-description">
         <div>{author}</div>
