@@ -310,6 +310,10 @@ a:focus {
   border-radius: 10px 10px 0 0;
 }
 
+.bio[data-isolated="true"] {
+  border-radius: 10px;
+}
+
 .bio-avatar {
   font-size: 3.3rem;
   margin-right: var(--spacing-2);
@@ -359,6 +363,26 @@ a:focus {
 
 .blog-post-nav ul {
   margin: var(--spacing-0);
+}
+
+.blog-post-header {
+  background-color: var(--color-primary);
+  padding: var(--spacing-5);
+  border-radius: 10px 10px 0 0;
+}
+
+.blog-post-header h1,
+.blog-post-header p {
+  color: var(--color-background);
+  margin: 0;
+}
+
+.blog-post-categories {
+  display: flex;
+  background-color: #cacaca;
+  border-radius: 0 0 10px 10px;
+  padding: var(--spacing-1) var(--spacing-2) var(--spacing-2) var(--spacing-2);
+  margin-bottom: var(--spacing-6);
 }
 
 .gatsby-highlight {

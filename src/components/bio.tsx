@@ -1,7 +1,11 @@
 import * as React from "react"
 import { useStaticQuery, graphql } from "gatsby"
 
-const Bio = () => {
+interface BioProps {
+  isolated: boolean
+}
+
+const Bio = ({ isolated }: BioProps) => {
   const data = useStaticQuery(graphql`
     query BioQuery {
       site {
@@ -23,7 +27,7 @@ const Bio = () => {
   const github = data.site.siteMetadata.social.github
 
   return (
-    <div className="bio">
+    <div className="bio" data-isolated={isolated}>
       <div className="bio-avatar">👨‍💻</div>
       <div className="bio-description">
         <div>{author}</div>

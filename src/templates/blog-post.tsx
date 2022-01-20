@@ -4,6 +4,7 @@ import { PageProps, Link, graphql } from "gatsby"
 import Bio from "../components/bio"
 import Layout from "../components/layout"
 import Seo from "../components/seo"
+import Badge from "../components/badge"
 
 interface BlogPostTemplateProps {
   site: {
@@ -19,6 +20,7 @@ interface BlogPostTemplateProps {
       title: string
       date: string
       description: string
+      categories: string[]
     }
   }
   previous: {
@@ -46,6 +48,7 @@ const BlogPostTemplate: React.FC<PageProps<BlogPostTemplateProps>> = ({
   const post = data.markdownRemark
   const siteTitle = data.site.siteMetadata?.title || `Title`
   const { previous, next } = data
+  const categories = data.markdownRemark.frontmatter.categories
 
   return (
     <Layout location={location} title={siteTitle}>
@@ -59,8 +62,15 @@ const BlogPostTemplate: React.FC<PageProps<BlogPostTemplateProps>> = ({
         itemType="http://schema.org/Article"
       >
         <header>
-          <h1 itemProp="headline">{post.frontmatter.title}</h1>
-          <p>{post.frontmatter.date}</p>
+          <div className="blog-post-header">
+            <h1 itemProp="headline">{post.frontmatter.title}</h1>
+            <p>{post.frontmatter.date}</p>
+          </div>
+          <div className="blog-post-categories">
+            {categories.map(category => (
+              <Badge>{category}</Badge>
+            ))}
+          </div>
         </header>
         <section
           dangerouslySetInnerHTML={{ __html: post.html }}
@@ -68,7 +78,7 @@ const BlogPostTemplate: React.FC<PageProps<BlogPostTemplateProps>> = ({
         />
         <hr />
         <footer>
-          <Bio />
+          <Bio isolated />
         </footer>
       </article>
       <nav className="blog-post-nav">
@@ -122,6 +132,7 @@ export const pageQuery = graphql`
         title
         date(formatString: "MMMM DD, YYYY")
         description
+        categories
       }
     }
     previous: markdownRemark(id: { eq: $previousPostId }) {
