@@ -25,9 +25,6 @@ const Seo = ({ description, lang, meta, title }: SeoProps) => {
           siteMetadata {
             title
             description
-            social {
-              twitter
-            }
           }
         }
       }
@@ -64,10 +61,6 @@ const Seo = ({ description, lang, meta, title }: SeoProps) => {
         {
           name: `twitter:card`,
           content: `summary`,
-        },
-        {
-          name: `twitter:creator`,
-          content: site.siteMetadata?.social?.twitter || ``,
         },
         {
           name: `twitter:title`,
