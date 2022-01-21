@@ -1,6 +1,6 @@
 import * as React from "react"
 import { PageProps, Link, graphql } from "gatsby"
-
+import { MdKeyboardArrowLeft, MdKeyboardArrowRight } from "react-icons/md"
 import Bio from "../components/bio"
 import Layout from "../components/layout"
 import Seo from "../components/seo"
@@ -93,15 +93,27 @@ const BlogPostTemplate: React.FC<PageProps<BlogPostTemplateProps>> = ({
         >
           <li>
             {previous && (
-              <Link to={previous.fields.slug} rel="prev">
-                ← {previous.frontmatter.title}
+              <Link
+                className="page-navigator"
+                data-direction="prev"
+                to={previous.fields.slug}
+                rel="prev"
+              >
+                <MdKeyboardArrowLeft />
+                {previous.frontmatter.title}
               </Link>
             )}
           </li>
           <li>
             {next && (
-              <Link to={next.fields.slug} rel="next">
-                {next.frontmatter.title} →
+              <Link
+                className="page-navigator"
+                data-direction="next"
+                to={next.fields.slug}
+                rel="next"
+              >
+                {next.frontmatter.title}
+                <MdKeyboardArrowRight />
               </Link>
             )}
           </li>
