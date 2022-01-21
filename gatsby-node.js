@@ -12,6 +12,11 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
   const result = await graphql(
     `
       {
+        site {
+          siteMetadata {
+            numPost
+          }
+        }
         allMarkdownRemark(sort: { fields: [frontmatter___date], order: ASC }) {
           nodes {
             id
@@ -22,6 +27,12 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
               categories
             }
           }
+          group(field: frontmatter___categories) {
+            tag: fieldValue
+            totalCount
+          }
+          distinct(field: frontmatter___categories)
+          totalCount
         }
       }
     `
@@ -36,13 +47,8 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
   }
 
   const posts = result.data.allMarkdownRemark.nodes
-  const categories = Array.from(
-    new Set(
-      result.data.allMarkdownRemark.nodes
-        .map(node => node.frontmatter.categories)
-        .flat()
-    )
-  )
+  const group = result.data.allMarkdownRemark.group
+  const numPost = result.data.site.siteMetadata.numPost
 
   // Create blog posts pages
   // But only if there's at least one markdown file found at "content/blog" (defined in gatsby-config.js)
@@ -65,14 +71,27 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
     })
   }
 
-  categories.forEach(category => {
-    createPage({
-      path: `category/${category}`,
-      component: postList,
-      context: {
-        category: category,
-      },
-    })
+  const all = {
+    all: true,
+    tag: result.data.allMarkdownRemark.distinct,
+    totalCount: result.data.allMarkdownRemark.totalCount,
+  }
+  group.concat(all).forEach(group => {
+    const totalCount = group.totalCount
+    for (index = 0; index * numPost < totalCount; index++) {
+      const category = group.all ? group.tag : [].concat(group.tag)
+      const pathIdx = index === 0 ? "" : index
+      createPage({
+        path: group.all ? `/${pathIdx}` : `/${group.tag}/${pathIdx}`,
+        component: postList,
+        context: {
+          category: category,
+          skip: index * numPost,
+          limit: numPost,
+          index,
+        },
+      })
+    }
   })
 }
 

@@ -1,5 +1,6 @@
 import * as React from "react"
 import { PageProps, Link, graphql } from "gatsby"
+import { MdKeyboardArrowLeft, MdKeyboardArrowRight } from "react-icons/md"
 import Bio from "../components/bio"
 import CategoryFilter from "../components/category-filter"
 import Layout from "../components/layout"
@@ -9,6 +10,7 @@ interface BlogIndexProps {
   site: {
     siteMetadata: {
       title: string
+      numPost: number
     }
   }
   allMarkdownRemark: {
@@ -23,11 +25,15 @@ interface BlogIndexProps {
         description: string
       }
     }[]
+    totalCount: number
   }
 }
 
 interface PageContext {
   category: string
+  skip: number
+  limit: number
+  index: number
 }
 
 const BlogIndex: React.FC<PageProps<BlogIndexProps>> = ({
@@ -38,11 +44,15 @@ const BlogIndex: React.FC<PageProps<BlogIndexProps>> = ({
   const siteTitle = data.site.siteMetadata.title
   const posts = data.allMarkdownRemark.nodes
   const category = (pageContext as PageContext).category
+  const endIndex =
+    data.allMarkdownRemark.totalCount / data.site.siteMetadata.numPost
+  const pageIndex = (pageContext as PageContext).index
+  const pathPrefix = category.length > 1 ? "" : `/${category[0]}`
 
   if (posts.length === 0) {
     return (
       <Layout location={location} title={siteTitle}>
-        <Seo title={category} />
+        <Seo title={category.length > 1 ? "Home" : category[0]} />
         <Bio />
         <CategoryFilter />
         <p>No blog posts found.</p>
@@ -52,7 +62,7 @@ const BlogIndex: React.FC<PageProps<BlogIndexProps>> = ({
 
   return (
     <Layout location={location} title={siteTitle}>
-      <Seo title={category} />
+      <Seo title={category.length > 1 ? "Home" : category[0]} />
       <Bio />
       <CategoryFilter />
       <ol style={{ listStyle: `none` }} className="post-list">
@@ -87,6 +97,32 @@ const BlogIndex: React.FC<PageProps<BlogIndexProps>> = ({
           )
         })}
       </ol>
+      <div>
+        {pageIndex - 1 >= 0 && (
+          <Link
+            className="page-navigator"
+            data-direction="prev"
+            to={
+              pageIndex - 1 === 0
+                ? `${pathPrefix}/`
+                : `${pathPrefix}/${pageIndex - 1}`
+            }
+          >
+            <MdKeyboardArrowLeft />
+            prev
+          </Link>
+        )}
+        {pageIndex + 1 < endIndex && (
+          <Link
+            className="page-navigator"
+            data-direction="next"
+            to={`${pathPrefix}/${pageIndex + 1}`}
+          >
+            next
+            <MdKeyboardArrowRight />
+          </Link>
+        )}
+      </div>
     </Layout>
   )
 }
@@ -94,15 +130,18 @@ const BlogIndex: React.FC<PageProps<BlogIndexProps>> = ({
 export default BlogIndex
 
 export const pageQuery = graphql`
-  query PostListQuery($category: [String]) {
+  query PostListQuery($category: [String], $skip: Int, $limit: Int) {
     site {
       siteMetadata {
         title
+        numPost
       }
     }
     allMarkdownRemark(
       sort: { fields: [frontmatter___date], order: DESC }
       filter: { frontmatter: { categories: { in: $category } } }
+      skip: $skip
+      limit: $limit
     ) {
       nodes {
         excerpt
@@ -115,6 +154,7 @@ export const pageQuery = graphql`
           description
         }
       }
+      totalCount
     }
   }
 `

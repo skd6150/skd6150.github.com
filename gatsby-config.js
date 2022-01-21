@@ -10,6 +10,7 @@ module.exports = {
       email: "skd6150@gmail.com",
       github: "https://github.com/skd6150",
     },
+    numPost: 5,
   },
   plugins: [
     "gatsby-plugin-dark-mode",

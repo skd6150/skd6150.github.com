@@ -418,6 +418,20 @@ body.dark .theme-toggler {
   font-size: var(--fontSize-4);
 }
 
+.page-navigator {
+  display: inline-flex;
+  align-items: center;
+  text-decoration: none;
+  color: var(--color-primary);
+  font-family: var(--fontFamily-sans);
+  font-weight: var(--fontWeight-semibold);
+  font-size: var(--fontSize-2);
+}
+
+.page-navigator[data-direction="next"] {
+  float: right;
+}
+
 /* Media queries */
 
 @media (max-width: 42rem) {

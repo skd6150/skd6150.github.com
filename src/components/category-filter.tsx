@@ -34,7 +34,7 @@ const CategoryFilter = () => {
       <Badge link="/">All</Badge>
       {categories.map(category => {
         return (
-          <Badge key={category} link={`/category/${category}`}>
+          <Badge key={category} link={`/${category}`}>
             {category}
           </Badge>
         )
