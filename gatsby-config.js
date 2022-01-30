@@ -13,6 +13,13 @@ module.exports = {
     numPost: 5,
   },
   plugins: [
+    {
+      resolve: `gatsby-plugin-google-fonts`,
+      options: {
+        fonts: ["Nanum Myeongjo", "Do Hyeon"],
+        display: "swap",
+      },
+    },
     "gatsby-plugin-dark-mode",
     {
       resolve: `gatsby-plugin-typescript`,
