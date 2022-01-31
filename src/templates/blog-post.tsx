@@ -67,9 +67,10 @@ const BlogPostTemplate: React.FC<PageProps<BlogPostTemplateProps>> = ({
             <p>{post.frontmatter.date}</p>
           </div>
           <div className="blog-post-categories">
-            {categories.map(category => (
-              <Badge key={category}>{category}</Badge>
-            ))}
+            {categories &&
+              categories.map(category => (
+                <Badge key={category}>{category}</Badge>
+              ))}
           </div>
         </header>
         <section

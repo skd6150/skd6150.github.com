@@ -73,7 +73,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
 
   const all = {
     all: true,
-    tag: result.data.allMarkdownRemark.distinct,
+    tag: result.data.allMarkdownRemark.distinct.concat(null),
     totalCount: result.data.allMarkdownRemark.totalCount,
   }
   group.concat(all).forEach(group => {

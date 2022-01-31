@@ -32,13 +32,15 @@ const CategoryFilter = () => {
   return (
     <div className="categories-filter">
       <Badge link="/">All</Badge>
-      {categories.map(category => {
-        return (
-          <Badge key={category} link={`/${category}`}>
-            {category}
-          </Badge>
-        )
-      })}
+      {categories
+        .filter(category => category !== null)
+        .map(category => {
+          return (
+            <Badge key={category} link={`/${category}`}>
+              {category}
+            </Badge>
+          )
+        })}
     </div>
   )
 }

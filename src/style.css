@@ -385,6 +385,7 @@ main:after {
 .blog-post-categories {
   display: flex;
   background-color: #cacaca;
+  min-height: calc(6px + 2.75rem);
   border-radius: 0 0 10px 10px;
   padding: var(--spacing-1) var(--spacing-2) var(--spacing-2) var(--spacing-2);
   margin-bottom: var(--spacing-6);
