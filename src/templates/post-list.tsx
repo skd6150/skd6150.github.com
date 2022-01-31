@@ -23,6 +23,7 @@ interface BlogIndexProps {
         date: string
         title: string
         description: string
+        categories: string[]
       }
     }[]
     totalCount: number
@@ -79,7 +80,11 @@ const BlogIndex: React.FC<PageProps<BlogIndexProps>> = ({
                 >
                   <header>
                     <h2>
-                      <span itemProp="headline">{title}</span>
+                      <span itemProp="headline">{`${
+                        post.frontmatter.categories
+                          ? `[${post.frontmatter.categories[0]}]`
+                          : ""
+                      } ${title}`}</span>
                     </h2>
                     <small>{post.frontmatter.date}</small>
                   </header>
@@ -152,6 +157,7 @@ export const pageQuery = graphql`
           date(formatString: "MMMM DD, YYYY")
           title
           description
+          categories
         }
       }
       totalCount
