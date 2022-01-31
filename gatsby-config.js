@@ -1,10 +1,10 @@
 module.exports = {
   siteMetadata: {
-    title: `sijin.log`,
+    title: `정리하는 습관`,
     author: {
       name: `Sijin`,
     },
-    description: `기록하는 블로그`,
+    description: `개발공부 블로그`,
     siteUrl: `https://skd6150.github.io`,
     social: {
       email: "skd6150@gmail.com",
@@ -122,7 +122,7 @@ module.exports = {
               }
             `,
             output: "/rss.xml",
-            title: "Gatsby Starter Blog RSS Feed",
+            title: "sijin.blog",
           },
         ],
       },
@@ -130,8 +130,8 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `Gatsby Starter Blog`,
-        short_name: `GatsbyJS`,
+        name: `sijin.blog`,
+        short_name: `sijin.blog`,
         start_url: `/`,
         background_color: `#ffffff`,
         // This will impact how browsers show your PWA/website
