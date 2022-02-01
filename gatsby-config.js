@@ -16,7 +16,7 @@ module.exports = {
     {
       resolve: `gatsby-plugin-google-fonts`,
       options: {
-        fonts: ["Nanum Myeongjo", "Do Hyeon"],
+        fonts: ["Nanum Gothic", "Nanum Myeongjo", "Do Hyeon"],
         display: "swap",
       },
     },
@@ -48,6 +48,7 @@ module.exports = {
       resolve: `gatsby-transformer-remark`,
       options: {
         plugins: [
+          `gatsby-remark-autolink-headers`,
           {
             resolve: `gatsby-remark-images`,
             options: {

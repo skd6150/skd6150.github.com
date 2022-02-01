@@ -5,6 +5,7 @@ import Bio from "../components/bio"
 import Layout from "../components/layout"
 import Seo from "../components/seo"
 import Badge from "../components/badge"
+import Toc from "../components/toc"
 
 interface BlogPostTemplateProps {
   site: {
@@ -16,6 +17,7 @@ interface BlogPostTemplateProps {
     id: string
     excerpt: string
     html: string
+    tableOfContents: string
     frontmatter: {
       title: string
       date: string
@@ -73,6 +75,7 @@ const BlogPostTemplate: React.FC<PageProps<BlogPostTemplateProps>> = ({
               ))}
           </div>
         </header>
+        <Toc html={post.tableOfContents} />
         <section
           dangerouslySetInnerHTML={{ __html: post.html }}
           itemProp="articleBody"
@@ -141,6 +144,7 @@ export const pageQuery = graphql`
       id
       excerpt(pruneLength: 160)
       html
+      tableOfContents
       frontmatter {
         title
         date(formatString: "MMMM DD, YYYY")
