@@ -10,16 +10,6 @@ const TableOfContents = ({ html }: TableOfContentsProps) => {
   const initialOffset = useRef<number>()
   const offset = 130
 
-  useEffect(() => {
-    initialOffset.current =
-      ref.current!.getBoundingClientRect().top + window.scrollY
-    handleScroll()
-    window.addEventListener("scroll", throttle(handleScroll, 100))
-    return () => {
-      window.addEventListener("scroll", throttle(handleScroll, 100))
-    }
-  }, [])
-
   const handleScroll = () => {
     if (ref.current === null) return
     if (initialOffset.current === undefined) return
@@ -31,6 +21,17 @@ const TableOfContents = ({ html }: TableOfContentsProps) => {
       ref.current.style.top = ""
     }
   }
+  const throttledHandleScroll = throttle(handleScroll, 100)
+
+  useEffect(() => {
+    initialOffset.current =
+      ref.current!.getBoundingClientRect().top + window.scrollY
+    handleScroll()
+    window.addEventListener("scroll", throttledHandleScroll)
+    return () => {
+      window.removeEventListener("scroll", throttledHandleScroll)
+    }
+  }, [])
 
   return (
     <div className="toc_wrapper">
