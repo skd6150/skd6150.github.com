@@ -8,27 +8,28 @@ interface TableOfContentsProps {
 const TableOfContents = ({ html }: TableOfContentsProps) => {
   const ref = useRef<HTMLDivElement>(null)
   const initialOffset = useRef<number>()
-  const offset = 130
+  const fixedPosition = 130
 
   const handleScroll = () => {
-    if (ref.current === null) return
-    if (initialOffset.current === undefined) return
-    if (window.scrollY > initialOffset.current - offset) {
-      ref.current.style.position = "fixed"
-      ref.current.style.top = `${offset}px`
+    if (window.scrollY > initialOffset.current! - fixedPosition) {
+      ref.current!.style.position = "fixed"
+      ref.current!.style.top = `${fixedPosition}px`
     } else {
-      ref.current.style.position = ""
-      ref.current.style.top = ""
+      ref.current!.style.position = ""
+      ref.current!.style.top = ""
     }
   }
   const throttledHandleScroll = throttle(handleScroll, 100)
 
   useEffect(() => {
-    initialOffset.current =
-      ref.current!.getBoundingClientRect().top + window.scrollY
-    handleScroll()
-    window.addEventListener("scroll", throttledHandleScroll)
+    document.fonts.onloadingdone = () => {
+      initialOffset.current =
+        ref.current!.getBoundingClientRect().top + window.scrollY
+      handleScroll()
+      window.addEventListener("scroll", throttledHandleScroll)
+    }
     return () => {
+      document.fonts.onloadingdone = null
       window.removeEventListener("scroll", throttledHandleScroll)
     }
   }, [])
