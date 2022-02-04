@@ -22,14 +22,14 @@ const TableOfContents = ({ html }: TableOfContentsProps) => {
   const throttledHandleScroll = throttle(handleScroll, 100)
 
   useEffect(() => {
-    document.fonts.onloadingdone = () => {
+    document.fonts.ready.then(() => {
       initialOffset.current =
         ref.current!.getBoundingClientRect().top + window.scrollY
       handleScroll()
       window.addEventListener("scroll", throttledHandleScroll)
-    }
+    })
     return () => {
-      document.fonts.onloadingdone = null
+      document.fonts.ready.then(null)
       window.removeEventListener("scroll", throttledHandleScroll)
     }
   }, [])
