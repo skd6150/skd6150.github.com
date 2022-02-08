@@ -1,0 +1,261 @@
+<!DOCTYPE html><html lang="ko"><head><meta charSet="utf-8"/><meta http-equiv="x-ua-compatible" content="ie=edge"/><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/><meta data-react-helmet="true" name="twitter:description" content="우연치 않게 React Hooks Quiz를 풀었는데 생각보다 헷갈리는 부분들이 많아서 정리해보았다. 1번문제  부모, 자식 컴포넌트간 실행순서와 useEffect hooks에서 effect…"/><meta data-react-helmet="true" name="twitter:title" content="React Hooks Quiz"/><meta data-react-helmet="true" name="twitter:card" content="summary"/><meta data-react-helmet="true" property="og:type" content="website"/><meta data-react-helmet="true" property="og:description" content="우연치 않게 React Hooks Quiz를 풀었는데 생각보다 헷갈리는 부분들이 많아서 정리해보았다. 1번문제  부모, 자식 컴포넌트간 실행순서와 useEffect hooks에서 effect…"/><meta data-react-helmet="true" property="og:title" content="React Hooks Quiz"/><meta data-react-helmet="true" name="description" content="우연치 않게 React Hooks Quiz를 풀었는데 생각보다 헷갈리는 부분들이 많아서 정리해보았다. 1번문제  부모, 자식 컴포넌트간 실행순서와 useEffect hooks에서 effect…"/><meta name="generator" content="Gatsby 4.5.3"/><style data-href="/styles.ec5c821e1b3b71d04414.css" data-identity="gatsby-global-css">@font-face{font-display:swap;font-family:Montserrat;font-style:normal;font-weight:100;src:local("Montserrat Thin "),local("Montserrat-Thin"),url(/static/montserrat-latin-100-8d7d79679b70dbe27172b6460e7a7910.woff2) format("woff2"),url(/static/montserrat-latin-100-ec38980a9e0119a379e2a9b3dbb1901a.woff) format("woff")}@font-face{font-display:swap;font-family:Montserrat;font-style:italic;font-weight:100;src:local("Montserrat Thin italic"),local("Montserrat-Thinitalic"),url(/static/montserrat-latin-100italic-e279051046ba1286706adc886cf1c96b.woff2) format("woff2"),url(/static/montserrat-latin-100italic-3b325a3173c8207435cd1b76e19bf501.woff) format("woff")}@font-face{font-display:swap;font-family:Montserrat;font-style:normal;font-weight:200;src:local("Montserrat Extra Light "),local("Montserrat-Extra Light"),url(/static/montserrat-latin-200-9d266fbbfa6cab7009bd56003b1eeb67.woff2) format("woff2"),url(/static/montserrat-latin-200-2d8ba08717110d27122e54c34b8a5798.woff) format("woff")}@font-face{font-display:swap;font-family:Montserrat;font-style:italic;font-weight:200;src:local("Montserrat Extra Light italic"),local("Montserrat-Extra Lightitalic"),url(/static/montserrat-latin-200italic-6e5b3756583bb2263eb062eae992735e.woff2) format("woff2"),url(/static/montserrat-latin-200italic-a0d6f343e4b536c582926255367a57da.woff) format("woff")}@font-face{font-display:swap;font-family:Montserrat;font-style:normal;font-weight:300;src:local("Montserrat Light "),local("Montserrat-Light"),url(/static/montserrat-latin-300-00b3e893aab5a8fd632d6342eb72551a.woff2) format("woff2"),url(/static/montserrat-latin-300-ea303695ceab35f17e7d062f30e0173b.woff) format("woff")}@font-face{font-display:swap;font-family:Montserrat;font-style:italic;font-weight:300;src:local("Montserrat Light italic"),local("Montserrat-Lightitalic"),url(/static/montserrat-latin-300italic-56f34ea368f6aedf89583d444bbcb227.woff2) format("woff2"),url(/static/montserrat-latin-300italic-54b0bf2c8c4c12ffafd803be2466a790.woff) format("woff")}@font-face{font-display:swap;font-family:Montserrat;font-style:normal;font-weight:400;src:local("Montserrat Regular "),local("Montserrat-Regular"),url(/static/montserrat-latin-400-b71748ae4f80ec8c014def4c5fa8688b.woff2) format("woff2"),url(/static/montserrat-latin-400-0659a9f4e90db5cf51b50d005bff1e41.woff) format("woff")}@font-face{font-display:swap;font-family:Montserrat;font-style:italic;font-weight:400;src:local("Montserrat Regular italic"),local("Montserrat-Regularitalic"),url(/static/montserrat-latin-400italic-6eed6b4cbb809c6efc7aa7ddad6dbe3e.woff2) format("woff2"),url(/static/montserrat-latin-400italic-7583622cfde30ae49086d18447ab28e7.woff) format("woff")}@font-face{font-display:swap;font-family:Montserrat;font-style:normal;font-weight:500;src:local("Montserrat Medium "),local("Montserrat-Medium"),url(/static/montserrat-latin-500-091b209546e16313fd4f4fc36090c757.woff2) format("woff2"),url(/static/montserrat-latin-500-edd311588712a96bbf435fad264fff62.woff) format("woff")}@font-face{font-display:swap;font-family:Montserrat;font-style:italic;font-weight:500;src:local("Montserrat Medium italic"),local("Montserrat-Mediumitalic"),url(/static/montserrat-latin-500italic-c90ced68b46050061d1a41842d6dfb43.woff2) format("woff2"),url(/static/montserrat-latin-500italic-5146cbfe02b1deea5dffea27a5f2f998.woff) format("woff")}@font-face{font-display:swap;font-family:Montserrat;font-style:normal;font-weight:600;src:local("Montserrat SemiBold "),local("Montserrat-SemiBold"),url(/static/montserrat-latin-600-0480d2f8a71f38db8633b84d8722e0c2.woff2) format("woff2"),url(/static/montserrat-latin-600-b77863a375260a05dd13f86a1cee598f.woff) format("woff")}@font-face{font-display:swap;font-family:Montserrat;font-style:italic;font-weight:600;src:local("Montserrat SemiBold italic"),local("Montserrat-SemiBolditalic"),url(/static/montserrat-latin-600italic-cf46ffb11f3a60d7df0567f8851a1d00.woff2) format("woff2"),url(/static/montserrat-latin-600italic-c4fcfeeb057724724097167e57bd7801.woff) format("woff")}@font-face{font-display:swap;font-family:Montserrat;font-style:normal;font-weight:700;src:local("Montserrat Bold "),local("Montserrat-Bold"),url(/static/montserrat-latin-700-7dbcc8a5ea2289d83f657c25b4be6193.woff2) format("woff2"),url(/static/montserrat-latin-700-99271a835e1cae8c76ef8bba99a8cc4e.woff) format("woff")}@font-face{font-display:swap;font-family:Montserrat;font-style:italic;font-weight:700;src:local("Montserrat Bold italic"),local("Montserrat-Bolditalic"),url(/static/montserrat-latin-700italic-c41ad6bdb4bd504a843d546d0a47958d.woff2) format("woff2"),url(/static/montserrat-latin-700italic-6779372f04095051c62ed36bc1dcc142.woff) format("woff")}@font-face{font-display:swap;font-family:Montserrat;font-style:normal;font-weight:800;src:local("Montserrat ExtraBold "),local("Montserrat-ExtraBold"),url(/static/montserrat-latin-800-db9a3e0ba7eaea32e5f55328ace6cf23.woff2) format("woff2"),url(/static/montserrat-latin-800-4e3c615967a2360f5db87d2f0fd2456f.woff) format("woff")}@font-face{font-display:swap;font-family:Montserrat;font-style:italic;font-weight:800;src:local("Montserrat ExtraBold italic"),local("Montserrat-ExtraBolditalic"),url(/static/montserrat-latin-800italic-bf45bfa14805969eda318973947bc42b.woff2) format("woff2"),url(/static/montserrat-latin-800italic-fe82abb0bcede51bf724254878e0c374.woff) format("woff")}@font-face{font-display:swap;font-family:Montserrat;font-style:normal;font-weight:900;src:local("Montserrat Black "),local("Montserrat-Black"),url(/static/montserrat-latin-900-e66c7edc609e24bacbb705175669d814.woff2) format("woff2"),url(/static/montserrat-latin-900-8211f418baeb8ec880b80ba3c682f957.woff) format("woff")}@font-face{font-display:swap;font-family:Montserrat;font-style:italic;font-weight:900;src:local("Montserrat Black italic"),local("Montserrat-Blackitalic"),url(/static/montserrat-latin-900italic-4454c775e48152c1a72510ceed3603e2.woff2) format("woff2"),url(/static/montserrat-latin-900italic-efcaa0f6a82ee0640b83a0916e6e8d68.woff) format("woff")}@font-face{font-display:swap;font-family:Merriweather;font-style:normal;font-weight:300;src:local("Merriweather Light "),local("Merriweather-Light"),url(/static/merriweather-latin-300-fc117160c69a8ea0851b26dd14748ee4.woff2) format("woff2"),url(/static/merriweather-latin-300-58b18067ebbd21fda77b67e73c241d3b.woff) format("woff")}@font-face{font-display:swap;font-family:Merriweather;font-style:italic;font-weight:300;src:local("Merriweather Light italic"),local("Merriweather-Lightitalic"),url(/static/merriweather-latin-300italic-fe29961474f8dbf77c0aa7b9a629e4bc.woff2) format("woff2"),url(/static/merriweather-latin-300italic-23c3f1f88683618a4fb8d265d33d383a.woff) format("woff")}@font-face{font-display:swap;font-family:Merriweather;font-style:normal;font-weight:400;src:local("Merriweather Regular "),local("Merriweather-Regular"),url(/static/merriweather-latin-400-d9479e8023bef9cbd9bf8d6eabd6bf36.woff2) format("woff2"),url(/static/merriweather-latin-400-040426f99ff6e00b86506452e0d1f10b.woff) format("woff")}@font-face{font-display:swap;font-family:Merriweather;font-style:italic;font-weight:400;src:local("Merriweather Regular italic"),local("Merriweather-Regularitalic"),url(/static/merriweather-latin-400italic-2de7bfeaf08fb03d4315d49947f062f7.woff2) format("woff2"),url(/static/merriweather-latin-400italic-79db67aca65f5285964ab332bd65f451.woff) format("woff")}@font-face{font-display:swap;font-family:Merriweather;font-style:normal;font-weight:700;src:local("Merriweather Bold "),local("Merriweather-Bold"),url(/static/merriweather-latin-700-4b08e01d805fa35d7bf777f1b24314ae.woff2) format("woff2"),url(/static/merriweather-latin-700-22fb8afba4ab1f093b6ef9e28a9b6e92.woff) format("woff")}@font-face{font-display:swap;font-family:Merriweather;font-style:italic;font-weight:700;src:local("Merriweather Bold italic"),local("Merriweather-Bolditalic"),url(/static/merriweather-latin-700italic-cd92541b177652fffb6e3b952f1c33f1.woff2) format("woff2"),url(/static/merriweather-latin-700italic-f87f3d87cea0dd0979bfc8ac9ea90243.woff) format("woff")}@font-face{font-display:swap;font-family:Merriweather;font-style:normal;font-weight:900;src:local("Merriweather Black "),local("Merriweather-Black"),url(/static/merriweather-latin-900-f813fc6a4bee46eda5224ac7ebf1b7be.woff2) format("woff2"),url(/static/merriweather-latin-900-5d4e42cb44410674acd99153d57df032.woff) format("woff")}@font-face{font-display:swap;font-family:Merriweather;font-style:italic;font-weight:900;src:local("Merriweather Black italic"),local("Merriweather-Blackitalic"),url(/static/merriweather-latin-900italic-b7901d85486871c1779c0e93ddd85656.woff2) format("woff2"),url(/static/merriweather-latin-900italic-9647f9fdab98756989a8a5550eb205c3.woff) format("woff")}
+
+
+/*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */html{-webkit-text-size-adjust:100%;line-height:1.15}body{margin:0}main{display:block}h1{font-size:2em;margin:.67em 0}hr{box-sizing:content-box;height:0;overflow:visible}pre{font-family:monospace,monospace;font-size:1em}a{background-color:transparent}abbr[title]{border-bottom:none;text-decoration:underline;-webkit-text-decoration:underline dotted;text-decoration:underline dotted}b,strong{font-weight:bolder}code,kbd,samp{font-family:monospace,monospace;font-size:1em}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sub{bottom:-.25em}sup{top:-.5em}img{border-style:none}button,input,optgroup,select,textarea{font-family:inherit;font-size:100%;line-height:1.15;margin:0}button,input{overflow:visible}button,select{text-transform:none}[type=button],[type=reset],[type=submit],button{-webkit-appearance:button}[type=button]::-moz-focus-inner,[type=reset]::-moz-focus-inner,[type=submit]::-moz-focus-inner,button::-moz-focus-inner{border-style:none;padding:0}[type=button]:-moz-focusring,[type=reset]:-moz-focusring,[type=submit]:-moz-focusring,button:-moz-focusring{outline:1px dotted ButtonText}fieldset{padding:.35em .75em .625em}legend{box-sizing:border-box;color:inherit;display:table;max-width:100%;padding:0;white-space:normal}progress{vertical-align:baseline}textarea{overflow:auto}[type=checkbox],[type=radio]{box-sizing:border-box;padding:0}[type=number]::-webkit-inner-spin-button,[type=number]::-webkit-outer-spin-button{height:auto}[type=search]{-webkit-appearance:textfield;outline-offset:-2px}[type=search]::-webkit-search-decoration{-webkit-appearance:none}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}details{display:block}summary{display:list-item}[hidden]{display:none}:root{--maxWidth-none:"none";--maxWidth-xs:20rem;--maxWidth-sm:24rem;--maxWidth-md:28rem;--maxWidth-lg:32rem;--maxWidth-xl:36rem;--maxWidth-2xl:42rem;--maxWidth-3xl:48rem;--maxWidth-4xl:56rem;--maxWidth-full:"100%";--maxWidth-wrapper:var(--maxWidth-3xl);--spacing-px:"1px";--spacing-0:0;--spacing-1:0.25rem;--spacing-2:0.5rem;--spacing-3:0.75rem;--spacing-4:1rem;--spacing-5:1.25rem;--spacing-6:1.5rem;--spacing-8:2rem;--spacing-10:2.5rem;--spacing-12:3rem;--spacing-16:4rem;--spacing-20:5rem;--spacing-24:6rem;--spacing-32:8rem;--spacing-48:12rem;--fontFamily-sans:Do Hyeon,Montserrat,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";--fontFamily-serif:Nanum Myeongjo,"Merriweather","Georgia",Cambria,"Times New Roman",Times,serif;--font-body:var(--fontFamily-serif);--font-heading:var(--fontFamily-sans);--fontWeight-normal:400;--fontWeight-medium:500;--fontWeight-semibold:600;--fontWeight-bold:700;--fontWeight-extrabold:800;--fontWeight-black:900;--fontSize-root:16px;--lineHeight-none:1;--lineHeight-tight:1.1;--lineHeight-normal:1.5;--lineHeight-relaxed:1.625;--fontSize-0:0.833rem;--fontSize-1:1rem;--fontSize-2:1.2rem;--fontSize-3:1.44rem;--fontSize-4:1.728rem;--fontSize-5:2.074rem;--fontSize-6:2.488rem;--fontSize-7:2.986rem;--color-accent:#cacaca}body.light{--color-primary:#1d2632;--color-text:#000;--color-text-light:#666;--color-heading:#080707;--color-background:#fff}body.dark{--color-primary:#fff;--color-text:#cacaca;--color-text-light:#848484;--color-heading:#f3f3f3;--color-background:#1d2632}*,:after,:before{box-sizing:border-box}html{-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;font-size:var(--fontSize-root);line-height:var(--lineHeight-normal)}body{background-color:var(--color-background);color:var(--color-text);font-family:var(--font-body);font-size:var(--fontSize-1)}footer{padding:var(--spacing-6) var(--spacing-0)}hr{background:var(--color-accent);border:0;height:1px}h1,h2,h3,h4,h5,h6{font-family:var(--font-heading);letter-spacing:-.025em;line-height:var(--lineHeight-tight);margin-bottom:var(--spacing-6);margin-top:var(--spacing-12)}h2,h3,h4,h5,h6{font-weight:var(--fontWeight-normal)}h1,h2,h3,h4,h5,h6{color:var(--color-heading)}h1{font-size:var(--fontSize-6);font-weight:var(--fontWeight-extrabold)}h2{font-size:var(--fontSize-5)}h3{font-size:var(--fontSize-4)}h4{font-size:var(--fontSize-3)}h5{font-size:var(--fontSize-2)}h6{font-size:var(--fontSize-1)}h1>a,h2>a,h3>a,h4>a,h5>a,h6>a{color:inherit;text-decoration:none}p{--baseline-multiplier:0.179;--x-height-multiplier:0.35;line-height:var(--lineHeight-relaxed);margin:var(--spacing-0) var(--spacing-0) var(--spacing-8) var(--spacing-0)}ol,p,ul{padding:var(--spacing-0)}ol,ul{list-style-image:none;list-style-position:outside;margin-bottom:var(--spacing-8);margin-left:var(--spacing-0);margin-right:var(--spacing-0)}ol li,ul li{padding-left:var(--spacing-0)}li>p,ol li,ul li{margin-bottom:calc(var(--spacing-8)/2)}li :last-child{margin-bottom:var(--spacing-0)}li>ul{margin-left:var(--spacing-6)}blockquote{color:var(--color-text-light);font-size:var(--fontSize-2);font-style:italic;margin-bottom:var(--spacing-8);margin-left:calc(var(--spacing-6)*-1);margin-right:var(--spacing-8);padding:var(--spacing-0) var(--spacing-0) var(--spacing-0) var(--spacing-6)}blockquote>:last-child{margin-bottom:var(--spacing-0)}blockquote>ol,blockquote>ul{list-style-position:inside}table{border-collapse:collapse;border-spacing:.25rem;margin-bottom:var(--spacing-8);width:100%}table thead tr th{border-bottom:1px solid var(--color-accent)}a{color:var(--color-primary)}a:focus,a:hover{text-decoration:none}article{position:relative}main:after{clear:both;content:"";display:block}.global-wrapper{margin:var(--spacing-0) auto;max-width:var(--maxWidth-wrapper);padding:var(--spacing-10) var(--spacing-5)}.global-header{margin-bottom:var(--spacing-12)}.main-heading{font-size:var(--fontSize-5);margin:0}.post-list li:not(:last-child){border-bottom:3px solid var(--color-accent);padding-bottom:var(--spacing-6)}.post-list a{text-decoration:none}.post-list-item{margin-top:var(--spacing-6);padding-left:10px}.post-list-item p{margin-bottom:var(--spacing-0)}.post-list-item h2{color:var(--color-primary);font-size:var(--fontSize-4);margin-bottom:var(--spacing-2);margin-top:var(--spacing-0)}.post-list-item header{margin-bottom:var(--spacing-4)}.post-list-item small{color:var(--color-text-light)}.bio{background-color:var(--color-primary);border-radius:10px 10px 0 0;color:var(--color-background);display:flex;padding:var(--spacing-4)}.bio[data-isolated=true]{border-radius:10px}.bio-avatar{font-size:3.3rem;margin-right:var(--spacing-2)}.bio-description div{font-family:var(--font-heading);font-size:var(--fontSize-2);margin-bottom:var(--spacing-2)}.bio-description a,.bio-description p{color:var(--color-background);font-size:var(--fontSize-0);margin:0}.categories-filter{background-color:#cacaca;border-radius:0 0 10px 10px;display:flex;flex-direction:row;flex-wrap:wrap;padding:var(--spacing-1) var(--spacing-2) var(--spacing-2) var(--spacing-2)}.badge{background-color:#fff;border:3px solid #cacaca;border-radius:10px;box-shadow:1px 3px 3px 1px rgba(0,0,0,.2);color:#747474;font-family:var(--fontFamily-sans);margin:var(--spacing-1) var(--spacing-2);padding:0 var(--spacing-3)}.blog-post header h1{margin:var(--spacing-0) var(--spacing-0) var(--spacing-4) var(--spacing-0)}.blog-post header p{font-family:var(--font-heading);font-size:var(--fontSize-2)}.blog-post-nav ul{margin:var(--spacing-0)}.blog-post-header{background-color:var(--color-primary);border-radius:10px 10px 0 0;padding:var(--spacing-5)}.blog-post-header h1,.blog-post-header p{color:var(--color-background);margin:0}.blog-post-categories{background-color:#cacaca;border-radius:0 0 10px 10px;display:flex;margin-bottom:var(--spacing-6);min-height:calc(6px + 2.75rem);padding:var(--spacing-1) var(--spacing-2) var(--spacing-2) var(--spacing-2)}.gatsby-highlight{margin-bottom:var(--spacing-8)}.theme-toggler{background-color:#cacaca;border-radius:50px;bottom:var(--spacing-6);display:flex;height:50px;position:fixed;right:var(--spacing-6);width:50px}body.light .theme-toggler{box-shadow:2px 1px 3px 1px rgba(0,0,0,.5)}body.dark .theme-toggler{box-shadow:inset 2px 1px 3px 1px rgba(0,0,0,.5)}.theme-toggler input{all:unset}.theme-toggler svg{color:#1d2632;font-size:var(--fontSize-4);margin:auto}.page-navigator{align-items:center;color:var(--color-primary);display:inline-flex;font-family:var(--fontFamily-sans);font-size:var(--fontSize-2);font-weight:var(--fontWeight-semibold);text-decoration:none}.page-navigator[data-direction=next]{float:right}.toc_wrapper{left:100%;position:absolute}.toc_wrapper>div{border-left:1px solid #cacaca;margin-left:var(--spacing-8);overflow:hidden;padding-left:var(--spacing-4);width:var(--spacing-48)}.toc_wrapper *{color:var(--color-text-light);font-family:Nanum Gothic;font-size:var(--fontSize-0);list-style:none;margin-bottom:var(--spacing-1);margin-top:0;text-decoration:none}@media (min-width:48rem){.post-list li:hover{list-style-type:"👉"}}@media (max-width:72rem){.toc_wrapper{display:none}}@media (max-width:48rem){blockquote{margin-left:var(--spacing-0);padding:var(--spacing-0) var(--spacing-0) var(--spacing-0) var(--spacing-4)}ol,ul{list-style-position:inside}.bio,.categories-filter{padding:var(--spacing-2)}@media (max-width:375px){:root{--fontSize-root:14px}}}code[class*=language-],pre[class*=language-]{word-wrap:normal;background:none;color:#f8f8f2;font-family:Consolas,Monaco,Andale Mono,Ubuntu Mono,monospace;font-size:1em;-webkit-hyphens:none;-ms-hyphens:none;hyphens:none;line-height:1.5;-o-tab-size:4;tab-size:4;text-align:left;text-shadow:0 1px rgba(0,0,0,.3);white-space:pre;word-break:normal;word-spacing:normal}pre[class*=language-]{border-radius:.3em;margin:.5em 0;overflow:auto;padding:1em}:not(pre)>code[class*=language-],pre[class*=language-]{background:#272822}:not(pre)>code[class*=language-]{border-radius:.3em;padding:.1em;white-space:normal}.token.cdata,.token.comment,.token.doctype,.token.prolog{color:#8292a2}.token.punctuation{color:#f8f8f2}.token.namespace{opacity:.7}.token.constant,.token.deleted,.token.property,.token.symbol,.token.tag{color:#f92672}.token.boolean,.token.number{color:#ae81ff}.token.attr-name,.token.builtin,.token.char,.token.inserted,.token.selector,.token.string{color:#a6e22e}.language-css .token.string,.style .token.string,.token.entity,.token.operator,.token.url,.token.variable{color:#f8f8f2}.token.atrule,.token.attr-value,.token.class-name,.token.function{color:#e6db74}.token.keyword{color:#66d9ef}.token.important,.token.regex{color:#fd971f}.token.bold,.token.important{font-weight:700}.token.italic{font-style:italic}.token.entity{cursor:help}</style><link href="https://fonts.googleapis.com/css?family=Nanum+Gothic|Nanum+Myeongjo|Do+Hyeon&amp;display=swap" rel="stylesheet"/><style>.gatsby-image-wrapper{position:relative;overflow:hidden}.gatsby-image-wrapper picture.object-fit-polyfill{position:static!important}.gatsby-image-wrapper img{bottom:0;height:100%;left:0;margin:0;max-width:none;padding:0;position:absolute;right:0;top:0;width:100%;object-fit:cover}.gatsby-image-wrapper [data-main-image]{opacity:0;transform:translateZ(0);transition:opacity .25s linear;will-change:opacity}.gatsby-image-wrapper-constrained{display:inline-block;vertical-align:top}</style><noscript><style>.gatsby-image-wrapper noscript [data-main-image]{opacity:1!important}.gatsby-image-wrapper [data-placeholder-image]{opacity:0!important}</style></noscript><script type="module">const e="undefined"!=typeof HTMLImageElement&&"loading"in HTMLImageElement.prototype;e&&document.body.addEventListener("load",(function(e){if(void 0===e.target.dataset.mainImage)return;if(void 0===e.target.dataset.gatsbyImageSsr)return;const t=e.target;let a=null,n=t;for(;null===a&&n;)void 0!==n.parentNode.dataset.gatsbyImageWrapper&&(a=n.parentNode),n=n.parentNode;const o=a.querySelector("[data-placeholder-image]"),r=new Image;r.src=t.currentSrc,r.decode().catch((()=>{})).then((()=>{t.style.opacity=1,o&&(o.style.opacity=0,o.style.transition="opacity 500ms linear")}))}),!0);</script><style type="text/css">
+    .anchor.before {
+      position: absolute;
+      top: 0;
+      left: 0;
+      transform: translateX(-100%);
+      padding-right: 4px;
+    }
+    .anchor.after {
+      display: inline-block;
+      padding-left: 4px;
+    }
+    h1 .anchor svg,
+    h2 .anchor svg,
+    h3 .anchor svg,
+    h4 .anchor svg,
+    h5 .anchor svg,
+    h6 .anchor svg {
+      visibility: hidden;
+    }
+    h1:hover .anchor svg,
+    h2:hover .anchor svg,
+    h3:hover .anchor svg,
+    h4:hover .anchor svg,
+    h5:hover .anchor svg,
+    h6:hover .anchor svg,
+    h1 .anchor:focus svg,
+    h2 .anchor:focus svg,
+    h3 .anchor:focus svg,
+    h4 .anchor:focus svg,
+    h5 .anchor:focus svg,
+    h6 .anchor:focus svg {
+      visibility: visible;
+    }
+  </style><script>
+    document.addEventListener("DOMContentLoaded", function(event) {
+      var hash = window.decodeURI(location.hash.replace('#', ''))
+      if (hash !== '') {
+        var element = document.getElementById(hash)
+        if (element) {
+          var scrollTop = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop
+          var clientTop = document.documentElement.clientTop || document.body.clientTop || 0
+          var offset = element.getBoundingClientRect().top + scrollTop - clientTop
+          // Wait for the browser to finish rendering before scrolling.
+          setTimeout((function() {
+            window.scrollTo(0, offset - 0)
+          }), 0)
+        }
+      }
+    })
+  </script><link rel="alternate" type="application/rss+xml" title="sijin.blog" href="/rss.xml"/><link rel="icon" href="/favicon-32x32.png?v=3363aaab96bdacc1cfa3bacf5d3213b1" type="image/png"/><link rel="manifest" href="/manifest.webmanifest" crossorigin="anonymous"/><link rel="apple-touch-icon" sizes="48x48" href="/icons/icon-48x48.png?v=3363aaab96bdacc1cfa3bacf5d3213b1"/><link rel="apple-touch-icon" sizes="72x72" href="/icons/icon-72x72.png?v=3363aaab96bdacc1cfa3bacf5d3213b1"/><link rel="apple-touch-icon" sizes="96x96" href="/icons/icon-96x96.png?v=3363aaab96bdacc1cfa3bacf5d3213b1"/><link rel="apple-touch-icon" sizes="144x144" href="/icons/icon-144x144.png?v=3363aaab96bdacc1cfa3bacf5d3213b1"/><link rel="apple-touch-icon" sizes="192x192" href="/icons/icon-192x192.png?v=3363aaab96bdacc1cfa3bacf5d3213b1"/><link rel="apple-touch-icon" sizes="256x256" href="/icons/icon-256x256.png?v=3363aaab96bdacc1cfa3bacf5d3213b1"/><link rel="apple-touch-icon" sizes="384x384" href="/icons/icon-384x384.png?v=3363aaab96bdacc1cfa3bacf5d3213b1"/><link rel="apple-touch-icon" sizes="512x512" href="/icons/icon-512x512.png?v=3363aaab96bdacc1cfa3bacf5d3213b1"/><title data-react-helmet="true">React Hooks Quiz | Sijin.blog</title><link as="script" rel="preload" href="/webpack-runtime-35126a162f54f9f64658.js"/><link as="script" rel="preload" href="/framework-e413e527015be9a1bdfd.js"/><link as="script" rel="preload" href="/app-4ae17694e6fe834ab5bd.js"/><link as="script" rel="preload" href="/252f366e-1517936016f49e625ede.js"/><link as="script" rel="preload" href="/commons-c7b33bc26ba36c05c6ed.js"/><link as="script" rel="preload" href="/component---src-templates-blog-post-tsx-eb7174b6e42a49a3f823.js"/><link as="fetch" rel="preload" href="/page-data/React Hooks Quiz/page-data.json" crossorigin="anonymous"/><link as="fetch" rel="preload" href="/page-data/sq/d/3000541721.json" crossorigin="anonymous"/><link as="fetch" rel="preload" href="/page-data/sq/d/3646010053.json" crossorigin="anonymous"/><link as="fetch" rel="preload" href="/page-data/app-data.json" crossorigin="anonymous"/></head><body><script>
+void function() {
+  window.__onThemeChange = function() {}
+
+  var preferredTheme
+  try {
+    preferredTheme = localStorage.getItem('theme')
+  } catch (err) { }
+
+  function setTheme(newTheme) {
+    if (preferredTheme && document.body.classList.contains(preferredTheme)) {
+      document.body.classList.replace(preferredTheme, newTheme)
+    } else {
+      document.body.classList.add(newTheme)
+    }
+
+    window.__theme = newTheme
+    preferredTheme = newTheme
+    window.__onThemeChange(newTheme)
+  }
+
+  window.__setPreferredTheme = function(newTheme) {
+    setTheme(newTheme)
+    try {
+      localStorage.setItem('theme', newTheme)
+    } catch (err) {}
+  }
+
+  var darkQuery = window.matchMedia('(prefers-color-scheme: dark)')
+  darkQuery.addListener(function(e) {
+    window.__setPreferredTheme(e.matches ? 'dark' : 'light')
+  })
+
+  setTheme(preferredTheme || (darkQuery.matches ? 'dark' : 'light'))
+}()
+    </script><div id="___gatsby"><div style="outline:none" tabindex="-1" id="gatsby-focus-wrapper"><div class="global-wrapper"><header class="global-header"><h1 class="main-heading"><a href="/">Sijin.blog</a></h1></header><main><article class="blog-post" itemscope="" itemType="http://schema.org/Article"><header><div class="blog-post-header"><h1 itemProp="headline">React Hooks Quiz</h1><p>February 05, 2022</p></div><div class="blog-post-categories"><span class="badge">React</span></div></header><div class="toc_wrapper"><div><ul>
+<li><a href="#1%EB%B2%88%EB%AC%B8%EC%A0%9C">1번문제</a></li>
+<li><a href="#2%EB%B2%88%EB%AC%B8%EC%A0%9C">2번문제</a></li>
+<li><a href="#3%EB%B2%88%EB%AC%B8%EC%A0%9C">3번문제</a></li>
+<li><a href="#4%EB%B2%88%EB%AC%B8%EC%A0%9C">4번문제</a></li>
+<li><a href="#5%EB%B2%88%EB%AC%B8%EC%A0%9C">5번문제</a></li>
+</ul></div></div><section itemProp="articleBody"><p>우연치 않게 <a href="https://docs.google.com/forms/d/e/1FAIpQLSdAG7QtzNT_-rl6j1bqJpJaq-5ZaLR_hnWUGvtVCR4vD5O_sA/viewform">React Hooks Quiz</a>를 풀었는데 생각보다 헷갈리는 부분들이 많아서 정리해보았다.</p>
+<h3 id="1번문제" style="position:relative;"><a href="#1%EB%B2%88%EB%AC%B8%EC%A0%9C" aria-label="1번문제 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>1번문제</h3>
+<p><span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 517px; "
+    >
+      <a
+    class="gatsby-resp-image-link"
+    href="/static/2f84836ed18fb9b6a60185eeb617c279/fa2f5/1.png"
+    style="display: block"
+    target="_blank"
+    rel="noopener"
+  >
+    <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 98.73417721518987%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAIAAAAC64paAAAACXBIWXMAAAsTAAALEwEAmpwYAAACLElEQVQ4y42S226bQBRF/QVVwIC5E4ONLaWXGIOZYe7DcDNN0ibqQ///RyoSS3loayKdh6MzWrPnzN6LGMAAkITyHRdBxVLOt1w4JdtSsSZcz6rl8b+12EIY0HrFhgDLNee3mNknqmVQz6rr5AS7uA7bR4/1kRqCRgVcWQXWjzPYBfYKGAMYYRZjFmG2ZTwVtQ2YTVuXDR5qr8ErQB1U21gFWAQltgps5dUyq5Y5NgpsFvgabEOx+f5rc/65Pb/EXe/J2hV10DS+qFcnomfwKlzSW9HspFrLwQTUgsQCU5klMXI0s3MI+B1qrJx8+lpoB3BzD7V7oGVweVXzAlsnusc0JsLHyoUsrKgHuVNcjt8Nm8yDrxOoH6s3OxZGjgNISom/jD/2T7+/PbzctUM8Od97rE9lnVJhA5XU406Na94l8hwzlUIQArQwC5wguq+Ag4Qvx4jUWy5sKIzXu428mpocLXNk5MiYJpdmUvYr4UNiFWiy5/KwDyXkzWd2cw/0A9AzoB3gzeF9pXk4gehW9g7rI95tVLNXKsDSB8Q8kdkPX4RYRGr0aBfVQ9iotVBmjozsNWSzymbJHD6sWO/TJkTMKMmUk4paJZmHHcDT8Xk3PO7Oz5FqXSF91fi18oicT1iM1UGc74T8Oj5FtEu52HDlAfahD7MB0w5Qy6Yy8sv035r5X3AqxGdV+0S5rE8QSQBcldTlfageXNratHVY57LO5ypQjY+kfny34A8IhNsvvtpgogAAAABJRU5ErkJggg=='); background-size: cover; display: block;"
+  ></span>
+  <img
+        class="gatsby-resp-image-image"
+        alt="1"
+        title="1"
+        src="/static/2f84836ed18fb9b6a60185eeb617c279/fa2f5/1.png"
+        srcset="/static/2f84836ed18fb9b6a60185eeb617c279/c26ae/1.png 158w,
+/static/2f84836ed18fb9b6a60185eeb617c279/6bdcf/1.png 315w,
+/static/2f84836ed18fb9b6a60185eeb617c279/fa2f5/1.png 517w"
+        sizes="(max-width: 517px) 100vw, 517px"
+        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+        loading="lazy"
+        decoding="async"
+      />
+  </a>
+    </span></p>
+<p>부모, 자식 컴포넌트간 실행순서와 useEffect hooks에서 effect 함수가 언제 실행되는지 묻는 문제이다. 부모, 자식 컴포넌트간 실행순서는 각 컴포넌트가 자바스크립트 함수로서 Parent함수에서 Child 함수를 호출하는 방식이기 때문에 부모 > 자식 순서대로 실행된다. 또한 useEffect hook의 effect함수는 컴포넌트가 렌더링을 마친 이후에 실행되며, 부모 컴포넌트는 자식 컴포넌트의 렌더링이 완료된 이후에 렌더링되기 때문에 Child 컴포넌트가 렌더링 된 이후 Child함수의 effect함수가 실행되고, 이후 Parent 컴포넌트가 렌더링을 마치고나서 Parent 컴포넌트의 effect함수가 실행된다.</p>
+<p>따라서 답은, Parent, Child, Child useEffect, Parent useEffect 이다.</p>
+<h3 id="2번문제" style="position:relative;"><a href="#2%EB%B2%88%EB%AC%B8%EC%A0%9C" aria-label="2번문제 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>2번문제</h3>
+<p><span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 441px; "
+    >
+      <a
+    class="gatsby-resp-image-link"
+    href="/static/8ec9cec3d71de46e61f486515489a2cb/efc6e/2.png"
+    style="display: block"
+    target="_blank"
+    rel="noopener"
+  >
+    <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 94.30379746835443%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAATCAIAAAAf7rriAAAACXBIWXMAAAsTAAALEwEAmpwYAAACp0lEQVQ4y5WTiY7TOhSG+wpNE2dxlraoF1EY0aZNvK9xnGQuMPD+L4OSdEZcCV2B9MuyLH9H5z/L5ojJgYg9V0+9fW9swdSn3n3obMXVubMfXffJuY/OHqStmHnyXcl1UNPdbdZmj3COaMwdwDpDomQya3CCRFDjXU12NQmuZHvBwZUENdndyIo94AMVx27M/UvhX47cnLQ9Td8P3b+5nore512XKlMOvuhdbnyM9ByoXgPRTdhKwBwgGlALsIqJTniXMAv1mPIuUy5VBhqbSp0KkzANqAREAiTDG90AJBPpE+EzPaZqgOY5b1kuXDl8z9VYui+F94Vzmbbl6MvB75/Hwve5HqOGb7JWvifdnpjFHg6uaFvT7RVvL20wnyi44GDxvL3gWZ/xUgI8px238iztWZqwleGdgYZF96Ued/Yq+qvCt5cb3UQNDxt+5uw6fjk//3jHFUTsrRn/r01055Coi+IHTEErgtsfYQ8YUl1QnbY0uLGgJuHfwdytFdot3dvWvxr+j9vfwFWLYYMjahKkYqzTlkW3OVZwRUvxyXInv5+wI+VHO0D3repf9qo/CrUfXjLpczXmXQ+tzbQt+h7aDiof3tga5W3CFOB9TE3MXIpkSg2UHgoH9ZRJlykLTTeTxqbcxEQCLCIkwjufYYBlLH0sfaKGWPhET7AluXDVY8K+lt7nri9cXw59NQ3VNJR+gMrvarJJGn4iXdHKkqh3Ziy5SbHYXtdpW3bgQh6er/N93bDdmnbFXYFM2sqcyFK4jJqk5Y9u1+unV9V0ZVbDM5wRmWGeYh40Imx4fCfxnUR3FrUCYAWQiloZIRUhEc3tUICIhCrQLJ4/WPvUdydtEzUWZvyH8RPBKZaZ9PvxR+m+ZnLI1JTpKTVTrofCucp6SHRQk5/LsdQE3CTUpgAAAABJRU5ErkJggg=='); background-size: cover; display: block;"
+  ></span>
+  <img
+        class="gatsby-resp-image-image"
+        alt="2"
+        title="2"
+        src="/static/8ec9cec3d71de46e61f486515489a2cb/efc6e/2.png"
+        srcset="/static/8ec9cec3d71de46e61f486515489a2cb/c26ae/2.png 158w,
+/static/8ec9cec3d71de46e61f486515489a2cb/6bdcf/2.png 315w,
+/static/8ec9cec3d71de46e61f486515489a2cb/efc6e/2.png 441w"
+        sizes="(max-width: 441px) 100vw, 441px"
+        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+        loading="lazy"
+        decoding="async"
+      />
+  </a>
+    </span></p>
+<p>useEffect hook과 useLayoutEffect hook의 실행순서를 묻는 문제이다. useEffect hook과 useLayoutEffect hook은 컴포넌트가 렌더링된 이후에 실행됨은 같지만, useEffect가 DOM update와 paint이후에 effect함수를 실행시키는것과 달리 useLayoutEffect의 effect함수는 DOM update이후, paint 이전에 실행된다. 따라서 useEffect의 effect함수가 DOM 구조에 영향을 주게 되어 화면의 깜빡임이 일어나게 되는경우 useLayoutEffect가 해결방법이 될 수 있다. 문제에서 주어진 코드에서는 Child 컴포넌트의 DOM update 이후 Parent 컴포넌트의 DOM update가 뒤이어 일어나고, 모든 DOM update가 완료된 뒤 Child 컴포넌트의 paint 이후 Parent 컴포넌트의 paint가 이루어진다.</p>
+<p>답은 Child useLayoutEffect, Parent useLayoutEffect, Child useEffect, Parent useEffect 이다.</p>
+<h3 id="3번문제" style="position:relative;"><a href="#3%EB%B2%88%EB%AC%B8%EC%A0%9C" aria-label="3번문제 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>3번문제</h3>
+<p><span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 517px; "
+    >
+      <a
+    class="gatsby-resp-image-link"
+    href="/static/80398a23cd9c91d1121bab13f98bc278/fa2f5/3.png"
+    style="display: block"
+    target="_blank"
+    rel="noopener"
+  >
+    <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 105.0632911392405%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAVCAIAAADJt1n/AAAACXBIWXMAAAsTAAALEwEAmpwYAAACaElEQVQ4y42U6W6jMBSF8wYNWyh7QtokVTsZVuMF2xhDgbRJZ3v/ZxnBZKSpRk0q3R+Gq0/33MMxszWEASQbIfat9DDfPzfbWrqIR11rFVRNkJbij2q2hNgvxYINt0gsWeUTZgKqJOgmQurH2Bm2EQ/aoysOy+bFb9tAtmbB1ATpKdYSpF2efJtjH4CA8PtKeJhtKnFfCRtVFnu2ee+U/cXJgG6wdFG1yImRkwUgi7zUM6LnVM9LI6f6pcmAPVIRYK5lpZ5iI8MjmWE1hmoMlRgpCVZTpMSFMj5OlUwvEzwz8tIq8L5i++EYPp+i1+872a8JXRBpErmkIhgtFAHvA9b6tPFo4+FqBZEFyAh7iMUUhlUTDr/uXr4th96tZSBOLu89wl1IjZw7RLqkdrBwcG0j7gFk5nhmFszHPIBEB3QxFjGK0gClnhItxZNCpKVo3GI6T4v8le2WjZKQ+diDNxGcx2NbTa5/5NEwv0AupOYoRqwr6Ze1XVAjL7XPwEvCw+7Nkcdle9oeh03XW9nYuBzMM2zmJChQSPmurm9BaZDG5L1FhAupNq19JWEbOWy709Pr27Y/7H6cNi9HG9VmTq5PXhTsoR7AcNo2XciqnazXlNtA6FmppVeUz6yCrUjtkUrLynkM5xGaT25fJScYsCfa+IirYzaJnpHP+HyGtYysaPXYHu7q7ksrQy7V9LP8zEaVh7gD8LtUZER7J4FoGday/91G4iZC8wipcaEkaD7mbjp/BX8u1rkiqETjlXoHP0gZdU1YtVb9elfyHYYWZK4YVoefDu9scbDFwREHv+n87tlnzb//lt/oZeSJZjj6yAAAAABJRU5ErkJggg=='); background-size: cover; display: block;"
+  ></span>
+  <img
+        class="gatsby-resp-image-image"
+        alt="3"
+        title="3"
+        src="/static/80398a23cd9c91d1121bab13f98bc278/fa2f5/3.png"
+        srcset="/static/80398a23cd9c91d1121bab13f98bc278/c26ae/3.png 158w,
+/static/80398a23cd9c91d1121bab13f98bc278/6bdcf/3.png 315w,
+/static/80398a23cd9c91d1121bab13f98bc278/fa2f5/3.png 517w"
+        sizes="(max-width: 517px) 100vw, 517px"
+        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+        loading="lazy"
+        decoding="async"
+      />
+  </a>
+    </span></p>
+<p>useMemo hook의 실행 조건에 대해 묻는 문제이다. useMemo hook은 메모이제이션해 deps 배열의 값이 변경된 경우에만 전달된 함수를 실행하고 deps 배열이 update 이전과 같다면 메모이제이션 했던 기존에 계산되었던 값을 반환해 중복된 계산을 방지해주는 hook이다. 문제에서 주어진 코드는 버튼이 클릭될때마다 Parent 컴포넌트가 update되는데, update마다 Child 컴포넌트에 전달되는 props인 data에 객체가 전달되고 있다. 전달되는 객체는 각 update마다 같은 {multiplier: 5} 이지만 그럼에도 update마다 불변성을 만족한 새로운 객체가 만들어지는 것이기 때문에 이전에 전달되었던 객체와는 다른 레퍼런스값을 갖게된다. 따라서 Child 컴포넌트가 렌더링될때마다 react는 useMemo hook의 deps의 객체가 이전에 주어졌던 객체와 다른 객체라고 판단하게되고 useMemo hook에 전달된 함수는 Child 컴포넌트의 렌더링마다 실행된다.</p>
+<p>따라서 답은 Parent, Child, useMemo, Parent, Child, useMemo 이다.</p>
+<h3 id="4번문제" style="position:relative;"><a href="#4%EB%B2%88%EB%AC%B8%EC%A0%9C" aria-label="4번문제 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>4번문제</h3>
+<p><span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 423px; "
+    >
+      <a
+    class="gatsby-resp-image-link"
+    href="/static/4d1c0218cec3049bdfe45ce16ae0a650/f687d/4.png"
+    style="display: block"
+    target="_blank"
+    rel="noopener"
+  >
+    <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 110.12658227848102%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAWCAIAAABPIytRAAAACXBIWXMAAAsTAAALEwEAmpwYAAAC8ElEQVQ4y4WU+3KiSBTG8warCMhFJEa8JzEQaPredNMgijo7qa3aff8nmcJkxqQmk636/gCKX51zvnO5meRwgkhAxFrJlVY+5gup1mU5ocVUyI0uAyJvSXFflT7iRoIHz1fdBACNALKQNKG0Uxog7mTYAdTKmJGgfoyM5E3vsTd4Svlqf5q0/9zuX+b78/rvw6JtIqEHCTYSZP4GfIAHGRsi6ULhYeFiYUNmAmbl3ALcBnzwNewCModZCPFcym1dLkTh5oVftuPyHPDD4Bl9BTuARbi6RdrMWC9G/a42ZCTQiKGRwP+JPARsSeWjkBbgP4tExoeAxPwzTM2Mrii5r3brw/eJPt7X9XbfbEo1L9RSyrCop4QPM9z7abiZXtPu4BmlWYEfdrvl8WXVnDb785yJiKk7JkIqvJz6kHmQWc/MSGg/hu8ip8TFxX17ejweV7vDpm03p2YidVRXD/v6QettrUG729Y6YnpWVCGVV3gI2K06euo4pJXDdy7TQ1a4XLpSDTJqZzSk/I6JMeFjwiJRhEy+j4zvZLOq2qU+jInsPQLjCfae4F9b+DphvbhT/6LXhw+GzSjPeL4olEMrl5Y+KQPchQqIcKCwMmKmnU/mxa2rYXZGnJw/CjbDyGNVoM9B2YaiiYRaKTlXpU+UmZLPW+UhMSJyBLp+GjEy4rwbjxi+ZtiLP1+JN3jMayOllzLefuon+LpMX0+YD7Cb5hbgVsbsjDmABoiOCfcQdyB3MmJl7I9whMlc6aD5HuhT1Jxnh2Z72t/rakylT5QPiAX4JZFPtwrKuP1vrb/Nq/bp5d/Z8bxo9utST3kxoWJWyEjqkCoXst9LuAmZdhJiJXiYIjfndsYdQEeYjRBzc+rlxM3ZMCN2in+dFKNrNbycIcwDzMdEmLmwYOHlxMugneJutpC0kbK6750ur9IlhUOER6SZkpul6q7cUiqH1b7cTwmfIxhA6mI11qew/uaLnSt2btF4nfYjoQOtw6K2AfsBwqL33M3piUkAAAAASUVORK5CYII='); background-size: cover; display: block;"
+  ></span>
+  <img
+        class="gatsby-resp-image-image"
+        alt="4"
+        title="4"
+        src="/static/4d1c0218cec3049bdfe45ce16ae0a650/f687d/4.png"
+        srcset="/static/4d1c0218cec3049bdfe45ce16ae0a650/c26ae/4.png 158w,
+/static/4d1c0218cec3049bdfe45ce16ae0a650/6bdcf/4.png 315w,
+/static/4d1c0218cec3049bdfe45ce16ae0a650/f687d/4.png 423w"
+        sizes="(max-width: 423px) 100vw, 423px"
+        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+        loading="lazy"
+        decoding="async"
+      />
+  </a>
+    </span></p>
+<p>useRef hook이 반환한 ref 객체가 변경될때 컴포넌트를 update시키는지 묻는 문제이다. useRef hook은 useState hook과 달리 ref객체의 변경은 컴포넌트의 update를 일으키지 않는다. 따라서 문제의 코드에서 버튼을 눌러도 onClick 이벤트의 콜백함수만 실행될뿐, 컴포넌트의 update는 일어나지 않는다.</p>
+<p>따라서 답은 Parent, Child, Click count 1 이다.</p>
+<h3 id="5번문제" style="position:relative;"><a href="#5%EB%B2%88%EB%AC%B8%EC%A0%9C" aria-label="5번문제 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>5번문제</h3>
+<p><span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 630px; "
+    >
+      <a
+    class="gatsby-resp-image-link"
+    href="/static/1270bfe458308e85f5927cd2928eed31/0012b/5.png"
+    style="display: block"
+    target="_blank"
+    rel="noopener"
+  >
+    <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 124.0506329113924%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAZCAIAAAC+dZmEAAAACXBIWXMAAAsTAAALEwEAmpwYAAAC+0lEQVQ4y5VU2Y6jRhTlD+IF26wF2HjRtHrS2ODabq1gcLuX5C3//ycR2DOZrZ1EOroqFTqcc7dyVpRlQj3UdiXUztaJMGttd9ZkQq212RiTK7MUemvM1phU6J01S2lSrtfaOJ8YybXdtM+ZaUPZrZpL3l5i2S4qGBV0VNBxQcd7ejvvv7txlqDWzTlvL3nT5lKnoEMwkX72iJnsqVsy98Cmhz7+cJgemDOnxlfnUJ58pmfUDJDekQdUuiVcRSb7W5wc2HjPJvshHpjjExUyG1GJKCBZI2F9sEg0K219Kn0MPpELrAIiPCz9inkV80oWVL2+kzAblRAcMKpwVOG4xD5RHqtDKhGTiEvEVUBNCipiKj6yBNMYs5TQecWdlIGvusC++LqbY4W4jCm4vb2b23Hxj+3xYHj81TaCOrPPqe0CdVoQ7WOYVzD9UpLpN+X5GQ6i5rH981N3WV/eI9l6R5h9T74DJ+T2wZ53dYtAjQoy2dP/yOzJERHTkrtVn6dX8VnJ/wc5BR3Xr5E5Z9p6FZ8eeC/+tVrD+WPbRCSgM1Uj0AmomOk51nNmA24SLhNQCywnHypjmjO2NWajNJJ1Yi8eqV2s5lgEBEIi7tTPWTAbnf4I7As6vURUDo2hA65jeN8218XbS/H2tmnaTOgM9EabTOilVCFRsxKuP/qgz0SvuJlXfPQ7GT2RUUF+e7qCjgoyvts5J8RqCyqGOoI6AR0xnckBoBCYa86zks/KX5Gnldgw9mht/vrXw/l9Y0+p6VLTbo1NoclUl6gWcZ0S6v40Ao5HVEZhUfEZVv5RLI7DDhfk+m7c1rjHr5Q9ovtvA2FYIDYteT9z5b2VuJETyj1oFrxJpI258rFwD2wylOpf59zZqvrz8+vj6/vnyyVXNrFdrDtfnBJhEOjpgd9XNnEFKWgkmlToVNVI1Aui3Yq7Fb/tfZ8XnuzJpPiCp96Xs6vtSpsZnBIqVhgvjzjBbIlJQOSS8jWlOSEhN6h5C2Tny65/LU0b28bD8m8WYRJlO/4N/wAAAABJRU5ErkJggg=='); background-size: cover; display: block;"
+  ></span>
+  <img
+        class="gatsby-resp-image-image"
+        alt="5"
+        title="5"
+        src="/static/1270bfe458308e85f5927cd2928eed31/f058b/5.png"
+        srcset="/static/1270bfe458308e85f5927cd2928eed31/c26ae/5.png 158w,
+/static/1270bfe458308e85f5927cd2928eed31/6bdcf/5.png 315w,
+/static/1270bfe458308e85f5927cd2928eed31/f058b/5.png 630w,
+/static/1270bfe458308e85f5927cd2928eed31/0012b/5.png 661w"
+        sizes="(max-width: 630px) 100vw, 630px"
+        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+        loading="lazy"
+        decoding="async"
+      />
+  </a>
+    </span></p>
+<p>1~4번문제의 내용이 모두 섞인 문제이다. 가장먼저 ContextProvider 컴포넌트가 렌더링되면서 Parents 컴포넌트와 Child 컴포넌트가 연달아 호출되고 각 컴포넌트의 첫줄에 적힌대로 문자 l, o, l이 출력된다. 이후 Child 컴포넌트가 mount될때 useNegatedClicks라는 custom hook이 실행되면서 hook 문자 w가 출력되고 useMemo에 전달된 함수가 실행되면서 h가 출력된다. 이후 모든 컴포넌트들의 DOM update가 완료된 이후 Parent 컴포넌트에 등록된 useLayoutComponent hook의 effect함수가 실행되면서 a가 출력된다. 마지막으로 모든 컴포넌트들의 paint가 완료되면 ContextProvider 컴포넌트에 등록된 useEffect hook의 effect함수가 실행되면서 t가 출력된다.</p>
+<p>따라서 답은 lolwhat이다.</p></section><hr/><footer><div class="bio" data-isolated="true"><div class="bio-avatar">👨‍💻</div><div class="bio-description"><div>Sijin</div><p>Email. <a href="mailto:skd6150@gmail.com">skd6150@gmail.com</a></p><p>Github. <a href="https://github.com/skd6150">https://github.com/skd6150</a></p></div></div></footer></article><nav class="blog-post-nav"><ul style="display:flex;flex-wrap:wrap;justify-content:space-between;list-style:none;padding:0"><li><a class="page-navigator" data-direction="prev" rel="prev" href="/Gatsby에서 table of content 만들기/"><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 24 24" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path fill="none" d="M0 0h24v24H0V0z"></path><path d="M15.41 16.59L10.83 12l4.58-4.59L14 6l-6 6 6 6 1.41-1.41z"></path></svg>Gatsby blog에 table of content 만들어보기</a></li><li></li></ul></nav></main><label class="theme-toggler"><input type="checkbox"/><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 24 24" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path fill="none" d="M0 0h24v24H0z"></path><path d="M12 3a9 9 0 109 9c0-.46-.04-.92-.1-1.36a5.389 5.389 0 01-4.4 2.26 5.403 5.403 0 01-3.14-9.8c-.44-.06-.9-.1-1.36-.1z"></path></svg></label><footer>© <!-- -->2022<!-- -->, Built with<!-- --> <a href="https://www.gatsbyjs.com">Gatsby</a></footer></div></div><div id="gatsby-announcer" style="position:absolute;top:0;width:1px;height:1px;padding:0;overflow:hidden;clip:rect(0, 0, 0, 0);white-space:nowrap;border:0" aria-live="assertive" aria-atomic="true"></div></div><script id="gatsby-script-loader">/*<![CDATA[*/window.pagePath="/React Hooks Quiz/";window.___webpackCompilationHash="3ee26c2021b853e58f4c";/*]]>*/</script><script id="gatsby-chunk-mapping">/*<![CDATA[*/window.___chunkMapping={"polyfill":["/polyfill-b227d9031ab4094e5021.js"],"app":["/app-4ae17694e6fe834ab5bd.js"],"component---src-pages-404-tsx":["/component---src-pages-404-tsx-87f471a481b8d5b2ed25.js"],"component---src-templates-blog-post-tsx":["/component---src-templates-blog-post-tsx-eb7174b6e42a49a3f823.js"],"component---src-templates-post-list-tsx":["/component---src-templates-post-list-tsx-5b1904cb129217e80920.js"]};/*]]>*/</script><script src="/polyfill-b227d9031ab4094e5021.js" nomodule=""></script><script src="/component---src-templates-blog-post-tsx-eb7174b6e42a49a3f823.js" async=""></script><script src="/commons-c7b33bc26ba36c05c6ed.js" async=""></script><script src="/252f366e-1517936016f49e625ede.js" async=""></script><script src="/app-4ae17694e6fe834ab5bd.js" async=""></script><script src="/framework-e413e527015be9a1bdfd.js" async=""></script><script src="/webpack-runtime-35126a162f54f9f64658.js" async=""></script></body></html>

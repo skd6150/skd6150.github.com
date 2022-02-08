@@ -1,0 +1,5 @@
+{
+    "componentChunkName": "component---src-templates-post-list-tsx",
+    "path": "/HTML/",
+    "result": {"data":{"site":{"siteMetadata":{"title":"Sijin.blog","numPost":5}},"allMarkdownRemark":{"nodes":[{"excerpt":"반응형 이미지는 이미지의 크기에 따라 다른 이미지를 보여주는 ‘아트 디렉션’과 작은 이미지에는 저밀도, 큰 이미에는 고밀도의 사진을 보여주는 ‘해상도 전환’을 도와주는 기법이다. 1. 해상도 전환 사진의 해상도와 파일 크기는 비례한다. 고밀도의 사진…","fields":{"slug":"/반응형 이미지/"},"frontmatter":{"date":"January 18, 2022","title":"반응형 이미지","description":null,"categories":["HTML"]}}],"totalCount":1}},"pageContext":{"category":["HTML"],"skip":0,"limit":5,"index":0}},
+    "staticQueryHashes": ["3000541721","3646010053","48354114"]}
