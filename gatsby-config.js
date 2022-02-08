@@ -13,6 +13,14 @@ module.exports = {
     numPost: 5,
   },
   plugins: [
+    `gatsby-plugin-sitemap`,
+    {
+      resolve: "gatsby-plugin-robots-txt",
+      options: {
+        host: "https://skd6150.github.io/",
+        policy: [{ userAgent: "*", disallow: "/" }],
+      },
+    },
     {
       resolve: `gatsby-plugin-google-fonts`,
       options: {
