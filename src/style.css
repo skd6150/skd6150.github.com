@@ -324,8 +324,7 @@ main:after {
 }
 
 .bio-avatar {
-  font-size: 3.3rem;
-  margin-right: var(--spacing-2);
+  margin: auto var(--spacing-4) auto var(--spacing-1);
 }
 
 .bio-description div {

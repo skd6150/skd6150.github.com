@@ -1,5 +1,6 @@
 import * as React from "react"
 import { useStaticQuery, graphql } from "gatsby"
+import { StaticImage } from "gatsby-plugin-image"
 
 interface BioProps {
   isolated?: boolean
@@ -28,7 +29,15 @@ const Bio = ({ isolated }: BioProps) => {
 
   return (
     <div className="bio" data-isolated={isolated || false}>
-      <div className="bio-avatar">👨‍💻</div>
+      <StaticImage
+        className="bio-avatar"
+        src="../images/icon.png"
+        alt="icon"
+        layout="fixed"
+        width={60}
+        height={60}
+        quality={100}
+      />
       <div className="bio-description">
         <div>{author}</div>
         <p>
