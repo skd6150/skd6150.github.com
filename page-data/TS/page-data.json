@@ -1,0 +1,5 @@
+{
+    "componentChunkName": "component---src-templates-post-list-tsx",
+    "path": "/TS/",
+    "result": {"data":{"site":{"siteMetadata":{"title":"Sijin.blog","numPost":5}},"allMarkdownRemark":{"nodes":[{"excerpt":"타입단언 React의 useState hook은 value와 setValue함수를 담은 배열을 반환하는데 일반적으로 배열 구조 분해 문법을 통해 값을 전달받아 활용한다. typescript에서 useState처럼 type이 다른 두가지 요소를 담은 …","fields":{"slug":"/타입단언/"},"frontmatter":{"date":"February 10, 2022","title":"타입단언(Type assertions)","description":null,"categories":["TS","React"]}}],"totalCount":1}},"pageContext":{"category":["TS"],"skip":0,"limit":5,"index":0}},
+    "staticQueryHashes": ["3000541721","3646010053","48354114"]}
