@@ -369,6 +369,11 @@ main:after {
   font-family: var(--font-heading);
 }
 
+.blog-post section ul,
+.blog-post section ol {
+  padding-left: var(--spacing-4);
+}
+
 .blog-post-nav ul {
   margin: var(--spacing-0);
 }
