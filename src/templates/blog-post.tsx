@@ -45,7 +45,6 @@ interface BlogPostTemplateProps {
 
 const BlogPostTemplate: React.FC<PageProps<BlogPostTemplateProps>> = ({
   data,
-  location,
 }) => {
   const post = data.markdownRemark
   const siteTitle = data.site.siteMetadata?.title || `Title`
@@ -53,7 +52,7 @@ const BlogPostTemplate: React.FC<PageProps<BlogPostTemplateProps>> = ({
   const categories = data.markdownRemark.frontmatter.categories
 
   return (
-    <Layout location={location} title={siteTitle}>
+    <Layout title={siteTitle}>
       <Seo
         title={post.frontmatter.title}
         description={post.frontmatter.description || post.excerpt}

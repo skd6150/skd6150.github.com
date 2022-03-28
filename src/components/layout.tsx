@@ -3,13 +3,12 @@ import { PageProps, Link } from "gatsby"
 import ThemeToggler from "./theme-toggler"
 
 interface LayoutProps {
-  location: any
   title: string
   children: React.ReactNode
 }
 
-const Layout = ({ location, title, children }: LayoutProps) => {
-  const rootPath = `${__PATH_PREFIX__}/`
+const Layout = ({ title, children }: LayoutProps) => {
+  // const rootPath = `${__PATH_PREFIX__}/`
 
   return (
     <div className="global-wrapper">

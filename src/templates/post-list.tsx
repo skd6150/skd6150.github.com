@@ -37,22 +37,21 @@ interface PageContext {
   index: number
 }
 
-const BlogIndex: React.FC<PageProps<BlogIndexProps>> = ({
+const BlogIndex: React.FC<PageProps<BlogIndexProps, PageContext>> = ({
   data,
-  location,
   pageContext,
 }) => {
   const siteTitle = data.site.siteMetadata.title
   const posts = data.allMarkdownRemark.nodes
-  const category = (pageContext as PageContext).category
+  const category = pageContext.category
   const endIndex =
     data.allMarkdownRemark.totalCount / data.site.siteMetadata.numPost
-  const pageIndex = (pageContext as PageContext).index
+  const pageIndex = pageContext.index
   const pathPrefix = category.length > 1 ? "" : `/${category[0]}`
 
   if (posts.length === 0) {
     return (
-      <Layout location={location} title={siteTitle}>
+      <Layout title={siteTitle}>
         <Seo title={category.length > 1 ? "Home" : category[0]} />
         <Bio />
         <CategoryFilter />
@@ -62,7 +61,7 @@ const BlogIndex: React.FC<PageProps<BlogIndexProps>> = ({
   }
 
   return (
-    <Layout location={location} title={siteTitle}>
+    <Layout title={siteTitle}>
       <Seo title={category.length > 1 ? "Home" : category[0]} />
       <Bio />
       <CategoryFilter />
