@@ -1,4 +1,230 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[sijin.blog]]></title><description><![CDATA[개발공부 블로그]]></description><link>https://skd6150.github.io</link><generator>GatsbyJS</generator><lastBuildDate>Tue, 29 Mar 2022 13:49:55 GMT</lastBuildDate><item><title><![CDATA[Named Parameters]]></title><description><![CDATA[자바스크립트에서 함수를 정의할 때 매개변수의 수가 많아지거나 몇몇 매개변수에 기본값을 지정하고 싶은 경우 default parameter 혹은 named parameter방법으로 매개변수를 전달해 해결할 수 있다. default parameter…]]></description><link>https://skd6150.github.io/Named Parameters/</link><guid isPermaLink="false">https://skd6150.github.io/Named Parameters/</guid><pubDate>Tue, 29 Mar 2022 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;자바스크립트에서 함수를 정의할 때 매개변수의 수가 많아지거나 몇몇 매개변수에 기본값을 지정하고 싶은 경우 default parameter 혹은 named parameter방법으로 매개변수를 전달해 해결할 수 있다.&lt;/p&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[sijin.blog]]></title><description><![CDATA[개발공부 블로그]]></description><link>https://skd6150.github.io</link><generator>GatsbyJS</generator><lastBuildDate>Wed, 04 May 2022 18:12:25 GMT</lastBuildDate><item><title><![CDATA[Process (2)]]></title><description><![CDATA[Process creation & termination]]></description><link>https://skd6150.github.io/Process (2)/</link><guid isPermaLink="false">https://skd6150.github.io/Process (2)/</guid><pubDate>Thu, 05 May 2022 00:00:00 GMT</pubDate><content:encoded>&lt;h3 id=&quot;process-creation--termination&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#process-creation--termination&quot; aria-label=&quot;process creation  termination permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Process creation &amp;#x26; termination&lt;/h3&gt;</content:encoded></item><item><title><![CDATA[Process (1)]]></title><description><![CDATA[Process Concept Definition of Process A program in execution An execution stream in the context of a particular process state 특정 상태(context…]]></description><link>https://skd6150.github.io/Process (1)/</link><guid isPermaLink="false">https://skd6150.github.io/Process (1)/</guid><pubDate>Mon, 02 May 2022 00:00:00 GMT</pubDate><content:encoded>&lt;h3 id=&quot;process-concept&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#process-concept&quot; aria-label=&quot;process concept permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Process Concept&lt;/h3&gt;
+&lt;h4 id=&quot;definition-of-process&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#definition-of-process&quot; aria-label=&quot;definition of process permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Definition of Process&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;A program in execution&lt;/li&gt;
+&lt;li&gt;An execution stream in the context of a particular process state&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;특정 상태(context)를 가지는 프로그램의 실행 흐름(execution stream)&lt;/p&gt;
+&lt;h4 id=&quot;context&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#context&quot; aria-label=&quot;context permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Context&lt;/h4&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 214px; &quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/b46c8ee8016d4674a5c3dac0aa913a27/a48b3/1.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 158.22784810126583%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAgCAYAAAASYli2AAAACXBIWXMAAA7EAAAOxAGVKw4bAAAD2UlEQVRIx6VWi27aSBTN//9Dld1tsltl21RpU0XbUgoB/PbYxm9s8oAmITy6lQgkKZizumPs8HCrSGvpaMZzZs7cO76+d3biKEIcxzg/O8ciWaA/GMDzfcRxG1EUPw9xjLAVodPpYicMQzBdB2MM9LSiCLW6AMOyoTNzDcywcmxyqm7AdlzsYOMhy2RFh+P6aNpuDqvp8IXUz9pN3g9C7CRJAsJsNuOCUdyGJKuwHY9PIlD/+MMJXrzY5djb+5NbmQkRTMuG7wfYWSwWXHA+nz9ZqOpwvGC5u4em40FjJh8XJAWqZqSc4+W81XRTCzcFW60W6rU6TMOEruk5mM74WNOyYTBji9NUDY5tbwu6URvHAkPFClE2/CeYAT4qTbyriPhihigzf40vMQ+y21oRTBIuGF4NUL56hPIvII4AaZS28jfg9PoRR9YllO+AOEy5DMIIMPv324JB9xafzscQb+do3PzgqN88QhoCH5wufvunAWUE1K8f0ej9yOfUenOw63GB4NdblC7vIPUTNHozCCTcm0EaLFCKh3hvnnHxlEt5oTdD/TYBu3mmYCYqDhaQR1gbf57gxbaFWbs59nzBQbJlyarg/7Iwd7mfQBpg28pfCnZJcJwLPlmVoNK54x9G3OR+bWEfnztTyENA6Cd8MVlBcXlsd7B7UoP2HXxMXPJ8gz5g9Carf0oq6F3e4KQ1RO1qgkpnjGr3btlOUGoP8Ub2cXo1zbkUY5Q7d1C737Z/PT9s4WOlDkEzUJP1HIJm8rYqyGioBmrKE1dXdFQlFZplF2cbVdXheT5s2+VwHA+ypEDXGQxKGpRMcy4F9cOibBNFbYiSwtMT5TgC9d8cvsXLvX388XIfu7u/84ye8WbTgWE24XlF+bB9BlVj8PyQJ1bK3ASecG2XL9R0Ix9b5YOwtS0YBAE+lyuQFQ2CKHNrCdTP3imjr3KEhiDBMK0CwbCFSrXGrSBRRdV5S1aTdQSqKRmXgTaxmj/5KDTB9QLuBp0fuUQCe/t/4eDgNd/QXZYImpPNC4o+SlHVoz659ffrQxy+PUL5S5ULUnHKRKkf/KymnNYavKqR2wRyd7V0kts0lnHUkle27RQEth/gU6nMLao3RH7Ym+1mn0CXA8aM4rBRVJafYQay2FzeJsi9LFSy0OFnWBQ2a4V+GbjUP3r3ngf1q1cHUDSWB35W6Hlgrxb67KHLDwnSrtlkWkwWirLK7zDpuLvGm5aT3hwyMV3XcX9/j4uLCzQEMY+31YuSYTXBaJz+5w2oOh2Tn1pIT6fTwcPDA3d9MplgOpnytgjErWGazqX1/wH1MPepEopiQgAAAABJRU5ErkJggg==&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;1&quot;
+        title=&quot;1&quot;
+        src=&quot;/static/b46c8ee8016d4674a5c3dac0aa913a27/a48b3/1.png&quot;
+        srcset=&quot;/static/b46c8ee8016d4674a5c3dac0aa913a27/c26ae/1.png 158w,
+/static/b46c8ee8016d4674a5c3dac0aa913a27/a48b3/1.png 214w&quot;
+        sizes=&quot;(max-width: 214px) 100vw, 214px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+        decoding=&quot;async&quot;
+      /&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;memory context&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;stack segment (local variable, parameters, return address..)&lt;/li&gt;
+&lt;li&gt;heap (동적할당)&lt;/li&gt;
+&lt;li&gt;data segment (global variable)&lt;/li&gt;
+&lt;li&gt;text(code) segment&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;hardware context&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;cpu registers, I/O registers&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;system context&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;process table, file table, page table&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&quot;multi-programming-multi-processing&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#multi-programming-multi-processing&quot; aria-label=&quot;multi programming multi processing permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Multi-programming, Multi-processing&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Uni-programming&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Only one process in memory at a time&lt;/li&gt;
+&lt;li&gt;Mostly old OS&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Multi-programming (memory 관점)&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Multiple processes in memory&lt;/li&gt;
+&lt;li&gt;Most systems support multi-programming&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Multi-processing (cpu 관점)&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Multiple processes are running together at the same time&lt;/li&gt;
+&lt;li&gt;cpu is multiplexed&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&quot;process-control-block&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#process-control-block&quot; aria-label=&quot;process control block permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Process control block&lt;/h4&gt;
+&lt;p&gt;multi-processing에서 OS는 프로세스의 진행상태를 저장해야함.
+각 프로세스에 대해 아래의 정보를 PCB에 저장함.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Process state&lt;/li&gt;
+&lt;li&gt;Program counter&lt;/li&gt;
+&lt;li&gt;Registers&lt;/li&gt;
+&lt;li&gt;Scheduling information&lt;/li&gt;
+&lt;li&gt;Memory management information&lt;/li&gt;
+&lt;li&gt;Accounting information&lt;/li&gt;
+&lt;li&gt;I/O status information&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;PCB들은 process table에 저장됨.&lt;/p&gt;
+&lt;h3 id=&quot;process-state&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#process-state&quot; aria-label=&quot;process state permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Process state&lt;/h3&gt;
+&lt;h4 id=&quot;process-state-1&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#process-state-1&quot; aria-label=&quot;process state 1 permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Process state&lt;/h4&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 630px; &quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/18ac2797c5c7cf881e4e1d0350686a68/75a80/2.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 39.87341772151899%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAICAYAAAD5nd/tAAAACXBIWXMAAA7DAAAOwwHHb6hkAAABf0lEQVQoz22Ra2vbMBSG8/9/y6BfxtjWMrrBGC3s1rWpc3PtOL5KtmNZdub48gwprATaAy9C4ujhPeedOani80bwxZWsMkXbNuz3e4SQ9MNA3/cURYHWGlMT0B4O1HWNblp++hnXq5RPTsQmK5ndxYrLRcrVMuM+rsilJPB9cpHR6BopJZ7nEQQBulYWmUtBHEVkQvJ1FfHuz5a3v1zmUc5sGgeOvVEP42Bd7ETB3I9xdwld1zFNE8PQE4mCey/EjYV1bx2PI8dhZBhHc2Fmmo1G88CEm+15vy55893l46YkLE+jFrrlap1z8XvLxd2Oh6i0gBPoxDCywPMybsOy4dbxcLYxf7ujbTSO/DTn5tFlneQcjv3zH2PGyALN0pVSdun/T60qkihEpAlLZ46zWOI4j/jumjDwaXVN2zRUVYWu65dAk2qe51Ym0SiO7RlECTdPGZcPW64XMT+WHmVRUCmFEMIGVhbl88peHfm89KHjmydtih/mIU9Svdp37vAfAQdfadKHGaMAAAAASUVORK5CYII=&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;2&quot;
+        title=&quot;2&quot;
+        src=&quot;/static/18ac2797c5c7cf881e4e1d0350686a68/f058b/2.png&quot;
+        srcset=&quot;/static/18ac2797c5c7cf881e4e1d0350686a68/c26ae/2.png 158w,
+/static/18ac2797c5c7cf881e4e1d0350686a68/6bdcf/2.png 315w,
+/static/18ac2797c5c7cf881e4e1d0350686a68/f058b/2.png 630w,
+/static/18ac2797c5c7cf881e4e1d0350686a68/40601/2.png 945w,
+/static/18ac2797c5c7cf881e4e1d0350686a68/75a80/2.png 1134w&quot;
+        sizes=&quot;(max-width: 630px) 100vw, 630px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+        decoding=&quot;async&quot;
+      /&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;
+PCB에 저장되는 process state는 위 그림의 5가지 상태 중 하나를 나타냄&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;new: the process is being created&lt;/li&gt;
+&lt;li&gt;ready: the process is waiting to be assigned to a processor&lt;/li&gt;
+&lt;li&gt;running: instruction are being executed&lt;/li&gt;
+&lt;li&gt;waiting: the process is waiting for some event to occur&lt;/li&gt;
+&lt;li&gt;terminated: the process has finished execution&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&quot;state-transition&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#state-transition&quot; aria-label=&quot;state transition permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;State transition&lt;/h4&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 630px; &quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/870f7d54d29e300f9c92c6a46da6ec44/1b1d5/3.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 57.59493670886076%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAMCAYAAABiDJ37AAAACXBIWXMAAA7DAAAOwwHHb6hkAAACQklEQVQoz22TC08aQRSF+f+/oD/BNGmapjUUtb5QgQVRkIIvkOW17MI+ZmZB2AW+ZkZFTXqTszuZzJx77r1nMp7nUW80KVhlSlaFUrnCVa2O63oIIYii6BPCKEKJiEZ3wM96l6fhmCgIEFIy8SZkhsMhnc4Tt60W9ZsGN40mD+0O8/mc9XrNarUySNN0u2a9xp5G5DsT+u6E6eQleZIkZJJkySxJGYhnVitNkKKUMgekVEgpiePYEM1mM6NSCImSkjAKWaUpy+XSnNeRmXou17bLt3qfzsBh7IywKlccH+XZyx2QPysY1UHgc//Q5vzC4uTkjD8HR5SsS+xeD9/3CcPwhVB/FqsNjpjzFnE8Q6nYKNEqF4ul2Q/DCLvXp98fYNs98zctAKLoVaFuvlKSWMpt43WZBuqlZDOcMOT+sc3peZHd3d9kc/tY1Rpdu0fwUaFuvs6SJKlp/BvWacLGIN0OZOSMabbuKBaKXFaqJoGuYrFYGCGfCD+SJWmKo5a0XMFQzFgmiTnjeRNTcrfboz8cmbWK48+E2ofyY7kiwpn6/Ki2+ZK94Hv1EXs0RgnB39YthfIVOztfyeYOsKp1Y7kgCN5L1l77XwRS0fUVgYy3e/qSMx7jui6OMzbQyjebzbtC7bH01Usa2pxq/ozVHpGr3VN8HCDUjDRJ6A+GXBQtjo9OKRRKXNcb+H7A83z+Tqiz6im+PTMhIiZhxOHdgJ1ik/1mD2cyNa24e2iTPy+x+yvL/t4h5WrN+FA/BC1KE/4DehCAaXRKPusAAAAASUVORK5CYII=&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;3&quot;
+        title=&quot;3&quot;
+        src=&quot;/static/870f7d54d29e300f9c92c6a46da6ec44/f058b/3.png&quot;
+        srcset=&quot;/static/870f7d54d29e300f9c92c6a46da6ec44/c26ae/3.png 158w,
+/static/870f7d54d29e300f9c92c6a46da6ec44/6bdcf/3.png 315w,
+/static/870f7d54d29e300f9c92c6a46da6ec44/f058b/3.png 630w,
+/static/870f7d54d29e300f9c92c6a46da6ec44/1b1d5/3.png 876w&quot;
+        sizes=&quot;(max-width: 630px) 100vw, 630px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+        decoding=&quot;async&quot;
+      /&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;여러 state에 있는 프로세스들은 각 state에 맞는 queue에 저장되어서 관리됨.&lt;/p&gt;
+&lt;p&gt;예를 들어, cpu를 점유할 수 있는 상태의 프로세스를 담는 ready queue, I/O의 완료를 기다리고 있는 I/O queue, 시스템의 모든 프로세스를 담고있는 job queue 등이 있음&lt;/p&gt;
+&lt;h4 id=&quot;scheduler&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#scheduler&quot; aria-label=&quot;scheduler permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Scheduler&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;cpu scheduler (short-term scheduler)&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;어떤 프로세스가 다음에 cpu를 점유해서 실행될지 결정하는 스케줄러&lt;/li&gt;
+&lt;li&gt;자주 실행됨(milliseconds 수준)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;job scheduler (long-term scheduler)&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;어떤 프로세스를 ready queue에 넣을지 결정&lt;/li&gt;
+&lt;li&gt;자주 실행되지는 않는다(seconds, minutes 수준)&lt;/li&gt;
+&lt;li&gt;multi programming의 정도를 조절해 저장할 memory context가 너무 많은 경우를 방지&lt;/li&gt;
+&lt;li&gt;cpu bound process와 I/O bound process를 적당히 조합해 성능을 끌어올려야 함&lt;/li&gt;
+&lt;li&gt;최근 OS에는 없는 경우도 있다&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&quot;context-switching&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#context-switching&quot; aria-label=&quot;context switching permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Context Switching&lt;/h4&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 630px; &quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/3cd28da76c3455ff94cc6f77d5271fdc/d9b5d/4.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 67.08860759493672%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAANCAYAAACpUE5eAAAACXBIWXMAAA7DAAAOwwHHb6hkAAAB60lEQVQ4y31Si27iMBDs///WPYDSqlAeuSOiETRxHAcnTsiDPOe0ewQFcT1LK6/W6/HMrJ+AHnnTYxPmWHoxNirDLmlhpy1+6RIr3+DdN1jLFPa1bukSCzfCKsigyg60+r7neCLAqgMO5oJ9mOBoSoiih5s1eLWPmP928Lo7YOl4cKKCz47JBXuVwIkLmOoBEMizDFpJyPCEPM9RlzmyxECrADpUkMLDOTEospSu/o2uveUENIAyYNd16LoeIgjh+RJ1XaNtW2y2Fn5Opvj2/Qfvi+U76qZB07YQQvDj1PfAcHgh0hqJMRjXaDVNfcupTgRUECCKIgb9ElCfNOI4xsB6tVpjMplyTGczvL0t0DQNg7iuy0oGoH8Das2gdVUzoDEGURSzPNf1eE/TFGl6hitD7vm/5CiCUoqHxICxQVmWzFqfTsiyjFl1PWCJEKEKboq+ZGiuHrJPSuF4/IRlWbBtm3MCjWKD9cGji3d+30157OFg/IfjsI/r9Qab7Rb7/cf1R3RQUiJJElRVdc9wPE2SnIwYUvPlcrldpKA6DUYIn3vJkgfJ1Ei++VJykNF0SKzm8xdMZ894nr9gsVjehkDWjAcyLAY8n8/whcDu8AkvUND6BCklexiGIaQvuYeCPKRvUxQF56RgzPAPU0/lBurVyw4AAAAASUVORK5CYII=&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;4&quot;
+        title=&quot;4&quot;
+        src=&quot;/static/3cd28da76c3455ff94cc6f77d5271fdc/f058b/4.png&quot;
+        srcset=&quot;/static/3cd28da76c3455ff94cc6f77d5271fdc/c26ae/4.png 158w,
+/static/3cd28da76c3455ff94cc6f77d5271fdc/6bdcf/4.png 315w,
+/static/3cd28da76c3455ff94cc6f77d5271fdc/f058b/4.png 630w,
+/static/3cd28da76c3455ff94cc6f77d5271fdc/40601/4.png 945w,
+/static/3cd28da76c3455ff94cc6f77d5271fdc/d9b5d/4.png 1224w&quot;
+        sizes=&quot;(max-width: 630px) 100vw, 630px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+        decoding=&quot;async&quot;
+      /&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;
+cpu scheduler가 cpu를 점유하고 있는 프로세스를 교체할 때 기존 프로세스의 context를 save하고 새로운 프로세스의 context를 load하는 과정을 context switching이라고 함. context switching에 쓰이는 시간은 overhead임.&lt;/p&gt;</content:encoded></item><item><title><![CDATA[Named Parameters]]></title><description><![CDATA[자바스크립트에서 함수를 정의할 때 매개변수의 수가 많아지거나 몇몇 매개변수에 기본값을 지정하고 싶은 경우 default parameter 혹은 named parameter방법으로 매개변수를 전달해 해결할 수 있다. default parameter…]]></description><link>https://skd6150.github.io/Named Parameters/</link><guid isPermaLink="false">https://skd6150.github.io/Named Parameters/</guid><pubDate>Tue, 29 Mar 2022 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;자바스크립트에서 함수를 정의할 때 매개변수의 수가 많아지거나 몇몇 매개변수에 기본값을 지정하고 싶은 경우 default parameter 혹은 named parameter방법으로 매개변수를 전달해 해결할 수 있다.&lt;/p&gt;
 &lt;h3 id=&quot;default-parameter&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#default-parameter&quot; aria-label=&quot;default parameter permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;default parameter&lt;/h3&gt;
 &lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;js&quot;&gt;&lt;pre class=&quot;language-js&quot;&gt;&lt;code class=&quot;language-js&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;myFunc&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token parameter&quot;&gt;arg1&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; arg2 &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; arg3 &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;5&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
   console&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;arg1&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; arg2&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; arg3&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
@@ -387,7 +613,88 @@ module&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;exports &lt;
 &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;위 코드의 경우 body태그에 class로 light가 적용되었을 때와 dark가 적용되었을 때 각각의 모드에서 사용되는 색상들을 css변수에 정의했다. 모드가 바뀌면서 css변수에 담긴 값이 달라지고 하위요소들에 적용된 색상또한 변경된다.&lt;/p&gt;
 &lt;p&gt;예시로, 위 css코드에서 body태그의 경우 background-color로 할당된 —color-background 변수가 light모드에서는 #ffffff(하얀색), dark모드에서는 #1d2632(남색)으로 정의되기 때문에 light모드에서는 하얀바탕, dark모드에서는 남색바탕을 띄게 된다.&lt;/p&gt;
-&lt;p&gt;이 방식을 활용해 사이트 전체의 css에 dark테마와 light테마 각각의 색상을 손쉽게 적용시킬 수 있다.&lt;/p&gt;</content:encoded></item><item><title><![CDATA[크루스칼 알고리즘]]></title><description><![CDATA[최소신장트리  최소신장트리(minimum spanning tree…]]></description><link>https://skd6150.github.io/크루스칼 알고리즘/</link><guid isPermaLink="false">https://skd6150.github.io/크루스칼 알고리즘/</guid><pubDate>Sat, 12 Feb 2022 00:00:00 GMT</pubDate><content:encoded>&lt;h3 id=&quot;최소신장트리&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#%EC%B5%9C%EC%86%8C%EC%8B%A0%EC%9E%A5%ED%8A%B8%EB%A6%AC&quot; aria-label=&quot;최소신장트리 permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;최소신장트리&lt;/h3&gt;
+&lt;p&gt;이 방식을 활용해 사이트 전체의 css에 dark테마와 light테마 각각의 색상을 손쉽게 적용시킬 수 있다.&lt;/p&gt;</content:encoded></item><item><title><![CDATA[유니온 파인드]]></title><description><![CDATA[유니온 파인드 유니온 파인드는 상호 배타적 집합(disjoint set…]]></description><link>https://skd6150.github.io/유니온파인드/</link><guid isPermaLink="false">https://skd6150.github.io/유니온파인드/</guid><pubDate>Sat, 12 Feb 2022 00:00:00 GMT</pubDate><content:encoded>&lt;h3 id=&quot;유니온-파인드&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#%EC%9C%A0%EB%8B%88%EC%98%A8-%ED%8C%8C%EC%9D%B8%EB%93%9C&quot; aria-label=&quot;유니온 파인드 permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;유니온 파인드&lt;/h3&gt;
+&lt;p&gt;유니온 파인드는 상호 배타적 집합(disjoint set)을 효율적으로 표현하는데 사용되는 자료구조이다. 유니온 파인드가 상호 배타적 집합을 표현, 저장하기 위해서는 다음의 연산들을 필요로 한다.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Find: 어떤 원소가 주어졌을 때 해당 원소가 어떤 집합에 속해있는지 판단&lt;/li&gt;
+&lt;li&gt;Union: 두 원소가 주어졌을 때 두 원소가 속합 집합들을 하나로 병합&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;상호 배타적 집합을 가장 간단하게 표현하는 방법은 1차원 배열이다. 예를들어 상호 배타적 집합을 표현하는 집합 arr이 있을 때 arr[i]가 원소 i가 속한 집합의 고유번호라고 정의하게 되면 상수시간 안에 원소가 어떤 집합에 속해있는지 판단할 수 있다.&lt;/p&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 515px; &quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/253d02da321953870c9027d1bb9e617b/fbdcb/1.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 50%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAKCAIAAAA7N+mxAAAACXBIWXMAAA7DAAAOwwHHb6hkAAABOUlEQVQoz32S64rDIBCF8/7P1ScoKbSlwahRvCTxUi1J6mXpzm4pG9j543Hg45xxbGqtpZT6W596XyEEQoj3Hq7NHt7z7yalVGvNOf+B7/c753xZllprzlkppbXee5ZSHo9H27aHw0EIAZ2GUiqlZIzVWo0xQohxHCEYuG3b5pwDQyEEiBjjC56m6XQ6hRDAuW3b4/H4JnPOjDGMMUJIStn3fQiBc44xds4127Z1XZdzLqXEGCmlhJAYY84ZYEIIxngYBs45Y8wYI6XEGFtrGyklQmieZynl5XIxxkzTdL1elVIwrff+fD6DgIAxRu/9KzZjrO97pdQwDF3Xzd91u90YY5B8nmeE0PP53L9isyyLtTaltK6rtTbnnFJyzq3rWmtNKcHA4zh+LhVEA8c/f0NrTSmFXf5x/gLCHzv/p+QW4QAAAABJRU5ErkJggg==&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;1&quot;
+        title=&quot;1&quot;
+        src=&quot;/static/253d02da321953870c9027d1bb9e617b/fbdcb/1.png&quot;
+        srcset=&quot;/static/253d02da321953870c9027d1bb9e617b/c26ae/1.png 158w,
+/static/253d02da321953870c9027d1bb9e617b/6bdcf/1.png 315w,
+/static/253d02da321953870c9027d1bb9e617b/fbdcb/1.png 515w&quot;
+        sizes=&quot;(max-width: 515px) 100vw, 515px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+        decoding=&quot;async&quot;
+      /&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;
+또한 두가지 연산을 효율적으로 하기위해 상호 배타적 집합을 트리로 표현한다. 예를들어, 1번 정점과 2번 정점을 연결할 때 두 정점이 연결됬음을 표현하기 위해 1번 정점을 2번 정점의 부모노드로 설정한다. 또한 유니온 파인드 배열에 저장되는 집합의 고유번호를 트리의 루트 번호로 설정해 find 연산을 해당 정점이 포함된 트리의 루트를 찾는 것으로 구현하고 union 연산은 find연산을 통해 트리의 루트 정점을 얻어 루트 정점의 부모를 변경하는 것으로 구현할 수 있다.&lt;/p&gt;
+&lt;p&gt;위 방식을 통해 find연산과 union연산은 트리의 높이에 비례하는 시간이 걸리게 된다.&lt;/p&gt;
+&lt;h4 id=&quot;초기화&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#%EC%B4%88%EA%B8%B0%ED%99%94&quot; aria-label=&quot;초기화 permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;초기화&lt;/h4&gt;
+&lt;p&gt;배열 arr에 대해 arr[i] = i로 초기화한다. arr[i]가 i인 경우, i번째 정점이 i가 속한 트리의 루트라는 의미를 갖게된다.&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;cpp&quot;&gt;&lt;pre class=&quot;language-cpp&quot;&gt;&lt;code class=&quot;language-cpp&quot;&gt;vector&lt;span class=&quot;token operator&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;token keyword&quot;&gt;int&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;arr&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;size&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;for&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token keyword&quot;&gt;int&lt;/span&gt; i&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt; i&lt;span class=&quot;token operator&quot;&gt;&amp;lt;&lt;/span&gt;size&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt; i&lt;span class=&quot;token operator&quot;&gt;++&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; arr&lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;i&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; i&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h4 id=&quot;find&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#find&quot; aria-label=&quot;find permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;find&lt;/h4&gt;
+&lt;p&gt;find 연산을 통해 트리의 루트 번호를 구해야 한다. 이를 위해 재귀적으로 정점의 부모노드로 올라가면서 탐색한다.&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;cpp&quot;&gt;&lt;pre class=&quot;language-cpp&quot;&gt;&lt;code class=&quot;language-cpp&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;find&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token keyword&quot;&gt;int&lt;/span&gt; idx&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; vector&lt;span class=&quot;token operator&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;token keyword&quot;&gt;int&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;&amp;amp;&lt;/span&gt; disjointSet&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;token keyword&quot;&gt;if&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;disjointSet&lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;idx&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;==&lt;/span&gt; idx&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;return&lt;/span&gt; idx&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;token keyword&quot;&gt;else&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;find&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;disjointSet&lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;idx&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; disjointSet&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h4 id=&quot;union&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#union&quot; aria-label=&quot;union permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;union&lt;/h4&gt;
+&lt;p&gt;union은 c/c++에서 예약어이기 때문에 함수명을 merge로 설정했다. union연산은 두 정점이 속한 트리의 루트들을 구하고 두 정점이 서로 다른 트리에 속한 경우, 한 트리의 루트가 부모노드로 다른 트리의 루트를 가지도록 설정한다.&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;cpp&quot;&gt;&lt;pre class=&quot;language-cpp&quot;&gt;&lt;code class=&quot;language-cpp&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;merge&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token keyword&quot;&gt;int&lt;/span&gt; idxA&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;int&lt;/span&gt; idxB&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; vector&lt;span class=&quot;token operator&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;token keyword&quot;&gt;int&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;&amp;amp;&lt;/span&gt; disjointSet&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;token keyword&quot;&gt;int&lt;/span&gt; rootA &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;find&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;idxA&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; disjointSet&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;token keyword&quot;&gt;int&lt;/span&gt; rootB &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;find&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;idxB&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; disjointSet&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;token keyword&quot;&gt;if&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;rootA &lt;span class=&quot;token operator&quot;&gt;==&lt;/span&gt; rootB&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;return&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;token keyword&quot;&gt;else&lt;/span&gt; disjointSet&lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;rootA&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; rootB&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h3 id=&quot;최적화&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#%EC%B5%9C%EC%A0%81%ED%99%94&quot; aria-label=&quot;최적화 permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;최적화&lt;/h3&gt;
+&lt;p&gt;앞서 말했듯 find연산과 union연산은 트리의 높이에 비례하는 시간이 걸리게 된다. 위에서 구현한 find와 merge함수는 잘 작동하지만 트리가 한쪽으로 기울어지게되면 최악의 경우 O(n)까지 효율이 낮아질 수 있다. 유니온 파인드에서 설정한 트리구조는 트리의 루트를 구하는 것이 유일한 목적임을 이용해서 트리의 구조를 최적화 할 수 있다.&lt;/p&gt;
+&lt;h4 id=&quot;find-1&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#find-1&quot; aria-label=&quot;find 1 permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;find&lt;/h4&gt;
+&lt;p&gt;find 연산에서 경로 압축 최적화를 이용해 수행시간을 줄일 수 있다.&lt;/p&gt;
+&lt;p&gt;기존의 find 연산은 수행 마다 중복된 계산을 수행하게 된다. 이에 착안해서 find(v)를 통해 v의 루트를 찾아냈다고 할 때, v에서 트리의 루트로 가는 경로상의 모든 정점들에 대해서 정점들의 부모노드를 루트로 바꾸면 다음 호출에서는 경로를 따라 올라갈 것 없이 바로 루트를 찾을 수 있도록 할 수 있다.&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;cpp&quot;&gt;&lt;pre class=&quot;language-cpp&quot;&gt;&lt;code class=&quot;language-cpp&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;find&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token keyword&quot;&gt;int&lt;/span&gt; idx&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; vector&lt;span class=&quot;token operator&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;token keyword&quot;&gt;int&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;&amp;amp;&lt;/span&gt; disjointSet&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;token keyword&quot;&gt;if&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;disjointSet&lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;idx&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;==&lt;/span&gt; idx&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;return&lt;/span&gt; idx&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;token keyword&quot;&gt;else&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;return&lt;/span&gt; disjointSet&lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;idx&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;find&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;disjointSet&lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;idx&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; disjointSet&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h4 id=&quot;union-1&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#union-1&quot; aria-label=&quot;union 1 permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;union&lt;/h4&gt;
+&lt;p&gt;union 연산에서도 트리가 한쪽으로 기울어지는 것을 방지함으로서 수행시간을 줄일 수 있다.&lt;/p&gt;
+&lt;p&gt;트리의 루트가 i일때 해당 트리의 높이를 rank[i]에 저장하는 배열 rank를 만든 후, 두 노드를 병합할 때마다 높이가 더 낮은 트리를 높은 트리의 서브트리로 편입시키는 방식으로 최적화해 수행시간을 줄일 수 있다.&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;cpp&quot;&gt;&lt;pre class=&quot;language-cpp&quot;&gt;&lt;code class=&quot;language-cpp&quot;&gt;vector&lt;span class=&quot;token operator&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;token keyword&quot;&gt;int&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;rank&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;size&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;for&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token keyword&quot;&gt;int&lt;/span&gt; i&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt; i&lt;span class=&quot;token operator&quot;&gt;&amp;lt;&lt;/span&gt;size&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt; i&lt;span class=&quot;token operator&quot;&gt;++&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; rank&lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;i&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+
+&lt;span class=&quot;token keyword&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;merge&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token keyword&quot;&gt;int&lt;/span&gt; idxA&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;int&lt;/span&gt; idxB&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; vector&lt;span class=&quot;token operator&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;token keyword&quot;&gt;int&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;&amp;amp;&lt;/span&gt; disjointSet&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;token keyword&quot;&gt;int&lt;/span&gt; rootA &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;find&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;idxA&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; disjointSet&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;token keyword&quot;&gt;int&lt;/span&gt; rootB &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;find&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;idxB&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; disjointSet&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;token keyword&quot;&gt;if&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;rootA &lt;span class=&quot;token operator&quot;&gt;==&lt;/span&gt; rootB&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;return&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;token keyword&quot;&gt;else&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;token keyword&quot;&gt;if&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;rank&lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;idxA&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt; rank&lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;idxB&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;swap&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;idxA&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; idxB&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+        disjointSet&lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;rootA&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; rootB&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+        &lt;span class=&quot;token keyword&quot;&gt;if&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;rank&lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;idxA&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt; rank&lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;idxB&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; rank&lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;idxB&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;++&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</content:encoded></item><item><title><![CDATA[크루스칼 알고리즘]]></title><description><![CDATA[최소신장트리  최소신장트리(minimum spanning tree…]]></description><link>https://skd6150.github.io/크루스칼 알고리즘/</link><guid isPermaLink="false">https://skd6150.github.io/크루스칼 알고리즘/</guid><pubDate>Sat, 12 Feb 2022 00:00:00 GMT</pubDate><content:encoded>&lt;h3 id=&quot;최소신장트리&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#%EC%B5%9C%EC%86%8C%EC%8B%A0%EC%9E%A5%ED%8A%B8%EB%A6%AC&quot; aria-label=&quot;최소신장트리 permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;최소신장트리&lt;/h3&gt;
 &lt;p&gt;&lt;span
       class=&quot;gatsby-resp-image-wrapper&quot;
       style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 499px; &quot;
@@ -481,87 +788,6 @@ module&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;exports &lt;
         &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
     &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
     cout &lt;span class=&quot;token operator&quot;&gt;&amp;lt;&amp;lt;&lt;/span&gt; result &lt;span class=&quot;token operator&quot;&gt;&amp;lt;&amp;lt;&lt;/span&gt; endl&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
-&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</content:encoded></item><item><title><![CDATA[유니온 파인드]]></title><description><![CDATA[유니온 파인드 유니온 파인드는 상호 배타적 집합(disjoint set…]]></description><link>https://skd6150.github.io/유니온파인드/</link><guid isPermaLink="false">https://skd6150.github.io/유니온파인드/</guid><pubDate>Sat, 12 Feb 2022 00:00:00 GMT</pubDate><content:encoded>&lt;h3 id=&quot;유니온-파인드&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#%EC%9C%A0%EB%8B%88%EC%98%A8-%ED%8C%8C%EC%9D%B8%EB%93%9C&quot; aria-label=&quot;유니온 파인드 permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;유니온 파인드&lt;/h3&gt;
-&lt;p&gt;유니온 파인드는 상호 배타적 집합(disjoint set)을 효율적으로 표현하는데 사용되는 자료구조이다. 유니온 파인드가 상호 배타적 집합을 표현, 저장하기 위해서는 다음의 연산들을 필요로 한다.&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Find: 어떤 원소가 주어졌을 때 해당 원소가 어떤 집합에 속해있는지 판단&lt;/li&gt;
-&lt;li&gt;Union: 두 원소가 주어졌을 때 두 원소가 속합 집합들을 하나로 병합&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;상호 배타적 집합을 가장 간단하게 표현하는 방법은 1차원 배열이다. 예를들어 상호 배타적 집합을 표현하는 집합 arr이 있을 때 arr[i]가 원소 i가 속한 집합의 고유번호라고 정의하게 되면 상수시간 안에 원소가 어떤 집합에 속해있는지 판단할 수 있다.&lt;/p&gt;
-&lt;p&gt;&lt;span
-      class=&quot;gatsby-resp-image-wrapper&quot;
-      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 515px; &quot;
-    &gt;
-      &lt;a
-    class=&quot;gatsby-resp-image-link&quot;
-    href=&quot;/static/253d02da321953870c9027d1bb9e617b/fbdcb/1.png&quot;
-    style=&quot;display: block&quot;
-    target=&quot;_blank&quot;
-    rel=&quot;noopener&quot;
-  &gt;
-    &lt;span
-    class=&quot;gatsby-resp-image-background-image&quot;
-    style=&quot;padding-bottom: 50%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAKCAIAAAA7N+mxAAAACXBIWXMAAA7DAAAOwwHHb6hkAAABOUlEQVQoz32S64rDIBCF8/7P1ScoKbSlwahRvCTxUi1J6mXpzm4pG9j543Hg45xxbGqtpZT6W596XyEEQoj3Hq7NHt7z7yalVGvNOf+B7/c753xZllprzlkppbXee5ZSHo9H27aHw0EIAZ2GUiqlZIzVWo0xQohxHCEYuG3b5pwDQyEEiBjjC56m6XQ6hRDAuW3b4/H4JnPOjDGMMUJIStn3fQiBc44xds4127Z1XZdzLqXEGCmlhJAYY84ZYEIIxngYBs45Y8wYI6XEGFtrGyklQmieZynl5XIxxkzTdL1elVIwrff+fD6DgIAxRu/9KzZjrO97pdQwDF3Xzd91u90YY5B8nmeE0PP53L9isyyLtTaltK6rtTbnnFJyzq3rWmtNKcHA4zh+LhVEA8c/f0NrTSmFXf5x/gLCHzv/p+QW4QAAAABJRU5ErkJggg==&apos;); background-size: cover; display: block;&quot;
-  &gt;&lt;/span&gt;
-  &lt;img
-        class=&quot;gatsby-resp-image-image&quot;
-        alt=&quot;1&quot;
-        title=&quot;1&quot;
-        src=&quot;/static/253d02da321953870c9027d1bb9e617b/fbdcb/1.png&quot;
-        srcset=&quot;/static/253d02da321953870c9027d1bb9e617b/c26ae/1.png 158w,
-/static/253d02da321953870c9027d1bb9e617b/6bdcf/1.png 315w,
-/static/253d02da321953870c9027d1bb9e617b/fbdcb/1.png 515w&quot;
-        sizes=&quot;(max-width: 515px) 100vw, 515px&quot;
-        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
-        loading=&quot;lazy&quot;
-        decoding=&quot;async&quot;
-      /&gt;
-  &lt;/a&gt;
-    &lt;/span&gt;
-또한 두가지 연산을 효율적으로 하기위해 상호 배타적 집합을 트리로 표현한다. 예를들어, 1번 정점과 2번 정점을 연결할 때 두 정점이 연결됬음을 표현하기 위해 1번 정점을 2번 정점의 부모노드로 설정한다. 또한 유니온 파인드 배열에 저장되는 집합의 고유번호를 트리의 루트 번호로 설정해 find 연산을 해당 정점이 포함된 트리의 루트를 찾는 것으로 구현하고 union 연산은 find연산을 통해 트리의 루트 정점을 얻어 루트 정점의 부모를 변경하는 것으로 구현할 수 있다.&lt;/p&gt;
-&lt;p&gt;위 방식을 통해 find연산과 union연산은 트리의 높이에 비례하는 시간이 걸리게 된다.&lt;/p&gt;
-&lt;h4 id=&quot;초기화&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#%EC%B4%88%EA%B8%B0%ED%99%94&quot; aria-label=&quot;초기화 permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;초기화&lt;/h4&gt;
-&lt;p&gt;배열 arr에 대해 arr[i] = i로 초기화한다. arr[i]가 i인 경우, i번째 정점이 i가 속한 트리의 루트라는 의미를 갖게된다.&lt;/p&gt;
-&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;cpp&quot;&gt;&lt;pre class=&quot;language-cpp&quot;&gt;&lt;code class=&quot;language-cpp&quot;&gt;vector&lt;span class=&quot;token operator&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;token keyword&quot;&gt;int&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;arr&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;size&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;token keyword&quot;&gt;for&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token keyword&quot;&gt;int&lt;/span&gt; i&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt; i&lt;span class=&quot;token operator&quot;&gt;&amp;lt;&lt;/span&gt;size&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt; i&lt;span class=&quot;token operator&quot;&gt;++&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; arr&lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;i&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; i&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;h4 id=&quot;find&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#find&quot; aria-label=&quot;find permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;find&lt;/h4&gt;
-&lt;p&gt;find 연산을 통해 트리의 루트 번호를 구해야 한다. 이를 위해 재귀적으로 정점의 부모노드로 올라가면서 탐색한다.&lt;/p&gt;
-&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;cpp&quot;&gt;&lt;pre class=&quot;language-cpp&quot;&gt;&lt;code class=&quot;language-cpp&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;find&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token keyword&quot;&gt;int&lt;/span&gt; idx&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; vector&lt;span class=&quot;token operator&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;token keyword&quot;&gt;int&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;&amp;amp;&lt;/span&gt; disjointSet&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;token keyword&quot;&gt;if&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;disjointSet&lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;idx&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;==&lt;/span&gt; idx&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;return&lt;/span&gt; idx&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
-    &lt;span class=&quot;token keyword&quot;&gt;else&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;find&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;disjointSet&lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;idx&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; disjointSet&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
-&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;h4 id=&quot;union&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#union&quot; aria-label=&quot;union permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;union&lt;/h4&gt;
-&lt;p&gt;union은 c/c++에서 예약어이기 때문에 함수명을 merge로 설정했다. union연산은 두 정점이 속한 트리의 루트들을 구하고 두 정점이 서로 다른 트리에 속한 경우, 한 트리의 루트가 부모노드로 다른 트리의 루트를 가지도록 설정한다.&lt;/p&gt;
-&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;cpp&quot;&gt;&lt;pre class=&quot;language-cpp&quot;&gt;&lt;code class=&quot;language-cpp&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;merge&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token keyword&quot;&gt;int&lt;/span&gt; idxA&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;int&lt;/span&gt; idxB&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; vector&lt;span class=&quot;token operator&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;token keyword&quot;&gt;int&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;&amp;amp;&lt;/span&gt; disjointSet&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;token keyword&quot;&gt;int&lt;/span&gt; rootA &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;find&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;idxA&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; disjointSet&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
-    &lt;span class=&quot;token keyword&quot;&gt;int&lt;/span&gt; rootB &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;find&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;idxB&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; disjointSet&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
-    &lt;span class=&quot;token keyword&quot;&gt;if&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;rootA &lt;span class=&quot;token operator&quot;&gt;==&lt;/span&gt; rootB&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;return&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
-    &lt;span class=&quot;token keyword&quot;&gt;else&lt;/span&gt; disjointSet&lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;rootA&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; rootB&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
-&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;h3 id=&quot;최적화&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#%EC%B5%9C%EC%A0%81%ED%99%94&quot; aria-label=&quot;최적화 permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;최적화&lt;/h3&gt;
-&lt;p&gt;앞서 말했듯 find연산과 union연산은 트리의 높이에 비례하는 시간이 걸리게 된다. 위에서 구현한 find와 merge함수는 잘 작동하지만 트리가 한쪽으로 기울어지게되면 최악의 경우 O(n)까지 효율이 낮아질 수 있다. 유니온 파인드에서 설정한 트리구조는 트리의 루트를 구하는 것이 유일한 목적임을 이용해서 트리의 구조를 최적화 할 수 있다.&lt;/p&gt;
-&lt;h4 id=&quot;find-1&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#find-1&quot; aria-label=&quot;find 1 permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;find&lt;/h4&gt;
-&lt;p&gt;find 연산에서 경로 압축 최적화를 이용해 수행시간을 줄일 수 있다.&lt;/p&gt;
-&lt;p&gt;기존의 find 연산은 수행 마다 중복된 계산을 수행하게 된다. 이에 착안해서 find(v)를 통해 v의 루트를 찾아냈다고 할 때, v에서 트리의 루트로 가는 경로상의 모든 정점들에 대해서 정점들의 부모노드를 루트로 바꾸면 다음 호출에서는 경로를 따라 올라갈 것 없이 바로 루트를 찾을 수 있도록 할 수 있다.&lt;/p&gt;
-&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;cpp&quot;&gt;&lt;pre class=&quot;language-cpp&quot;&gt;&lt;code class=&quot;language-cpp&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;find&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token keyword&quot;&gt;int&lt;/span&gt; idx&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; vector&lt;span class=&quot;token operator&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;token keyword&quot;&gt;int&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;&amp;amp;&lt;/span&gt; disjointSet&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;token keyword&quot;&gt;if&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;disjointSet&lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;idx&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;==&lt;/span&gt; idx&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;return&lt;/span&gt; idx&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
-    &lt;span class=&quot;token keyword&quot;&gt;else&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;return&lt;/span&gt; disjointSet&lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;idx&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;find&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;disjointSet&lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;idx&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; disjointSet&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
-&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;h4 id=&quot;union-1&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#union-1&quot; aria-label=&quot;union 1 permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;union&lt;/h4&gt;
-&lt;p&gt;union 연산에서도 트리가 한쪽으로 기울어지는 것을 방지함으로서 수행시간을 줄일 수 있다.&lt;/p&gt;
-&lt;p&gt;트리의 루트가 i일때 해당 트리의 높이를 rank[i]에 저장하는 배열 rank를 만든 후, 두 노드를 병합할 때마다 높이가 더 낮은 트리를 높은 트리의 서브트리로 편입시키는 방식으로 최적화해 수행시간을 줄일 수 있다.&lt;/p&gt;
-&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;cpp&quot;&gt;&lt;pre class=&quot;language-cpp&quot;&gt;&lt;code class=&quot;language-cpp&quot;&gt;vector&lt;span class=&quot;token operator&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;token keyword&quot;&gt;int&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;rank&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;size&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;token keyword&quot;&gt;for&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token keyword&quot;&gt;int&lt;/span&gt; i&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt; i&lt;span class=&quot;token operator&quot;&gt;&amp;lt;&lt;/span&gt;size&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt; i&lt;span class=&quot;token operator&quot;&gt;++&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; rank&lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;i&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
-
-&lt;span class=&quot;token keyword&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;merge&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token keyword&quot;&gt;int&lt;/span&gt; idxA&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;int&lt;/span&gt; idxB&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; vector&lt;span class=&quot;token operator&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;token keyword&quot;&gt;int&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;&amp;amp;&lt;/span&gt; disjointSet&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;token keyword&quot;&gt;int&lt;/span&gt; rootA &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;find&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;idxA&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; disjointSet&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
-    &lt;span class=&quot;token keyword&quot;&gt;int&lt;/span&gt; rootB &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;find&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;idxB&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; disjointSet&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
-    &lt;span class=&quot;token keyword&quot;&gt;if&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;rootA &lt;span class=&quot;token operator&quot;&gt;==&lt;/span&gt; rootB&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;return&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
-    &lt;span class=&quot;token keyword&quot;&gt;else&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
-        &lt;span class=&quot;token keyword&quot;&gt;if&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;rank&lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;idxA&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt; rank&lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;idxB&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;swap&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;idxA&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; idxB&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
-        disjointSet&lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;rootA&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; rootB&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
-        &lt;span class=&quot;token keyword&quot;&gt;if&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;rank&lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;idxA&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt; rank&lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;idxB&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; rank&lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;idxB&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;++&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
-    &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
 &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</content:encoded></item><item><title><![CDATA[타입단언(Type assertions)]]></title><description><![CDATA[타입단언 React의 useState hook은 value와 setValue함수를 담은 배열을 반환하는데 일반적으로 배열 구조 분해 문법을 통해 값을 전달받아 활용한다. typescript에서 useState처럼 type…]]></description><link>https://skd6150.github.io/타입단언/</link><guid isPermaLink="false">https://skd6150.github.io/타입단언/</guid><pubDate>Thu, 10 Feb 2022 00:00:00 GMT</pubDate><content:encoded>&lt;h3 id=&quot;타입단언&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#%ED%83%80%EC%9E%85%EB%8B%A8%EC%96%B8&quot; aria-label=&quot;타입단언 permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;타입단언&lt;/h3&gt;
 &lt;p&gt;React의 useState hook은 value와 setValue함수를 담은 배열을 반환하는데 일반적으로 &lt;a href=&quot;https://ko.reactjs.org/docs/hooks-state.html#tip-what-do-square-brackets-mean&quot;&gt;배열 구조 분해 문법&lt;/a&gt;을 통해 값을 전달받아 활용한다.&lt;/p&gt;
 &lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;ts&quot;&gt;&lt;pre class=&quot;language-ts&quot;&gt;&lt;code class=&quot;language-ts&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;count&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; setCount&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;useState&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;

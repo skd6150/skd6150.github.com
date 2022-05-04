@@ -1,0 +1,5 @@
+{
+    "componentChunkName": "component---src-templates-post-list-tsx",
+    "path": "/3",
+    "result": {"data":{"site":{"siteMetadata":{"title":"Sijin.blog","numPost":5}},"allMarkdownRemark":{"nodes":[{"excerpt":"변수 선언시 변수의 자료형을 정의하는 다른 많은 프로그래밍 언어들과 달리, 자바스크립트는 자료형 대신 var이나 let, const 키워드로 변수를 선언하고, 변수에 number, string같은 원시자료형부터 객체나 배열같은 참조 자료형까지 자유롭…","fields":{"slug":"/변수 선언, 데이터 할당 과정/"},"frontmatter":{"date":"January 08, 2022","title":"변수 선언, 데이터 할당 과정","description":null,"categories":["JS"]}}],"totalCount":16}},"pageContext":{"category":["Gatsby","HTML","JS","OS","React","TS","알고리즘",null],"skip":15,"limit":5,"index":3}},
+    "staticQueryHashes": ["3000541721","3646010053","48354114"]}
