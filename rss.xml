@@ -1,4 +1,135 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[sijin.blog]]></title><description><![CDATA[개발공부 블로그]]></description><link>https://skd6150.github.io</link><generator>GatsbyJS</generator><lastBuildDate>Wed, 04 May 2022 18:12:25 GMT</lastBuildDate><item><title><![CDATA[Process (2)]]></title><description><![CDATA[Process creation & termination]]></description><link>https://skd6150.github.io/Process (2)/</link><guid isPermaLink="false">https://skd6150.github.io/Process (2)/</guid><pubDate>Thu, 05 May 2022 00:00:00 GMT</pubDate><content:encoded>&lt;h3 id=&quot;process-creation--termination&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#process-creation--termination&quot; aria-label=&quot;process creation  termination permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Process creation &amp;#x26; termination&lt;/h3&gt;</content:encoded></item><item><title><![CDATA[Process (1)]]></title><description><![CDATA[Process Concept Definition of Process A program in execution An execution stream in the context of a particular process state 특정 상태(context…]]></description><link>https://skd6150.github.io/Process (1)/</link><guid isPermaLink="false">https://skd6150.github.io/Process (1)/</guid><pubDate>Mon, 02 May 2022 00:00:00 GMT</pubDate><content:encoded>&lt;h3 id=&quot;process-concept&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#process-concept&quot; aria-label=&quot;process concept permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Process Concept&lt;/h3&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[sijin.blog]]></title><description><![CDATA[개발공부 블로그]]></description><link>https://skd6150.github.io</link><generator>GatsbyJS</generator><lastBuildDate>Thu, 05 May 2022 19:09:36 GMT</lastBuildDate><item><title><![CDATA[Process (2)]]></title><description><![CDATA[Process creation & termination Process creation 일반적인 경우 부모 프로세스를 clone해서 만듦.
+ fork(): system call creates new process…]]></description><link>https://skd6150.github.io/Process (2)/</link><guid isPermaLink="false">https://skd6150.github.io/Process (2)/</guid><pubDate>Thu, 05 May 2022 00:00:00 GMT</pubDate><content:encoded>&lt;h3 id=&quot;process-creation--termination&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#process-creation--termination&quot; aria-label=&quot;process creation  termination permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Process creation &amp;#x26; termination&lt;/h3&gt;
+&lt;h4 id=&quot;process-creation&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#process-creation&quot; aria-label=&quot;process creation permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Process creation&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;일반적인 경우&lt;br&gt;
+부모 프로세스를 clone해서 만듦.
+&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 630px; &quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/d27067cc81a4fd8ac224fcec1aca5753/6acbf/1.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 25.316455696202528%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAFCAYAAABFA8wzAAAACXBIWXMAAA7DAAAOwwHHb6hkAAAA6klEQVQY042Qy0oDQRBF5/8/RzQbBZeCIAoqkwzEKJnE7pju6Zfpx4QcSS+Cj40X7uZe6lRRDb9USiHnjPceYwyz6QwhBCGEmg1a87C2TKaC64VmpQyvixe6rkMpReNTQbjIh9+htWYYBpxzFVrGkZRSXTKOY/UxX9rI7duWJ+lxu2OfSTnXrrlZWs6eVlzONcIE/qtgB9iXP3ljY2btEtLt2CqFlJIUIypEnqXnUVg2PrEfy+nC3kbue0278XzmsYIOh0N1851+HOj7Hm8N3btiMt1w3gpaYQjOnX541w9ctJKruWIb0g/gF9PEfqxB2vzAAAAAAElFTkSuQmCC&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;1&quot;
+        title=&quot;1&quot;
+        src=&quot;/static/d27067cc81a4fd8ac224fcec1aca5753/f058b/1.png&quot;
+        srcset=&quot;/static/d27067cc81a4fd8ac224fcec1aca5753/c26ae/1.png 158w,
+/static/d27067cc81a4fd8ac224fcec1aca5753/6bdcf/1.png 315w,
+/static/d27067cc81a4fd8ac224fcec1aca5753/f058b/1.png 630w,
+/static/d27067cc81a4fd8ac224fcec1aca5753/40601/1.png 945w,
+/static/d27067cc81a4fd8ac224fcec1aca5753/6acbf/1.png 1001w&quot;
+        sizes=&quot;(max-width: 630px) 100vw, 630px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+        decoding=&quot;async&quot;
+      /&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;fork(): system call creates new process
+&lt;ol&gt;
+&lt;li&gt;현재 프로세스 정지&lt;/li&gt;
+&lt;li&gt;현재 프로세스의 context를 복제, pid값 수정후 새로운 process 생성&lt;/li&gt;
+&lt;li&gt;fork()의 return value 반환&lt;/li&gt;
+&lt;li&gt;새로운 프로세스를 ready queue에 삽입&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;exec(): system call after a fork to replace the process’s memory space with a new program&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;c&quot;&gt;&lt;pre class=&quot;language-c&quot;&gt;&lt;code class=&quot;language-c&quot;&gt;&lt;span class=&quot;token macro property&quot;&gt;&lt;span class=&quot;token directive-hash&quot;&gt;#&lt;/span&gt;&lt;span class=&quot;token directive keyword&quot;&gt;include&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&amp;lt;sys/types.h&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;token macro property&quot;&gt;&lt;span class=&quot;token directive-hash&quot;&gt;#&lt;/span&gt;&lt;span class=&quot;token directive keyword&quot;&gt;include&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&amp;lt;stdio.h&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;token macro property&quot;&gt;&lt;span class=&quot;token directive-hash&quot;&gt;#&lt;/span&gt;&lt;span class=&quot;token directive keyword&quot;&gt;include&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&amp;lt;unistd.h&gt;&lt;/span&gt;&lt;/span&gt;
+
+&lt;span class=&quot;token keyword&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;main&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;token class-name&quot;&gt;pid_t&lt;/span&gt; pid&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+  pid &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;fork&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;token comment&quot;&gt;// fork a child process&lt;/span&gt;
+
+  &lt;span class=&quot;token keyword&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;pid &lt;span class=&quot;token operator&quot;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;token comment&quot;&gt;/* error occurred */&lt;/span&gt;
+      &lt;span class=&quot;token function&quot;&gt;fprintf&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token constant&quot;&gt;stderr&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; “fork failed”&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+      &lt;span class=&quot;token keyword&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+  &lt;span class=&quot;token keyword&quot;&gt;else&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;pid &lt;span class=&quot;token operator&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;token comment&quot;&gt;/* child process */&lt;/span&gt;
+      &lt;span class=&quot;token function&quot;&gt;execlp&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;“&lt;span class=&quot;token operator&quot;&gt;/&lt;/span&gt;bin&lt;span class=&quot;token operator&quot;&gt;/&lt;/span&gt;ls”&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; “ls”&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token constant&quot;&gt;NULL&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+  &lt;span class=&quot;token keyword&quot;&gt;else&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;token comment&quot;&gt;/* parent process */&lt;/span&gt;
+      &lt;span class=&quot;token function&quot;&gt;wait&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token constant&quot;&gt;NULL&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;token comment&quot;&gt;// parent will wait for the child to complete&lt;/span&gt;
+      &lt;span class=&quot;token function&quot;&gt;printf&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;“child complete”&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+  &lt;span class=&quot;token keyword&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;ul&gt;
+&lt;li&gt;cow (copy on write)&lt;br&gt;
+실제로는 fork에서 모든 context의 value를 복사하는 것이 아닌, pointer structure를 만들어 부모의 code, data를 참조.&lt;br&gt;
+code, data는 부모와 자식이 같은 경우가 대부분이기 때문에 굳이 copy by value로 복사할 필요가 없음. 그러나 exec등 호출로 code, data가 바뀌는 경우에는 copy by value로 reference를 지우고 새로운 내용을 덮어쓴다.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;첫 프로세스인 경우 (clone할 부모 프로세스가 없는 경우)&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;storage에서 code, data를 가져와 memory에 올림&lt;/li&gt;
+&lt;li&gt;empty stack 생성&lt;/li&gt;
+&lt;li&gt;PCB 생성 및 초기화&lt;/li&gt;
+&lt;li&gt;ready queue에 프로세스를 넣음&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&quot;process-termination&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#process-termination&quot; aria-label=&quot;process termination permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Process termination&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;exit(): child process에서 status와 함께 process 종료&lt;/li&gt;
+&lt;li&gt;wait(): child process의 exit함수에서 보낸 status를 회수하며 child process가 종료되었음을 확인&lt;/li&gt;
+&lt;li&gt;abort(): 명시적 비정상 종료&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;부모 프로세스가 wait함수로 자식 프로세스의 exit을 기다리는 것이 일반적이지만 그렇지 않은 경우 zombie 혹은 orphan process가 만들어 질 수 있음.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;zombie process: parent process가 실행 중 이지만, 아직 wait을 호출하기 전에 child process가 exit을 호출한 경우&lt;/li&gt;
+&lt;li&gt;orphan process: child process가 exit을 호출하기 전에 parent process가 terminated된 경우&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;child process는 대부분의 resource를 os에 반납하지만 아직 status를 return하지 못해 process table에 의미 없이 대기하게 됨. init 프로세스가 대신 수거해감으로서 해결.&lt;/p&gt;
+&lt;h3 id=&quot;ipc&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#ipc&quot; aria-label=&quot;ipc permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;IPC&lt;/h3&gt;
+&lt;p&gt;system의 몇몇 프로세스들은 서로 상호작용하며 동작해야할 필요가 있을 수 있음. 이때 상호작용하는 프로세스들은 inter-process communication (IPC)를 필요로 함.&lt;/p&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 630px; &quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/3f8d4835a9dfa95e0fcea421ba54e707/61c63/2.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 75.9493670886076%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAPCAYAAADkmO9VAAAACXBIWXMAAA7DAAAOwwHHb6hkAAAClElEQVQ4y2WUCXPaRhSA/f//SI+kdT1J2ziNXccTfMTmEBAkbMAGhJAEQje6QF+7a5Bj58282d23T9/qHbsHZVkiJAh86vU6/X6fwWCAqqqoqkYURXJfeBV5Lu2apjIajdA0jcfxmGKzefIpSw72wCLPmBsz5oaBZZpSxTxNEioptyxti+XCxvc9losFK2fJdvsdUEzyouBulXEfQ9uKUcyI7jLhLobhMmJbFMRxjOYkaCEoVkzTCOgs1qghjNyU7aaQ0B1ww5eJx8kk4rD5wGFjxJ89g1N9zfXIwlutmOk617rPZz3mvfLIH/V7jlWDcyOlNQ8od2FLoOf5nD84nE4ijpSx1HedqTygqbvEYcB0OsWwHVq9PrcdlW+DR+pdFXX4iG7aMnwJLIocy7LQTI+eHXE7NLgZzGiObXqLmKHlEvg+WZrSNCNqs5jj7oS/lBEfOmNq84TG1JG5lcA8zwmDoMrBSynJ0gTP88izlLYVcWXEnPSmfGw/8Pne5MbOUGYrkjh6Bvq+jxhFlbbb7bOWJUmyA+Y5yXpNURTSLnpD+BQ7u5i/AO4NryXLsgooYPv22OveZ79XAV3XxfU8VmJ0vae167JauVUEm10lX8v3eweC7DgOV19v+P3wiJ9+/oVf37zlzdvfOHr3nnan+wTMMoIgkP0odL1OqrmwV0Dx2+JGfDo55eM/n/j37Iy/PxxTu7jk7PycWu1CAsXB3V6PVrvDbaPJ5dU1jWZLrrX+3XMO2SU3DEP5kbhy4j6LcGUHhGGVJ6XTpdFS+HJxKQ+/vP5KvanwTVV/BIpKZbuwTNOU6zRNZZX3PvO5yVTXpQ6HQ/TZjMl0imXbVYGqx2EvMqdL52U3vvIRaxHBD137/+PwH5mCagvsZAIkAAAAAElFTkSuQmCC&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;2&quot;
+        title=&quot;2&quot;
+        src=&quot;/static/3f8d4835a9dfa95e0fcea421ba54e707/f058b/2.png&quot;
+        srcset=&quot;/static/3f8d4835a9dfa95e0fcea421ba54e707/c26ae/2.png 158w,
+/static/3f8d4835a9dfa95e0fcea421ba54e707/6bdcf/2.png 315w,
+/static/3f8d4835a9dfa95e0fcea421ba54e707/f058b/2.png 630w,
+/static/3f8d4835a9dfa95e0fcea421ba54e707/61c63/2.png 693w&quot;
+        sizes=&quot;(max-width: 630px) 100vw, 630px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+        decoding=&quot;async&quot;
+      /&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;/p&gt;</content:encoded></item><item><title><![CDATA[Process (1)]]></title><description><![CDATA[Process Concept Definition of Process A program in execution An execution stream in the context of a particular process state 특정 상태(context…]]></description><link>https://skd6150.github.io/Process (1)/</link><guid isPermaLink="false">https://skd6150.github.io/Process (1)/</guid><pubDate>Mon, 02 May 2022 00:00:00 GMT</pubDate><content:encoded>&lt;h3 id=&quot;process-concept&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#process-concept&quot; aria-label=&quot;process concept permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Process Concept&lt;/h3&gt;
 &lt;h4 id=&quot;definition-of-process&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#definition-of-process&quot; aria-label=&quot;definition of process permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Definition of Process&lt;/h4&gt;
 &lt;ul&gt;
 &lt;li&gt;A program in execution&lt;/li&gt;
