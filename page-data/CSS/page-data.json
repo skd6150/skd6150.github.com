@@ -1,0 +1,5 @@
+{
+    "componentChunkName": "component---src-templates-post-list-tsx",
+    "path": "/CSS/",
+    "result": {"data":{"site":{"siteMetadata":{"title":"Sijin.blog","numPost":5}},"allMarkdownRemark":{"nodes":[{"excerpt":"border-collapse border-collapse 속성은 테이블의 각 셀의 테두리 사이에 간격을 조절하는 속성으로 테이블에 border-collapse: separate가 설정되면 셀 테두리 사이에 간격이 생긴다.  이 간격을 없에기 위해 b…","fields":{"slug":"/table에 border radius 적용하는 법/"},"frontmatter":{"date":"May 26, 2022","title":"table에 border radius 적용하는 법","description":null,"categories":["CSS"]}}],"totalCount":1}},"pageContext":{"category":["CSS"],"skip":0,"limit":5,"index":0}},
+    "staticQueryHashes": ["3000541721","3646010053","48354114"]}

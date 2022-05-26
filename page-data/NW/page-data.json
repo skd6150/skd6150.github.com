@@ -1,5 +1,5 @@
 {
     "componentChunkName": "component---src-templates-post-list-tsx",
     "path": "/NW/",
-    "result": {"data":{"site":{"siteMetadata":{"title":"Sijin.blog","numPost":5}},"allMarkdownRemark":{"nodes":[{"excerpt":"TCP TCP protocol TCP는 transport layer에서 응용 프로그램과 네트워크 동작 사이의 매개체로서 사용되며, 포트번호를 이용한 process to process 통신을 제공함. stream delivery TCP는 송신측에서 수…","fields":{"slug":"/TCP/"},"frontmatter":{"date":"May 22, 2022","title":"TCP","description":null,"categories":["NW"]}}],"totalCount":1}},"pageContext":{"category":["NW"],"skip":0,"limit":5,"index":0}},
+    "result": {"data":{"site":{"siteMetadata":{"title":"Sijin.blog","numPost":5}},"allMarkdownRemark":{"nodes":[{"excerpt":"TCP TCP protocol TCP는 transport layer에서 응용 프로그램과 네트워크 동작 사이의 매개체로서 사용되며, 포트번호를 이용한 process to process 통신을 제공함. stream delivery TCP는 송신측에서 수…","fields":{"slug":"/TCP (1)/"},"frontmatter":{"date":"May 22, 2022","title":"TCP (1)","description":null,"categories":["NW"]}}],"totalCount":1}},"pageContext":{"category":["NW"],"skip":0,"limit":5,"index":0}},
     "staticQueryHashes": ["3000541721","3646010053","48354114"]}
