@@ -1,0 +1,5 @@
+{
+    "componentChunkName": "component---src-templates-post-list-tsx",
+    "path": "/AWS/",
+    "result": {"data":{"site":{"siteMetadata":{"title":"Sijin.blog","numPost":5}},"allMarkdownRemark":{"nodes":[{"excerpt":"amazon s3 (simple storage service) s3 bucket 생성 \r\nhttps://s3.console.aws.amazon.com/s3 접속 후 버킷만들기 \r\n버킷의 이름은 다른 버킷의 이름과 중복되면 안됨. aws 리전의 경우 …","fields":{"slug":"/s3 & cloudfront/"},"frontmatter":{"date":"June 30, 2022","title":"s3 & cloudfront","description":"인프런 스스로 구축하는 AWS 클라우드 인프라 기본편 정리","categories":["AWS"]}}],"totalCount":1}},"pageContext":{"category":["AWS"],"skip":0,"limit":5,"index":0}},
+    "staticQueryHashes": ["3000541721","3646010053","48354114"]}

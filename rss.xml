@@ -1,4 +1,593 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[sijin.blog]]></title><description><![CDATA[개발공부 블로그]]></description><link>https://skd6150.github.io</link><generator>GatsbyJS</generator><lastBuildDate>Thu, 26 May 2022 17:33:23 GMT</lastBuildDate><item><title><![CDATA[table에 border radius 적용하는 법]]></title><description><![CDATA[border-collapse border-collapse 속성은 테이블의 각 셀의 테두리 사이에 간격을 조절하는 속성으로 테이블에 border-collapse: separate…]]></description><link>https://skd6150.github.io/table에 border radius 적용하는 법/</link><guid isPermaLink="false">https://skd6150.github.io/table에 border radius 적용하는 법/</guid><pubDate>Thu, 26 May 2022 00:00:00 GMT</pubDate><content:encoded>&lt;h3 id=&quot;border-collapse&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#border-collapse&quot; aria-label=&quot;border collapse permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;border-collapse&lt;/h3&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[sijin.blog]]></title><description><![CDATA[개발공부 블로그]]></description><link>https://skd6150.github.io</link><generator>GatsbyJS</generator><lastBuildDate>Thu, 30 Jun 2022 15:56:26 GMT</lastBuildDate><item><title><![CDATA[s3 & cloudfront]]></title><description><![CDATA[amazon s3 (simple storage service) s3 bucket 생성 
+https://s3.console.aws.amazon.com/s3 접속 후 버킷만들기 
+버킷의 이름은 다른 버킷의 이름과 중복되면 안됨. aws…]]></description><link>https://skd6150.github.io/s3 &amp; cloudfront/</link><guid isPermaLink="false">https://skd6150.github.io/s3 &amp; cloudfront/</guid><pubDate>Thu, 30 Jun 2022 00:00:00 GMT</pubDate><content:encoded>&lt;h2 id=&quot;amazon-s3-simple-storage-service&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#amazon-s3-simple-storage-service&quot; aria-label=&quot;amazon s3 simple storage service permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;amazon s3 (simple storage service)&lt;/h2&gt;
+&lt;h4 id=&quot;s3-bucket-생성&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#s3-bucket-%EC%83%9D%EC%84%B1&quot; aria-label=&quot;s3 bucket 생성 permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;s3 bucket 생성&lt;/h4&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 630px; &quot;
+    &gt;
+      &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 54.43037974683544%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAALCAYAAAB/Ca1DAAAACXBIWXMAAA7DAAAOwwHHb6hkAAABuElEQVQoz52Qu24TQRSG9+lQkoKSd+AlgiMKSgpqJJDsNEF28MZA4kRysB3fAEELfRAi3svs7OzMeHc/NOtrgVJkpE9zzn/OnDP6vW73ig/nl7TaHU5aPienZ7x736Hpf6R5dr6hVXFBs9Pd6v5SO+1c0PI/0Wy28a6uhwxvxtTbXR4/r/PkxTEHh2/Ye/aWg6MG+0cN9mr/Z7/W4FHtmKevWrys+xy+9vHKfMH63AYJvwNBqCxBapinmrk0VRyqJYFax7biLsn4G6cInZPaAk8kEq0Ni8WCMJgTRSEyESSJQMoEIVN0pjA6q7A6QyuFSmWla61Jgz+InyOUCPGMWQ4z1hJGMbFISJUikgqpMqwx6F20IdMalWVkWYY2Fp0K5O0vUinwEvfD1VC3zd1FUZC7JcaQ53mVW2tJU7XJ3b2tlyxKqkWeaxRqNXDV4OKKVew0pTKiWGy03XqFtduB6yGxEA8miuPKKs99vyzLjYeu8BDCKCKREo+do42ufDHWVJ7dh+txFq373duiyPEmX74z/fqD0fQb/ZsJw/GMXn/EZW9wD32uh2MG4xn9mymfhxN6gxGD0Yx/d6whgK2UhqcAAAAASUVORK5CYII=&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;1&quot;
+        title=&quot;1&quot;
+        src=&quot;/static/959702364027128a6f05c5b262b1a939/f058b/1.png&quot;
+        srcset=&quot;/static/959702364027128a6f05c5b262b1a939/c26ae/1.png 158w,
+/static/959702364027128a6f05c5b262b1a939/6bdcf/1.png 315w,
+/static/959702364027128a6f05c5b262b1a939/f058b/1.png 630w,
+/static/959702364027128a6f05c5b262b1a939/40601/1.png 945w,
+/static/959702364027128a6f05c5b262b1a939/78612/1.png 1260w,
+/static/959702364027128a6f05c5b262b1a939/29114/1.png 1920w&quot;
+        sizes=&quot;(max-width: 630px) 100vw, 630px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+        decoding=&quot;async&quot;
+      /&gt;
+    &lt;/span&gt;
+&lt;a href=&quot;https://s3.console.aws.amazon.com/s3&quot;&gt;https://s3.console.aws.amazon.com/s3&lt;/a&gt; 접속 후 버킷만들기&lt;/p&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 630px; &quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/159989c9028844216a760fcaabfa9c6e/29114/2.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 54.43037974683544%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAALCAYAAAB/Ca1DAAAACXBIWXMAAA7DAAAOwwHHb6hkAAABiElEQVQoz42SfY+jIBDG+f4fZje2VWvRaq3t7eYum9x3aPbFZH0BREDb5wLWS/+47S3JLwwwMzwwQ+I4AU0yeMsAD94KDwvfzd4qhOdH8PzNRDBDb/YjLEOKRUDxuAwR+CEITYvJ0V8j3MRY0wR+GE12nCGkGcL4azbbPWi6x2abIy+OILLv8fr2BsYFrN0pg2EcMY4DhmHCDOZrjEU7P6UUCOMcn1UFpTX6vofslcOurbPWGi1jqJsWTXsPhqZpQKSULsBmt8HKGAhlVY2w43K5gAvhfOzl/2I+s7N7clXXYIxjHKckc6LvJmSMoeUcoutAhBD4KEtYpU6hUlBKT/Z1favinspOShDRSZzeS5RVjZoLtKIDvzpZZfbW/yq8TcilwqnieK05Sq7QqBFW9Vz1vp8U1k1ztyh127o4cj6f3bPuDdsS2uhri5i/1bdfomeMdq1GdsUTFkEEb2Ube4td8QM0zRHFGdZxiijZIdkdEGfFDXvkx2ccnn4iPzw7O90f8evlN/4A7+grGwnV4z8AAAAASUVORK5CYII=&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;2&quot;
+        title=&quot;2&quot;
+        src=&quot;/static/159989c9028844216a760fcaabfa9c6e/f058b/2.png&quot;
+        srcset=&quot;/static/159989c9028844216a760fcaabfa9c6e/c26ae/2.png 158w,
+/static/159989c9028844216a760fcaabfa9c6e/6bdcf/2.png 315w,
+/static/159989c9028844216a760fcaabfa9c6e/f058b/2.png 630w,
+/static/159989c9028844216a760fcaabfa9c6e/40601/2.png 945w,
+/static/159989c9028844216a760fcaabfa9c6e/78612/2.png 1260w,
+/static/159989c9028844216a760fcaabfa9c6e/29114/2.png 1920w&quot;
+        sizes=&quot;(max-width: 630px) 100vw, 630px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+        decoding=&quot;async&quot;
+      /&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;
+버킷의 이름은 다른 버킷의 이름과 중복되면 안됨. aws 리전의 경우 서울리전으로 선택하는 것이 일반적이지만, cloudfront 적용 전후의 속도비교를 위해 거리가 먼 버지니아 리전으로 선택&lt;/p&gt;
+&lt;p&gt;나머지 부분은 기본값으로 선택함&lt;/p&gt;
+&lt;h4 id=&quot;objectfile-업로드&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#objectfile-%EC%97%85%EB%A1%9C%EB%93%9C&quot; aria-label=&quot;objectfile 업로드 permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;object(file) 업로드&lt;/h4&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 630px; &quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/f525142574ff43d38b3f4e82493e8364/29114/3.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 53.79746835443038%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAALCAYAAAB/Ca1DAAAACXBIWXMAAA7DAAAOwwHHb6hkAAABtUlEQVQoz52RT2tTURDF33cTsnDTT+F3EKEKFbduXRWpFHGj4FZjmyYxVStCl9a0RTFNbNK8d/+/+/LnJ3NfgyA2Cy8cZpiZc+65c7OjL8d0eh9otrq8a79P8c1+h+ZBj73uR/a6n9ai1TuiffiZVrtHp3tI1tzv0Dpoc+fxCzYe7rKx9Yxb97ZpbO7QuL9L48F63N56zqOnr7n75CXbr96SsVwiZ6wd/cEl58MJw9wyMYGx9ilOjP8DvcoDY+MTTChRLiSdzFjLcrlEFVPGv0ZMp1cURY4qcrQqsMZgjcZaU8MHrLV17RpaK5RSVFVFFmNkvlhQaE1eFHghOIeyHmUdzjnkUqUN2hj0RR87vayF01ygjBHvPdVsRuacZ7FYpKYQJEpTCM6HlAtkzkj/+zFhOiTEKtVDGRFT4nomgtoFytmcsixTQcTn83mKsgp5huQimHJAti65OJIZgYgmhzHWhBBCGop/IdVipFAKn2ZqR9Wqdx2FnxzKz8gNsqe8UIn4Lyitb+wJcvmUlaCcUNZLdv4GrOvJzp1LxrLBxYjBcET/7JyT/ikn/bP/wtdvp/z4OeA3OJ0o4XALAMIAAAAASUVORK5CYII=&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;3&quot;
+        title=&quot;3&quot;
+        src=&quot;/static/f525142574ff43d38b3f4e82493e8364/f058b/3.png&quot;
+        srcset=&quot;/static/f525142574ff43d38b3f4e82493e8364/c26ae/3.png 158w,
+/static/f525142574ff43d38b3f4e82493e8364/6bdcf/3.png 315w,
+/static/f525142574ff43d38b3f4e82493e8364/f058b/3.png 630w,
+/static/f525142574ff43d38b3f4e82493e8364/40601/3.png 945w,
+/static/f525142574ff43d38b3f4e82493e8364/78612/3.png 1260w,
+/static/f525142574ff43d38b3f4e82493e8364/29114/3.png 1920w&quot;
+        sizes=&quot;(max-width: 630px) 100vw, 630px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+        decoding=&quot;async&quot;
+      /&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;
+만든 버킷으로 들어가 업로드 버튼을 클릭&lt;/p&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 630px; &quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/f16c86fcd6bbcf3b352b8a0a7c3bbf83/29114/4.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 53.79746835443038%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAALCAYAAAB/Ca1DAAAACXBIWXMAAA7DAAAOwwHHb6hkAAABjElEQVQoz5XSa2/aMBiG4fz/PzOp66Ck41w6OrpK/UILjNGpmzZCTo5jJ3FG78mm7TQJkPrhki2/8WvFj73JzS2jT1d0ByO6w0s6/QvavSH90RX90efjLidcjK8Zjr/Q64+YTu/x3p+1OWm0OGn4nDZ9PjR9Thstmn6b5nmXhm919jvv4ncGnH3s0Wi1mVzf4P389ZsgyZBKo/SOLgrHzouyoK5rTG32M4bKVGy3W0Qm8GIhCOKEIIrYxImzDiMnyTKSTJIKcVQiBJmUhGGIF4UhcRwjpcRUFbUxFFqT5zlaKTeKLHMbDrH1XCmiKML7EWXEuSZVBVlRkeTaEbokVSVC6deGhxr/1/AhiNlkikiVxKp083UqCaVmI7U77E0NldKY+g88Pf3DywhVVb7tl9PnC7WpFkWJsYmaHZuu1oW7eLvpEFuXeb4LZR0EJGlKnCSuYE96ZcOxT0mpo+y39nnZcL272YLp/dyZLZbMv35jvlgyWz1yN24zG7xjvnp0a66215LFcsXq4Tt/AZ+XMMYZXnoHAAAAAElFTkSuQmCC&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;4&quot;
+        title=&quot;4&quot;
+        src=&quot;/static/f16c86fcd6bbcf3b352b8a0a7c3bbf83/f058b/4.png&quot;
+        srcset=&quot;/static/f16c86fcd6bbcf3b352b8a0a7c3bbf83/c26ae/4.png 158w,
+/static/f16c86fcd6bbcf3b352b8a0a7c3bbf83/6bdcf/4.png 315w,
+/static/f16c86fcd6bbcf3b352b8a0a7c3bbf83/f058b/4.png 630w,
+/static/f16c86fcd6bbcf3b352b8a0a7c3bbf83/40601/4.png 945w,
+/static/f16c86fcd6bbcf3b352b8a0a7c3bbf83/78612/4.png 1260w,
+/static/f16c86fcd6bbcf3b352b8a0a7c3bbf83/29114/4.png 1920w&quot;
+        sizes=&quot;(max-width: 630px) 100vw, 630px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+        decoding=&quot;async&quot;
+      /&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;
+업로드 화면에서 파일탐색기의 파일을 드래그+드롭하거나 파일추가, 폴더추가 버튼으로 원하는 파일들을 업로드할 수 있음&lt;/p&gt;
+&lt;h4 id=&quot;정적-웹사이트-호스팅-기능-활성화&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#%EC%A0%95%EC%A0%81-%EC%9B%B9%EC%82%AC%EC%9D%B4%ED%8A%B8-%ED%98%B8%EC%8A%A4%ED%8C%85-%EA%B8%B0%EB%8A%A5-%ED%99%9C%EC%84%B1%ED%99%94&quot; aria-label=&quot;정적 웹사이트 호스팅 기능 활성화 permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;정적 웹사이트 호스팅 기능 활성화&lt;/h4&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 630px; &quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/3bf9fc9f7844fe19651a80dfc8778d75/29114/5.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 53.79746835443038%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAALCAYAAAB/Ca1DAAAACXBIWXMAAA7DAAAOwwHHb6hkAAABn0lEQVQoz4XRTWsTQRzH8X1xmiB46lvxJpqCgiePnpXQIIhHb9qnpIk1tR70UERiEsFTstlkH+Z5N1+Z2RRttXHhs7+dYeY/DxsNP32mN/jAu+M++91ByLdHJ+x333NwMuSwf3aDIUf9M7qn5/ROzzk8HnBx8ZXo7qOX7Dze485um2arTePBC27df07jYZtGq0Nzt0PjmubG7VaHnSeveLr3hnvPXtP7+IXo53xJnElWypJIy0KW5HZNbitys13m01ZoV1Joh7GOKF0tMVrjrMEGltJdVbm/+/7k52ilEEIQzeYziqJAKYWSsk4lryikQunNguYfrEEqhZSSaJELMmlILwkdMlOWVGpWQpNIR6YdquRmxtUFZ0nKfJmxyASLrGCRFnWGtiDJPcUyl/Vi10nNslCkhQini+I4RkoRtq61xhiN0QqhNNpYqtJRuu38kX2xwt/hPI7xfENpHQrJULhewPfprer7E1LiNxelWRr+jnMu0LbElRX+WbMO7+1gva7C3CRJiL6NxowmU0bjacjvl9/jySb/5/e4yfQHvwD4Fitz1RcZZAAAAABJRU5ErkJggg==&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;5&quot;
+        title=&quot;5&quot;
+        src=&quot;/static/3bf9fc9f7844fe19651a80dfc8778d75/f058b/5.png&quot;
+        srcset=&quot;/static/3bf9fc9f7844fe19651a80dfc8778d75/c26ae/5.png 158w,
+/static/3bf9fc9f7844fe19651a80dfc8778d75/6bdcf/5.png 315w,
+/static/3bf9fc9f7844fe19651a80dfc8778d75/f058b/5.png 630w,
+/static/3bf9fc9f7844fe19651a80dfc8778d75/40601/5.png 945w,
+/static/3bf9fc9f7844fe19651a80dfc8778d75/78612/5.png 1260w,
+/static/3bf9fc9f7844fe19651a80dfc8778d75/29114/5.png 1920w&quot;
+        sizes=&quot;(max-width: 630px) 100vw, 630px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+        decoding=&quot;async&quot;
+      /&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;
+버킷 페이지로 돌아가 속성탭의 가장 하단의 정적 웹사이트 호스팅 카드에서 편집버튼 클릭&lt;/p&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 630px; &quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/63d6328f2302a2f39ab404379695e65e/29114/6.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 53.79746835443038%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAALCAYAAAB/Ca1DAAAACXBIWXMAAA7DAAAOwwHHb6hkAAABkklEQVQoz42RW1PbMBCF/f//TEsTQoDmShygpDz0gWlpk95CbsSxpVi2ZUv+GAvah7aeZme+B2n2nNnd401uP+BfXtMb+vRHl3SHPp3+Bb3hmN7omsH4HQO/hvENo6sJF1fv6Q987u4+4jXaHV4327xqnHDUPOGo0eJNs8Vx+5zj0w6ts2495z3OukPab/u0TjvcTG7x1psNFcEuJBKS3BiMNVhrsdZQmIK8yOvJc3SuXb+QAi/Y7ahI05Qsy9irFJVp11gUBSpJCKOISIhaQiGQ+z3b7RbvcRc6cVVlyV+ltSaS0gnqEFISK0UQBHi7SLJ53LKPFaHSKF248Y2x2LIk09oJDjZcioTpWjBdR8xWAfNgz3wrmQeSRaiIVIqUEnGoYRBGiDglTjWJztHGogtLbiyFLUmyAyeM45eVw9B9FC8h/MYYd8NMZ+7wVU8dv26slMKLY+XS/dNMm+eEjDHEKkYlygn+RbVukibOx5t9/c5yteFhsWKxXPOwXDkWy+f3tx8/+fR5yv2X2X9ZrTc8AYdgNLUM9ZC8AAAAAElFTkSuQmCC&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;6&quot;
+        title=&quot;6&quot;
+        src=&quot;/static/63d6328f2302a2f39ab404379695e65e/f058b/6.png&quot;
+        srcset=&quot;/static/63d6328f2302a2f39ab404379695e65e/c26ae/6.png 158w,
+/static/63d6328f2302a2f39ab404379695e65e/6bdcf/6.png 315w,
+/static/63d6328f2302a2f39ab404379695e65e/f058b/6.png 630w,
+/static/63d6328f2302a2f39ab404379695e65e/40601/6.png 945w,
+/static/63d6328f2302a2f39ab404379695e65e/78612/6.png 1260w,
+/static/63d6328f2302a2f39ab404379695e65e/29114/6.png 1920w&quot;
+        sizes=&quot;(max-width: 630px) 100vw, 630px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+        decoding=&quot;async&quot;
+      /&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;
+정적 웹사이트 호스팅을 활성화하면 호스팅 유형~ 리디렉션 규칙까지 관련된 속성들이 표시됨.&lt;/p&gt;
+&lt;p&gt;객체에 대한 요청 리디렉션은 들어오는 요청을 다른 버킷이나 도메인으로 리디렉션 하는 속성&lt;/p&gt;
+&lt;p&gt;인덱스 문서는 버킷에 들어오는 요청에 해한 default page를 설정하는 속성이며 이전에 업로드했던 mycar.html을 설정함&lt;/p&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 630px; &quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/a9616c1dc4c6b0a5ffafe313ddff3020/9c177/7.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 36.708860759493675%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAHCAYAAAAIy204AAAACXBIWXMAAA7DAAAOwwHHb6hkAAAAuklEQVQoz6WQ0Q6CMAxF9/9/CRGNQRlj7dha5JoOUV940SYnN+vDyXqd9x5t26LrOjRNi1N3RowRYwgIxhRwC4zzQOinBFWByDGOiGDSOWeIKmzWdf2ZKrwPA1T1L9E+jlPC8PrhP7NJVzhmrkLrzJKYUUSQS0H5Zt+J1Lf1xVkRkiDJ8pY6IsblNuLqGX1g9CPj6qlmJTAunpDLXrzWtIpSWTDNilken5MjEexs+9kR8WBv16W0pXmMJ8k1IsCDfXMEAAAAAElFTkSuQmCC&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;7&quot;
+        title=&quot;7&quot;
+        src=&quot;/static/a9616c1dc4c6b0a5ffafe313ddff3020/f058b/7.png&quot;
+        srcset=&quot;/static/a9616c1dc4c6b0a5ffafe313ddff3020/c26ae/7.png 158w,
+/static/a9616c1dc4c6b0a5ffafe313ddff3020/6bdcf/7.png 315w,
+/static/a9616c1dc4c6b0a5ffafe313ddff3020/f058b/7.png 630w,
+/static/a9616c1dc4c6b0a5ffafe313ddff3020/9c177/7.png 880w&quot;
+        sizes=&quot;(max-width: 630px) 100vw, 630px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+        decoding=&quot;async&quot;
+      /&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;
+설정 후 이전 페이지로 돌아가면 설정한 정적 웹 사이트에 대한 주소가 표시됨. 그러나 아직 외부 사용자에 대한 접근 권한이 부여되지 않았기 때문에 해당 사이트에 접속해도 403 Forbidden을 응답함.&lt;/p&gt;
+&lt;h4 id=&quot;bucket-object에-대한-access-policy-설정&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#bucket-object%EC%97%90-%EB%8C%80%ED%95%9C-access-policy-%EC%84%A4%EC%A0%95&quot; aria-label=&quot;bucket object에 대한 access policy 설정 permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;bucket, object에 대한 access policy 설정&lt;/h4&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 630px; &quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/6fbbbc63cde15302cf6c04c465b59f53/29114/8.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 54.43037974683544%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAALCAYAAAB/Ca1DAAAACXBIWXMAAA7DAAAOwwHHb6hkAAABxElEQVQoz5WQy27TQBRA/XWoYYX4FSRWCAUErNnCBlABFfFI0ySkcSqatNBCmxapsEVi05TEqV9je2ZiOwd58mgECMHi6NyXRveOtdnaotZs82q9zss5ldqU6lve1FtL2FNqs7zWotKwWW/YvN5o0qg3sa49rHPl7hpX7zylVF7lcnmVSzcesXLzCaXyM0q3nv+VldtrXH9Q5d7jGvdf2FjnYcy3vsP3HyP6rsAR0jCa4YjkFy5qRX8YJgSxJFba2ArDgOFgwGg4wPdcPPcc3/cQYUD4DxRzQRAQGPtYURTjBwFpmpKm2cwp4/9gPh/FMVacJLieh+f7SKnQWqO0Np7Haqm23FtGKkUii5OF4PS0T//sjKHjmG2Lxwv8hYNFPK/Pcf2AkR8ioogkSbCiJMb1XbQek+c5WZ4b/4ksm/az5dh4YmJZbCiEwHGG5mOjKEIpNUOipDRDxSlyUf8dmSRmu7j4wzTLcEVCrMZEaoyQikhqk8c6Q6Y5YpyjJ5BzQQakM+t8QjqBLM+wOns9qtufqNpdmp2Pho32LpXWDpWtPerdQxrb+2zuHND+cIT9vmfoHJywe/TVuHv4hXf7x/Q+n/ATz1QdyFEG+PIAAAAASUVORK5CYII=&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;8&quot;
+        title=&quot;8&quot;
+        src=&quot;/static/6fbbbc63cde15302cf6c04c465b59f53/f058b/8.png&quot;
+        srcset=&quot;/static/6fbbbc63cde15302cf6c04c465b59f53/c26ae/8.png 158w,
+/static/6fbbbc63cde15302cf6c04c465b59f53/6bdcf/8.png 315w,
+/static/6fbbbc63cde15302cf6c04c465b59f53/f058b/8.png 630w,
+/static/6fbbbc63cde15302cf6c04c465b59f53/40601/8.png 945w,
+/static/6fbbbc63cde15302cf6c04c465b59f53/78612/8.png 1260w,
+/static/6fbbbc63cde15302cf6c04c465b59f53/29114/8.png 1920w&quot;
+        sizes=&quot;(max-width: 630px) 100vw, 630px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+        decoding=&quot;async&quot;
+      /&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;
+퍼블릭 엑세스를 허용하기 위해 버킷 페이지에서 권한탭의 퍼블릭 엑세스 차단메뉴를 편집&lt;/p&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 630px; &quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/5bc2d863d424c2c922f7cbc71d2d288c/29114/9.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 54.43037974683544%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAALCAYAAAB/Ca1DAAAACXBIWXMAAA7DAAAOwwHHb6hkAAABoUlEQVQoz52S25KaQBBA+f+PiYuKqGDBiq5mfcsPbKVqFRDlfpER9qQGVh9ispXKw6me6ek5MD2jGMaC6XyBOtIYDDWeRhO+qeOOwUhH1eZ3hpM56sRA1WafuVmXG+kG6njK02CIYlgrhrqJOpn1jCcMhmM0fY5uWOiGjW4+MpXRsJktnjHtFYblsLCWKGVV8n44cAwCguBEGEUUZUXbtjRN03G9CsRXCEEtatqPD5Q0TXnf79lLXJdjcMI/Hnt8nyAISNKUKI6Jk+SvyPUsz1GqqiI4nTiHIWGSk+UFZVlSltXnl0VXKKVplj1wy8tYlCWK3BCGEQfXw/N8XM/vxudzSF0L2rb5D2HUC/cHF/8Y9H98PpMXJaKBrCj+XXipa5Ik7aSyD12v4oRQcvJJvZ9kaUIiBX+QPgjlcWRTfy9K8oLYfSP+MSMKPOI0I/7iYu6X0rQNl/pCXdddvI3lMxBNgwDE9YqQcyHuyHV5ulut3Cf7rSxfvmOvNh3O5pX1doftbLrHaloOprXEtJ1+fsfheb1ltd3hvLyyXPeO1WbHL23eJgTxqUyjAAAAAElFTkSuQmCC&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;9&quot;
+        title=&quot;9&quot;
+        src=&quot;/static/5bc2d863d424c2c922f7cbc71d2d288c/f058b/9.png&quot;
+        srcset=&quot;/static/5bc2d863d424c2c922f7cbc71d2d288c/c26ae/9.png 158w,
+/static/5bc2d863d424c2c922f7cbc71d2d288c/6bdcf/9.png 315w,
+/static/5bc2d863d424c2c922f7cbc71d2d288c/f058b/9.png 630w,
+/static/5bc2d863d424c2c922f7cbc71d2d288c/40601/9.png 945w,
+/static/5bc2d863d424c2c922f7cbc71d2d288c/78612/9.png 1260w,
+/static/5bc2d863d424c2c922f7cbc71d2d288c/29114/9.png 1920w&quot;
+        sizes=&quot;(max-width: 630px) 100vw, 630px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+        decoding=&quot;async&quot;
+      /&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;
+퍼블릭 액세스 차단 편집창에서 모든 퍼블릭 엑세스 차단의 체크를 해제시켜주고 저장&lt;/p&gt;
+&lt;p&gt;퍼블릭 액세스가 허용되었으면 버킷에 대한 object(파일)에 대한 접근 또한 허용해주어야 정상적으로 웹페이지를 읽어올 수 있을 것임. 따라서 퍼블릭 액세스 차단 메뉴 아래 버킷 정책 메뉴에서 버킷 정책을 편집해주어야 함.&lt;/p&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 630px; &quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/25cceee40e5d0dd41af6f0dba627dff4/29114/10.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 54.43037974683544%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAALCAYAAAB/Ca1DAAAACXBIWXMAAA7DAAAOwwHHb6hkAAABV0lEQVQoz62S626CQBCFef93aSgKoqxGq6jEa+M71H825eKysAunmaEYbWpjk5J8mZ3ds5OZs1hCjNAPRnC6HmzHhd3x8PTcZeyOD8cbwPECptML4PTEJW/2BGN3ffQ8H5YYh82G68PtD+H6AVx/gN5AwBdj+GKC/nDCsWF8tZ5AjGcYTkKO03ABK1c53o5HJFmGUmuUuoQxhtFGM7RPeVUZmGuMAd0nVKEY6ywlsixDnud3UEhlAVVqGK2hb6CCijVEHMew4iTB6fSOsmw6q+saVVXdUH/LW9o7rKlrpGkKK80yfMQxHyql/gQ1Q1O0FiVUUH6NVhQFiyg+QqulmJ3PbAF3KKUE+dgePsJFWxRciNY0NndI1X9/lJ+RsonkHWFMxRZYdd0Y/B8f/VbWbLHCbLnCPNogWu+w2r5iHq0xnUd4Ce+zXG1Zu9kdsNkfEK332O4P+AR3oTO99JCE1AAAAABJRU5ErkJggg==&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;10&quot;
+        title=&quot;10&quot;
+        src=&quot;/static/25cceee40e5d0dd41af6f0dba627dff4/f058b/10.png&quot;
+        srcset=&quot;/static/25cceee40e5d0dd41af6f0dba627dff4/c26ae/10.png 158w,
+/static/25cceee40e5d0dd41af6f0dba627dff4/6bdcf/10.png 315w,
+/static/25cceee40e5d0dd41af6f0dba627dff4/f058b/10.png 630w,
+/static/25cceee40e5d0dd41af6f0dba627dff4/40601/10.png 945w,
+/static/25cceee40e5d0dd41af6f0dba627dff4/78612/10.png 1260w,
+/static/25cceee40e5d0dd41af6f0dba627dff4/29114/10.png 1920w&quot;
+        sizes=&quot;(max-width: 630px) 100vw, 630px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+        decoding=&quot;async&quot;
+      /&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;
+버킷 정책 메뉴에서 편집을 누른 뒤 버킷 정책 편집 페이지에서 왼쪽 상단 정책 생성기 클릭&lt;/p&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 630px; &quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/8d2798e33c96c15bda4b29ad64df394c/29114/11.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 54.43037974683544%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAALCAYAAAB/Ca1DAAAACXBIWXMAAA7DAAAOwwHHb6hkAAABN0lEQVQoz52SwXLCMAxE+f9/66UXShMTOj21FFJiy5ZkO9uxaZhAA4dq5k0m9nqzsrJq2xbrTYPXxqAzr+hMi6bd1vfGbGG63Yy3X3ZXtKZD0xo0L2usMCvtt+g2z4hpxH8qqWA1jiMKpYgI+/0X+mMP8gxHDKIARwGeI0QjVPWCiCLnfDkfmK8Ng/egUw9vTyDn4AODmRFYECSBK/GCqGJ+vmhry9NCioJgTwi2BwdfU+Q81hQTk8Hc6IGhIgqDnIV1VAWiCRozYoyVP7WUcG5aN0QwDAOIHFSlGpV0KSWknC/6M48SpgQOoRode4v+21bRRNm/bXO55fNyfU6yj/cnHD7N4u9xe493E0b24OEILlMeDghkEWOqLZ8HlO9+oJSI3BoyxA1QZ6GeEVmuJrw05XnCciU/rNVbtpnaiLsAAAAASUVORK5CYII=&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;11&quot;
+        title=&quot;11&quot;
+        src=&quot;/static/8d2798e33c96c15bda4b29ad64df394c/f058b/11.png&quot;
+        srcset=&quot;/static/8d2798e33c96c15bda4b29ad64df394c/c26ae/11.png 158w,
+/static/8d2798e33c96c15bda4b29ad64df394c/6bdcf/11.png 315w,
+/static/8d2798e33c96c15bda4b29ad64df394c/f058b/11.png 630w,
+/static/8d2798e33c96c15bda4b29ad64df394c/40601/11.png 945w,
+/static/8d2798e33c96c15bda4b29ad64df394c/78612/11.png 1260w,
+/static/8d2798e33c96c15bda4b29ad64df394c/29114/11.png 1920w&quot;
+        sizes=&quot;(max-width: 630px) 100vw, 630px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+        decoding=&quot;async&quot;
+      /&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;
+policy generator에서 위 사진대로 속성을 입력함. (actions는 getObject 1개 설정)&lt;/p&gt;
+&lt;p&gt;arn의 경우 이전의 버킷 정책 편집 페이지 상단부분에 있음&lt;/p&gt;
+&lt;p&gt;policy generator에서 올바른 arn을 입력해도 arn이 invalid한 값이라고 오류가 발생했는데 자바스크립트 콘솔에서 String의 match 함수를 수정해서 넘어감.
+&lt;br&gt;(참조: &lt;a href=&quot;https://stackoverflow.com/questions/72756697/resource-field-is-not-valid-you-must-enter-a-valid-arn&quot;&gt;https://stackoverflow.com/questions/72756697/resource-field-is-not-valid-you-must-enter-a-valid-arn&lt;/a&gt;)&lt;/p&gt;
+&lt;p&gt;이후 generate policy로 나온 policy json을 그대로 복사해 버킷 정책 편집 페이지에 붙여넣기 함.&lt;/p&gt;
+&lt;h4 id=&quot;웹사이트-접속-및-작동-여부-확인&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#%EC%9B%B9%EC%82%AC%EC%9D%B4%ED%8A%B8-%EC%A0%91%EC%86%8D-%EB%B0%8F-%EC%9E%91%EB%8F%99-%EC%97%AC%EB%B6%80-%ED%99%95%EC%9D%B8&quot; aria-label=&quot;웹사이트 접속 및 작동 여부 확인 permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;웹사이트 접속 및 작동 여부 확인&lt;/h4&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 630px; &quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/4f5bcf24fdfbbc9b75910107da1bd73a/29114/12.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 54.43037974683544%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAALCAYAAAB/Ca1DAAAACXBIWXMAAA7DAAAOwwHHb6hkAAADKUlEQVQozyWMW0wbBABFm/ij8cMlY8bHRD9AgzwSxlY3EMFBN6CmwGgHg5Z2rdRSWl6FUgoMGF2xsnYCjsemuGwSWbNEswSMMrM58UHmouskQCibKbSlLxw6/D1G/Lg5J+fjCryrD1hYWsG7+hDf2jq+NT8r//l6gLXABv6NMP7gxk73rft3uO4P4PcH2QiFCQZDBALBnXmXlhB4fpnjoXeRzUiQP6NBwgEf238/4o+VRVaXF/DcnWfx9/sEQyH8oRBroRCL3gfcX1nlh5/vMO+5x9yvv3H7pzv88/gxAvdIF8v35gj4llj2/MiNLy4zf3uayyN99Jq0DA+c5tOJMb79/hbnL44wce0qvfYuus+5kFbKUTarOW5UojJUEw6HEdy8foGFu7N45r9ma9PPzNQF7GYNPfoTtGrKGehrx3GmA9eAlZ42Nfb+duo0MjptnRyTHKVIlIFIlE5DfSWxWAzBpKuZSVc9H1rU3JyZYvx0PUO9LejeKaJMeIgGpZwWnZqaE8dpqKvBYNQjr6ig5O08pCIR9pY69sUnIM07SiwaRTDepWXUqmHQfJLPBnuYsDXiOmVAUZCPZN8bHDlwEJmogMyUDA5kZPHWSS05VQpeeWo3WcnpOK0mEp95ltKcvP8PZ6/0c/WsmQ9qK5i+dJYb7lEmPzpDg0qOTiGnVlWNSlZGeUEBJaJChDlHEB7M5rW4veSm76fD8B7xT++hMDOXaCSKYLRbybClBvXhbD52dGJp1HOstAS1VkuxtBJxcTlZb+bz4q7niX/uZV54cjdJcXt5dc9LZCanolSqiHtiF4f3ZxOJRBBMONuZvTbOV1Nj3Jp2882XbgadDupbTHTbbZyy2XAODXF+ZAiDXschYSavJyaRlJBMamIaOeIi0pISKBGL2YxtIlAX5aMU5aGRFGPUqJi9/jnfzbjpsJgwWc2cG3Yy4OzH2m5Gr9ViaTPSZMlA25yKRJZGaUUKGmMK1j4J29tbCGrLJIy/382Io5d3qyrpbWtk2v0JClkZYnEh1YoqGow6WpsMqKsraWsyMHZRjcUhRNWaTLkxiVxpPPK6fLb+esS/UtAzLO1/yRQAAAAASUVORK5CYII=&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;12&quot;
+        title=&quot;12&quot;
+        src=&quot;/static/4f5bcf24fdfbbc9b75910107da1bd73a/f058b/12.png&quot;
+        srcset=&quot;/static/4f5bcf24fdfbbc9b75910107da1bd73a/c26ae/12.png 158w,
+/static/4f5bcf24fdfbbc9b75910107da1bd73a/6bdcf/12.png 315w,
+/static/4f5bcf24fdfbbc9b75910107da1bd73a/f058b/12.png 630w,
+/static/4f5bcf24fdfbbc9b75910107da1bd73a/40601/12.png 945w,
+/static/4f5bcf24fdfbbc9b75910107da1bd73a/78612/12.png 1260w,
+/static/4f5bcf24fdfbbc9b75910107da1bd73a/29114/12.png 1920w&quot;
+        sizes=&quot;(max-width: 630px) 100vw, 630px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+        decoding=&quot;async&quot;
+      /&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;
+다시 속성탭의 정적 웹사이트 호스팅의 웹사이트 주소로 접속하면 이전과 달리 접속이 가능함.&lt;/p&gt;
+&lt;h2 id=&quot;amazon-cloudfront&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#amazon-cloudfront&quot; aria-label=&quot;amazon cloudfront permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;amazon cloudfront&lt;/h2&gt;
+&lt;h4 id=&quot;cloudfront-distribution-생성&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#cloudfront-distribution-%EC%83%9D%EC%84%B1&quot; aria-label=&quot;cloudfront distribution 생성 permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;cloudfront distribution 생성&lt;/h4&gt;
+&lt;p&gt;&lt;a href=&quot;https://us-east-1.console.aws.amazon.com/cloudfront&quot;&gt;https://us-east-1.console.aws.amazon.com/cloudfront&lt;/a&gt; 접속 후 배포 생성 클릭&lt;/p&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 630px; &quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/fa138fdd808e127f76a1c0c5a3aab2bc/681f1/13.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 96.20253164556962%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAATCAYAAACQjC21AAAACXBIWXMAAA7DAAAOwwHHb6hkAAABtElEQVQ4y6VU7ZKjIBDM+7/i5X5c1UYjIAoIgkJ6a4Y15V7ibvZuqrrGmNDpng9OV6XxpxFohUKnBvRaYzQG1rkfw1iLU9s0OJ9/49f5DKUU3DTxF/8CIj3RQycEwjwfYn4Bm5CTcw5SSqRlQc75EeuK9QVM3ldC7z2k6tEPI+YYWZEPgTP9KKaE2+12R/kAxfaOgs5UwhDg3IRhHDESjIExFsNADRqYOJeC9UPxsiyIMR0TkgopFVSv0fcaykysdJ4jQghMtFe4JzlW6D2sq0RkkRQQ6DPVp5TCKhm55mNCKqaxVVWMbGurFedSHvGVQqqR1pptC6mYnDpP9ZymiQ/nvcLyncIQuPjUFONp7qptLn5akNLysxoaH/AmNETX4e3SoGlbtO0Vl0uLy6XB9Sruo7OPv8k/WSaLNCZk3RjDoxPCjEibEuomlCc2nxOGgHE00MNQ99HSkjseGxop2qBnig4V0r8zibEPto7i2zmkK6sTEkJKDNYjpcQKt5mkBtG7fS0PFVpqStdjcq4SxcTDTN2lTGQ112cmwe3rptDhkjP+Jz5tynb1rC9dVfkROd+vr3eGiMmWitIkowAAAABJRU5ErkJggg==&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;13&quot;
+        title=&quot;13&quot;
+        src=&quot;/static/fa138fdd808e127f76a1c0c5a3aab2bc/f058b/13.png&quot;
+        srcset=&quot;/static/fa138fdd808e127f76a1c0c5a3aab2bc/c26ae/13.png 158w,
+/static/fa138fdd808e127f76a1c0c5a3aab2bc/6bdcf/13.png 315w,
+/static/fa138fdd808e127f76a1c0c5a3aab2bc/f058b/13.png 630w,
+/static/fa138fdd808e127f76a1c0c5a3aab2bc/681f1/13.png 899w&quot;
+        sizes=&quot;(max-width: 630px) 100vw, 630px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+        decoding=&quot;async&quot;
+      /&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;원본도메인으로 s3를 선택함&lt;/p&gt;
+&lt;p&gt;원본경로는 cloudfront가 s3의 특정 내부 디렉토리에서 콘텐츠를 요청하는 경우 해당하는 세부 경로를 요청하는 속성을 의미함.&lt;/p&gt;
+&lt;p&gt;s3 버킷 엑세스는 OAI를 통해 cloudfront의 origin이 되는 s3에 대한 access를 컨트롤 할 것인지에 대한 설정을 의미함.&lt;/p&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 630px; &quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/b78da854f9e51c9d044d7ea458137c88/41d3b/14.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 106.9620253164557%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAVCAYAAABG1c6oAAAACXBIWXMAAA7DAAAOwwHHb6hkAAABmUlEQVQ4y51Ua5ODIAy8//8z7z70oRWF8BJwb5KqZ50W22OMOCMsm+ySr77v0bQ3WOdRSkHO+TDGcYQ2BoPWMm/jy/CPQSOXgjJNmCqxDD74JeBgSACd80i5ADgGzTVANRiknGXhlsWzsfyvMuQX19H7sG46YlgFVMbidLpAqR4ppQfQPeu3AA2RgMUYn6b4L4bXaws9aLFDTlmY1uqZjxg21wZKKVHaew9r3R184700z3xQlWGnSYCWheOYZHOamW5jnJlXAS0R+n7AresQwqPSvPFZ6tWUu8GgaVpcmwadUjC0LNQilKSJD0RxPkjNQohrjfZXbT+qgJwmp8t3mr+tc3De3+92KQjRw8f7gX4uST5i+HNu8X1uce40rA+IrDB3nlLggoP1hBCjKH8IyKc2bYtO9ei1kY0cqyD8TJjtU44B2QoXZaBdQClZrDGuVsmrXcg6KYcA5lLvh1praWFs6q2B9wK9pTKneb6xXUjE4M7NAqQN0zh36D+G+TUgOY92IHwyylRhSESwloShIStBHPZ18NpXgL+1NGXto1XSfAAAAABJRU5ErkJggg==&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;14&quot;
+        title=&quot;14&quot;
+        src=&quot;/static/b78da854f9e51c9d044d7ea458137c88/f058b/14.png&quot;
+        srcset=&quot;/static/b78da854f9e51c9d044d7ea458137c88/c26ae/14.png 158w,
+/static/b78da854f9e51c9d044d7ea458137c88/6bdcf/14.png 315w,
+/static/b78da854f9e51c9d044d7ea458137c88/f058b/14.png 630w,
+/static/b78da854f9e51c9d044d7ea458137c88/41d3b/14.png 774w&quot;
+        sizes=&quot;(max-width: 630px) 100vw, 630px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+        decoding=&quot;async&quot;
+      /&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;자동으로 객체 압축 속성은 cloudfront가 origin에서 가져온 object의 전송속도, 효율을 위해 자동으로 압축하는 기능임&lt;/p&gt;
+&lt;p&gt;cloudfront는 edge location에서 cache hit가 발생할 때 origin server의 개입 없이 edge location에서 콘텐츠를 가져오기 때문에 origin server의 부하를 줄이고 사용자의 delay time을 줄일 수 있음. 해당 내용에 대한 정책들은 캐시 키 및 원본 요청 속성에서 설정할 수 있음.&lt;/p&gt;
+&lt;p&gt;특정 header값에 따라서 캐시 정책을 바꿔야 하는 경우에는 legacy cache settings를 선택해 커스터마이징이 가능함.&lt;/p&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 630px; &quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/d41d8cd98f00b204e9800998ecf8427e/5205c/15.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 103.79746835443038%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAVCAYAAABG1c6oAAAACXBIWXMAAA7DAAAOwwHHb6hkAAABwUlEQVQ4y51UCY7iQAyc/79yV3uMyNWX++6kRnYCwwIhsEiFlY66Ui4fH+M4wTmHlBJCjIhvwHsPYy2scxd8EDmEEFFbQ2sNta7xFbCIO8J+Mvjx8xd+f54wKY1+GDAphWVZsPc7vyml3BMaChiGEV3XQWsNIhILci7r5WV5iF1C9oF91NpgmhS8D5JKrfWxuiNC8h5KGzjy8CEgxATyQQjneb6An3P5Vr1PSASlNcZpgjYGxlhRyJdTzogpSWxtJT4kZII/fz+lIHw5xg1MJM8RKeULyWHK/MfqjDESrbWgWGB8gjUGIYSLsts6Pya0Dl3fYxhH9MOIU9eLn+wje2odgX1m8DkTnL187GFMUBQRcpVU2jyjze0mrkVhK5yj5ylr63AaFIZJi1/cf6yAY9kKw7hu9KeEnSapbubK5rKN1SyRvSulyvnLRXFEMm7cOkpp8Ypnm6vseca3Bmfya9JdwrT1maRZyto60jJZtg+fiY9t9fNQ4ai0jF5K3/3HcW+WDxUOhiS169VVNx+x/McsxxDQDhbB2wq5CHiy/95SuE6FF+/mZflnw9zh5qOl1ntCruR5q7yCczewOr57S/gFQQ5m0PjuTBoAAAAASUVORK5CYII=&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;15&quot;
+        title=&quot;15&quot;
+        src=&quot;/static/d41d8cd98f00b204e9800998ecf8427e/f058b/15.png&quot;
+        srcset=&quot;/static/d41d8cd98f00b204e9800998ecf8427e/c26ae/15.png 158w,
+/static/d41d8cd98f00b204e9800998ecf8427e/6bdcf/15.png 315w,
+/static/d41d8cd98f00b204e9800998ecf8427e/f058b/15.png 630w,
+/static/d41d8cd98f00b204e9800998ecf8427e/5205c/15.png 833w&quot;
+        sizes=&quot;(max-width: 630px) 100vw, 630px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+        decoding=&quot;async&quot;
+      /&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;가격 분류는 어느 지리적 위치에 cloudfront를 적용할 것인지를 선택하는 속성으로 많은 위치에 적용시킬수록 더 좋은 효율을 얻을 수 있지만 가격이 비싸진다.&lt;/p&gt;
+&lt;p&gt;기본값 루트 객체는 루트로 요청할 때 어떤 object를 반환할 것인지 설정하는 속성임. 이번 경우에는 s3의 정적 웹 호스팅과 cloudfront의 속도비교를 위해 s3의 정적 웹 호스팅의 경우와 같은 mycar.html로 설정.&lt;/p&gt;
+&lt;h4 id=&quot;브라우저에서-cloudfront-distribution-작동-확인&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#%EB%B8%8C%EB%9D%BC%EC%9A%B0%EC%A0%80%EC%97%90%EC%84%9C-cloudfront-distribution-%EC%9E%91%EB%8F%99-%ED%99%95%EC%9D%B8&quot; aria-label=&quot;브라우저에서 cloudfront distribution 작동 확인 permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;브라우저에서 cloudfront distribution 작동 확인&lt;/h4&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 630px; &quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/d41d8cd98f00b204e9800998ecf8427e/3b477/16.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 103.79746835443038%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAVCAYAAABG1c6oAAAACXBIWXMAAA7DAAAOwwHHb6hkAAABwUlEQVQ4y51UCY7iQAyc/79yV3uMyNWX++6kRnYCwwIhsEiFlY66Ui4fH+M4wTmHlBJCjIhvwHsPYy2scxd8EDmEEFFbQ2sNta7xFbCIO8J+Mvjx8xd+f54wKY1+GDAphWVZsPc7vyml3BMaChiGEV3XQWsNIhILci7r5WV5iF1C9oF91NpgmhS8D5JKrfWxuiNC8h5KGzjy8CEgxATyQQjneb6An3P5Vr1PSASlNcZpgjYGxlhRyJdTzogpSWxtJT4kZII/fz+lIHw5xg1MJM8RKeULyWHK/MfqjDESrbWgWGB8gjUGIYSLsts6Pya0Dl3fYxhH9MOIU9eLn+wje2odgX1m8DkTnL187GFMUBQRcpVU2jyjze0mrkVhK5yj5ylr63AaFIZJi1/cf6yAY9kKw7hu9KeEnSapbubK5rKN1SyRvSulyvnLRXFEMm7cOkpp8Ypnm6vseca3Bmfya9JdwrT1maRZyto60jJZtg+fiY9t9fNQ4ai0jF5K3/3HcW+WDxUOhiS169VVNx+x/McsxxDQDhbB2wq5CHiy/95SuE6FF+/mZflnw9zh5qOl1ntCruR5q7yCczewOr57S/gFQQ5m0PjuTBoAAAAASUVORK5CYII=&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;16&quot;
+        title=&quot;16&quot;
+        src=&quot;/static/d41d8cd98f00b204e9800998ecf8427e/f058b/16.png&quot;
+        srcset=&quot;/static/d41d8cd98f00b204e9800998ecf8427e/c26ae/16.png 158w,
+/static/d41d8cd98f00b204e9800998ecf8427e/6bdcf/16.png 315w,
+/static/d41d8cd98f00b204e9800998ecf8427e/f058b/16.png 630w,
+/static/d41d8cd98f00b204e9800998ecf8427e/40601/16.png 945w,
+/static/d41d8cd98f00b204e9800998ecf8427e/78612/16.png 1260w,
+/static/d41d8cd98f00b204e9800998ecf8427e/3b477/16.png 1855w&quot;
+        sizes=&quot;(max-width: 630px) 100vw, 630px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+        decoding=&quot;async&quot;
+      /&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;
+배포 후 cloudfront 콘솔에서 도메인 주소와 상태를 확인할 수 있음&lt;/p&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 630px; &quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/74d10069f243778f022db8536548d8e5/29114/17.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 54.43037974683544%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAALCAYAAAB/Ca1DAAAACXBIWXMAAA7DAAAOwwHHb6hkAAAC30lEQVQoz12Q7WtTBxjFL4IMFL85QUQ/CPviHyBzKOIruGEFCyIoq1ZaEbayjSFu0hX94MumZVuhXVdt1VrrSx1TtFnN2LC2aprGJE2TJjU15vXm7SY3994kN2nSn+TWfdmBAw8P5zmc8wihSJTA2yD+uQBzgSDBcJRAMEw4FjcYFRNEYnFC4SjhSMxgNCoaFOMJRDFBLCYa9Hu9CE7rKG9ee5BSIrIUJx2PoKlZ3sy68Xuncdmt+GY8xBMJgtEIQVHEM/sa16yf8ZcTvHTaGbM7GH1hpaBpCHc7f8DnHEMMefFNPcf8xzUc1nGmnE5e2SaxWCxMTtpw+/zMzPqZ8c/hmPZgc7l5MeGgs7+Hfc0HaWxpIJlMIvz78HfcNjNTlhFUWeTBjV959s8TykAur5PVishaEUXVyGkqWTWHrKnkVIUa7gxe45NNH/H1V4eRJAlhoP0bBtpb+PlUI09Nd+k4fZynZhNqQUfKyuQUDVlRkWWFQrFIQdcplnSKum4YDt+/z4ZVaziwaw9SOo3Q3dpM1/fH+OXkUQY6ztLVepyxJ48Msa7rlMtlg8lUmnw+b+wXFhaYn5835ge3B1n3wQrqt+1eNDT3n+fOpZP8eOIgw9fbeXyjnYDPxftL/oOiKGQzEqqqUq1WqVQqxv5e/00+XLKczzZvJ51KI3S1NdBxqonG7Vvo/amNluYjjPxlMsS1o1qamnEymeJtNIGUySLLMplMxtD09fSxTFjKzo1bSaVSCL2Xv8M81I3p9m+Mmob481YfXvdiwlqtWppqpWIYpmXV+GO5VKJQKBiaK71XWb92NfV1dWSkDELjpztp2LWDY3X7aGk6yvDQdZKxEP9HraqmqpRKJUqlMtXq4jtG/h7gwJF1tJ7bTz6fQzhRX0f3hTY6L56h6fAh2r79ArvlGU6HE6t1gvHx59he2fG4XUxPOXBPu0jEgoTCLvxBFz2DZ/h470o+/3I3OUXmHZBB2fMPcXOPAAAAAElFTkSuQmCC&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;17&quot;
+        title=&quot;17&quot;
+        src=&quot;/static/74d10069f243778f022db8536548d8e5/f058b/17.png&quot;
+        srcset=&quot;/static/74d10069f243778f022db8536548d8e5/c26ae/17.png 158w,
+/static/74d10069f243778f022db8536548d8e5/6bdcf/17.png 315w,
+/static/74d10069f243778f022db8536548d8e5/f058b/17.png 630w,
+/static/74d10069f243778f022db8536548d8e5/40601/17.png 945w,
+/static/74d10069f243778f022db8536548d8e5/78612/17.png 1260w,
+/static/74d10069f243778f022db8536548d8e5/29114/17.png 1920w&quot;
+        sizes=&quot;(max-width: 630px) 100vw, 630px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+        decoding=&quot;async&quot;
+      /&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;
+접속하면 s3의 mycar.html과 동일한 화면을 확인할 수 있으며 개발자도구로 응답의 header의 x-cache가 Hit from cloudfront임을 통해 cloudfront를 통해 load가 되었음을 확인할 수 있다.&lt;/p&gt;
+&lt;h4 id=&quot;cloudfront-적용-유무에-따른-콘텐츠-로드-속도-확인&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#cloudfront-%EC%A0%81%EC%9A%A9-%EC%9C%A0%EB%AC%B4%EC%97%90-%EB%94%B0%EB%A5%B8-%EC%BD%98%ED%85%90%EC%B8%A0-%EB%A1%9C%EB%93%9C-%EC%86%8D%EB%8F%84-%ED%99%95%EC%9D%B8&quot; aria-label=&quot;cloudfront 적용 유무에 따른 콘텐츠 로드 속도 확인 permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;cloudfront 적용 유무에 따른 콘텐츠 로드 속도 확인&lt;/h4&gt;
+&lt;p&gt;s3로 호스팅된 웹페이지에서 mycar.html을 로드하는데 평균적으로 3초 가량 걸리는 반면, cloudfront로 로딩된 웹페이지에서는 1.5초 가량 소요되었으며
+cloudfront를 적용한 방법이 더 빠른 콘텐츠 로드 속도를 보임.&lt;/p&gt;</content:encoded></item><item><title><![CDATA[table에 border radius 적용하는 법]]></title><description><![CDATA[border-collapse border-collapse 속성은 테이블의 각 셀의 테두리 사이에 간격을 조절하는 속성으로 테이블에 border-collapse: separate…]]></description><link>https://skd6150.github.io/table에 border radius 적용하는 법/</link><guid isPermaLink="false">https://skd6150.github.io/table에 border radius 적용하는 법/</guid><pubDate>Thu, 26 May 2022 00:00:00 GMT</pubDate><content:encoded>&lt;h3 id=&quot;border-collapse&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#border-collapse&quot; aria-label=&quot;border collapse permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;border-collapse&lt;/h3&gt;
 &lt;p&gt;border-collapse 속성은 테이블의 각 셀의 테두리 사이에 간격을 조절하는 속성으로 테이블에 border-collapse: separate가 설정되면 셀 테두리 사이에 간격이 생긴다.&lt;/p&gt;
 &lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;css&quot;&gt;&lt;pre class=&quot;language-css&quot;&gt;&lt;code class=&quot;language-css&quot;&gt;&lt;span class=&quot;token selector&quot;&gt;table&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
   &lt;span class=&quot;token property&quot;&gt;border-collapse&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; separate&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
